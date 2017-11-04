@@ -46,7 +46,10 @@ def WestCampus():
     t = ['월', '화', '수', '목', '금','토','일']
     r = datetime.datetime.today().weekday()
 
-    if t[r] == '토' | t[r] == '일' :
+    if t[r] == '토':
+        messages = "학식 기능은 주말에 제공되지 않습니다."
+        return messages
+    elif t[r] == '일':
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return messages
 
@@ -99,7 +102,10 @@ def EastCampus():
     t = ['월', '화', '수', '목', '금','토','일']
     r = datetime.datetime.today().weekday()
 
-    if t[r] == '토' | t[r] == '일' :
+    if t[r] == '토':
+        messages = "학식 기능은 주말에 제공되지 않습니다."
+        return messages
+    elif t[r] == '일':
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return messages
 
@@ -152,7 +158,10 @@ def Dormitory():
     t = ['월', '화', '수', '목', '금','토','일']
     r = datetime.datetime.today().weekday()
 
-    if t[r] == '토' | t[r] == '일' :
+    if t[r] == '토':
+        messages = "학식 기능은 주말에 제공되지 않습니다."
+        return messages
+    elif t[r] == '일':
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return messages
 
