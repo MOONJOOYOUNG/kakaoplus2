@@ -140,7 +140,7 @@ def EastCampus():
         messages += ('\n●교직원 메뉴●\n' + a[39].get_text())
         return parser.dong(messages)
 
-    if t[r] == '토' | t[r] == '일':
+    if t[r] == '토':
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return  messages
 
@@ -192,7 +192,7 @@ def Dormitory():
         messages += ('\n●석식●\n' + a[54].get_text())
         return parser.kik(messages)
 
-    if t[r] == '토' | t[r] == '일':
+    if t[r] == '토':
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return  messages
 
