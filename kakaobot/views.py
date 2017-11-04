@@ -38,7 +38,7 @@ def on_message(request):
         response = functions.Dormitory()
 
     elif content.startswith('맛집'):
-        response = "오늘의 근처 맛집 리스트 입니다.\n" + functions.FoodList()
+        response = "오늘의 근처 맛집 리스트 입니다.\n {}".format(functions.FoodList())
 
     elif content.startswith('추천'):
         response = "오늘의 추천 식당은 " + functions.NearCampus() + " 입니다."
