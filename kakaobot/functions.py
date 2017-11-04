@@ -55,39 +55,35 @@ def WestCampus():
         messages += ('\n●교직원 메뉴●\n' + a[3].get_text())
         return parser.ser(messages)
 
-    if t[r] == '화':
+    elif t[r] == '화':
         messages += (nowdate + ' ' + t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[4].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[5].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[6].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[7].get_text())
         return parser.ser(messages)
 
-    if t[r] == '수':
+    elif t[r] == '수':
         messages += (nowdate + ' ' + t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[8].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[9].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[10].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[11].get_text())
         return parser.ser(messages)
 
-    if t[r] == '목':
+    elif t[r] == '목':
         messages += (nowdate + ' ' + t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[12].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[13].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[14].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[15].get_text())
         return parser.ser(messages)
 
-    if t[r] == '금':
+    elif t[r] == '금':
         messages += (nowdate + ' ' + t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[16].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[17].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[18].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[19].get_text())
         return parser.ser(messages)
 
-    if t[r] == '토':
-        messages = "학식 기능은 주말에 제공되지 않습니다."
-        return  messages
-
-    if t[r] == '일':
+    else:
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return  messages
 
@@ -112,39 +108,35 @@ def EastCampus():
         messages += ('\n●교직원 메뉴●\n' + a[23].get_text())
         return parser.dong(messages)
 
-    if t[r] == '화':
+    elif t[r] == '화':
         messages += (nowdate + ' ' + t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[24].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[25].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[26].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[27].get_text())
         return parser.dong(messages)
 
-    if t[r] == '수':
+    elif t[r] == '수':
         messages += (nowdate + ' ' + t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[28].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[29].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[30].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[31].get_text())
         return parser.dong(messages)
 
-    if t[r] == '목':
+    elif t[r] == '목':
         messages += (nowdate + ' ' + t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[32].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[33].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[34].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[35].get_text())
         return parser.dong(messages)
 
-    if t[r] == '금':
+    elif t[r] == '금':
         messages += (nowdate + ' ' + t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[36].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[37].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[38].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[39].get_text())
         return parser.dong(messages)
 
-    if t[r] == '토':
-        messages = "학식 기능은 주말에 제공되지 않습니다."
-        return  messages
-
-    if t[r] == '일':
+    else:
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return  messages
 
@@ -168,35 +160,31 @@ def Dormitory():
         messages += ('\n●석식●\n' + a[42].get_text())
         return parser.kik(messages)
 
-    if t[r] == '화':
+    elif t[r] == '화':
         messages += (nowdate + ' ' + t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[43].get_text())
         messages += ('\n●중식●\n' + a[44].get_text())
         messages += ('\n●석식●\n' + a[45].get_text())
         return parser.kik(messages)
 
-    if t[r] == '수':
+    elif t[r] == '수':
         messages += (nowdate + ' ' + t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[46].get_text())
         messages += ('\n●중식●\n' + a[47].get_text())
         messages += ('\n●석식●\n' + a[48].get_text())
         return parser.kik(messages)
 
-    if t[r] == '목':
+    elif t[r] == '목':
         messages += (nowdate + ' ' + t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[49].get_text())
         messages += ('\n●중식●\n' + a[50].get_text())
         messages += ('\n●석식●\n' + a[51].get_text())
         return parser.kik(messages)
 
-    if t[r] == '금':
+    elif t[r] == '금':
         messages += (nowdate + ' ' + t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[52].get_text())
         messages += ('\n●중식●\n' + a[53].get_text())
         messages += ('\n●석식●\n' + a[54].get_text())
         return parser.kik(messages)
 
-    if t[r] == '토':
-        messages = "학식 기능은 주말에 제공되지 않습니다."
-        return  messages
-
-    if t[r] == '일':
+    else:
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return  messages
 
