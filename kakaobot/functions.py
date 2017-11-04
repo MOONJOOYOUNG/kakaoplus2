@@ -46,6 +46,10 @@ def WestCampus():
     t = ['월', '화', '수', '목', '금','토','일']
     r = datetime.datetime.today().weekday()
 
+    if t[r] == '토' | t[r] == '일' :
+        messages = "학식 기능은 주말에 제공되지 않습니다."
+        return messages
+
     a = soup.findAll("td", limit=20)
 
     if t[r] == '월':
@@ -83,10 +87,6 @@ def WestCampus():
         messages += ('\n●교직원 메뉴●\n' + a[19].get_text())
         return parser.ser(messages)
 
-    else:
-        messages = "학식 기능은 주말에 제공되지 않습니다."
-        return  messages
-
 def EastCampus():
     html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
     soup = BeautifulSoup(html, 'html.parser')
@@ -98,6 +98,10 @@ def EastCampus():
 
     t = ['월', '화', '수', '목', '금','토','일']
     r = datetime.datetime.today().weekday()
+
+    if t[r] == '토' | t[r] == '일' :
+        messages = "학식 기능은 주말에 제공되지 않습니다."
+        return messages
 
     a = soup.findAll("td", limit=40)
 
@@ -136,10 +140,6 @@ def EastCampus():
         messages += ('\n●교직원 메뉴●\n' + a[39].get_text())
         return parser.dong(messages)
 
-    else:
-        messages = "학식 기능은 주말에 제공되지 않습니다."
-        return  messages
-
 def Dormitory():
     html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
     soup = BeautifulSoup(html, 'html.parser')
@@ -151,6 +151,10 @@ def Dormitory():
 
     t = ['월', '화', '수', '목', '금','토','일']
     r = datetime.datetime.today().weekday()
+
+    if t[r] == '토' | t[r] == '일' :
+        messages = "학식 기능은 주말에 제공되지 않습니다."
+        return messages
 
     a = soup.findAll("td", limit=60)
 
@@ -183,10 +187,6 @@ def Dormitory():
         messages += ('\n●중식●\n' + a[53].get_text())
         messages += ('\n●석식●\n' + a[54].get_text())
         return parser.kik(messages)
-
-    else:
-        messages = "학식 기능은 주말에 제공되지 않습니다."
-        return  messages
 
 def naver_rank():
     html = requests.get('http://naver.com').text
