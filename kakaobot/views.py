@@ -41,7 +41,7 @@ def on_message(request):
         response = "오늘의 근처 맛집 리스트 입니다.\n" + functions.FoodList()
 
     elif content.startswith('추천'):
-        response = "오늘의 추천 식당은 " + functions.NearCampus() + "입니다."
+        response = "오늘의 추천 식당은 " + functions.NearCampus() + " 입니다."
 
     elif content.startswith('혼밥'):
         response = functions.alone()

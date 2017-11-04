@@ -19,8 +19,10 @@ def FoodList():
          '알촌',
          '돈다리', '일미닭갈비', '낭만순두부', '해뜨는집(컵밥)', '솔뫼해장국', '오늘은닭', '통통우동&컵밥', '강청골 순대국밥', '솔바람 꽃내음', '마루',
          '민동', '엽기떡볶이', '빨봉분식', '우리들족발', '고향집', '고향의맛', '덤', '또또와 식당', '할머니 족발보쌈', '뒤집어진 뚝배기', '피자스쿨', '도깨비장터']
-    for idx in enumerate(a, 1):
-        message.append(str(idx) + '.' + a[idx])
+
+    for idx, tag in enumerate(a, 1):
+        message.append(str(idx) + '.' + a[idx - 1])
+
     return message
 
 def alone():
@@ -81,7 +83,11 @@ def WestCampus():
         messages += ('\n●교직원 메뉴●\n' + a[19].get_text())
         return parser.ser(messages)
 
-    if t[r] == '토' | t[r] == '일':
+    if t[r] == '토':
+        messages = "학식 기능은 주말에 제공되지 않습니다."
+        return  messages
+
+    if t[r] == '일':
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return  messages
 
@@ -138,6 +144,10 @@ def EastCampus():
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return  messages
 
+    if t[r] == '일':
+        messages = "학식 기능은 주말에 제공되지 않습니다."
+        return  messages
+
 def Dormitory():
     html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
     soup = BeautifulSoup(html, 'html.parser')
@@ -186,6 +196,9 @@ def Dormitory():
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return  messages
 
+    if t[r] == '일':
+        messages = "학식 기능은 주말에 제공되지 않습니다."
+        return  messages
 
 def naver_rank():
     html = requests.get('http://naver.com').text
