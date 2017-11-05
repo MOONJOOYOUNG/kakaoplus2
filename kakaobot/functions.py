@@ -35,15 +35,11 @@ def alone():
 
 
 def WestCampus():
-    html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
-    soup = BeautifulSoup(html, 'html.parser')
-
-    idx = 0
     now = datetime.datetime.now()
     nowdate = now.strftime('%m-%d')
     messages = ''
 
-    t = ['월', '화', '수', '목', '금','토','일']
+    t = ['월', '화', '수', '목', '금', '토', '일']
     r = datetime.datetime.today().weekday()
 
     if t[r] == '토':
@@ -52,6 +48,9 @@ def WestCampus():
     elif t[r] == '일':
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return messages
+
+    html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
+    soup = BeautifulSoup(html, 'html.parser')
 
     a = soup.findAll("td", limit=20)
 
@@ -91,15 +90,11 @@ def WestCampus():
         return parser.ser(messages)
 
 def EastCampus():
-    html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
-    soup = BeautifulSoup(html, 'html.parser')
-
-    idx = 0
     now = datetime.datetime.now()
     nowdate = now.strftime('%m-%d')
     messages = ''
 
-    t = ['월', '화', '수', '목', '금','토','일']
+    t = ['월', '화', '수', '목', '금', '토', '일']
     r = datetime.datetime.today().weekday()
 
     if t[r] == '토':
@@ -108,6 +103,9 @@ def EastCampus():
     elif t[r] == '일':
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return messages
+
+    html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
+    soup = BeautifulSoup(html, 'html.parser')
 
     a = soup.findAll("td", limit=40)
 
@@ -147,15 +145,11 @@ def EastCampus():
         return parser.dong(messages)
 
 def Dormitory():
-    html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
-    soup = BeautifulSoup(html, 'html.parser')
-
-    idx = 0
     now = datetime.datetime.now()
     nowdate = now.strftime('%m-%d')
     messages = ''
 
-    t = ['월', '화', '수', '목', '금','토','일']
+    t = ['월', '화', '수', '목', '금', '토', '일']
     r = datetime.datetime.today().weekday()
 
     if t[r] == '토':
@@ -164,6 +158,9 @@ def Dormitory():
     elif t[r] == '일':
         messages = "학식 기능은 주말에 제공되지 않습니다."
         return messages
+
+    html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
+    soup = BeautifulSoup(html, 'html.parser')
 
     a = soup.findAll("td", limit=60)
 
