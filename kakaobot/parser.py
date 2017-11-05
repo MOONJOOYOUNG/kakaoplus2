@@ -20,7 +20,7 @@ def ser(string):
     parser = parser.replace('(계육:국내산,사골육수-쇠고기:호주산)', '')
     parser = parser.replace('(흑미:국내산) ', '')
     parser = re.sub('[★]', '', parser)
-
+    parser = parser.replace('/', ' ')
     return parser
 
 def dong(string):
@@ -42,7 +42,7 @@ def dong(string):
     parser = parser.replace("오징어-페루산, 두부-콩:외국산", '')
     parser = parser.replace("배추,고춧가루:중국산", '')
     parser = parser.replace("우육:호주산,사골육수-쇠고기:호주산", '')
-
+    parser = parser.replace('/', ' ')
     return parser
 
 def kik(string):
@@ -61,12 +61,12 @@ def kik(string):
     parser = parser.replace('(대구:네덜란드산)', ' ')
     parser = parser.replace('(배추:국내산,고추분:중국산)', ' ')
     parser = parser.replace('(돈육:외국산.국내산)', ' ')
-
     parser = parser.replace('[DIY코너]', '\n[DIY코너]')
     parser = parser.replace('[일품 및 양식]', '\n[일품]')
     parser = parser.replace('[누들]', '\n[누들]')
-
+    parser = parser.replace('/', ' ')
     parser = re.sub('[★]', '', parser)
-
-
+    parser = parser.replace('(우민찌;호주산)', ' ')
+    parser = parser.replace('(오징어:페루산)', ' ')
+    parser = parser.replace('(배추:국내산,고추분:중국[산)', ' ')
     return parser
