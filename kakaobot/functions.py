@@ -43,10 +43,7 @@ def WestCampus():
     r = datetime.datetime.today().weekday()
 
     if t[r] == '토':
-        messages = "학식 기능은 주말에 제공되지 않습니다."
-        return messages
-    elif t[r] == '일':
-        messages = "학식 기능은 주말에 제공되지 않습니다."
+        messages = "학식 기능은 토요일에 제공되지 않습니다."
         return messages
 
     html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
@@ -89,6 +86,13 @@ def WestCampus():
         messages += ('\n●교직원 메뉴●\n' + a[19].get_text())
         return parser.ser(messages)
 
+    elif t[r] == '일':
+        messages += ('월요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[0].get_text())
+        messages += ('\n●미스터 셰프 메뉴●\n' + a[1].get_text())
+        messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[2].get_text())
+        messages += ('\n●교직원 메뉴●\n' + a[3].get_text())
+        return parser.ser(messages)
+
 def EastCampus():
     now = datetime.datetime.now()
     nowdate = now.strftime('%m-%d')
@@ -98,7 +102,7 @@ def EastCampus():
     r = datetime.datetime.today().weekday()
 
     if t[r] == '토':
-        messages = "학식 기능은 주말에 제공되지 않습니다."
+        messages = "학식 기능은 토요일에 제공되지 않습니다."
         return messages
     elif t[r] == '일':
         messages = "학식 기능은 주말에 제공되지 않습니다."
@@ -144,6 +148,13 @@ def EastCampus():
         messages += ('\n●교직원 메뉴●\n' + a[39].get_text())
         return parser.dong(messages)
 
+    elif t[r] == '일':
+        messages += ('월요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[20].get_text())
+        messages += ('\n●미스터 셰프 메뉴●\n' + a[21].get_text())
+        messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[22].get_text())
+        messages += ('\n●교직원 메뉴●\n' + a[23].get_text())
+        return parser.dong(messages)
+
 def Dormitory():
     now = datetime.datetime.now()
     nowdate = now.strftime('%m-%d')
@@ -153,7 +164,7 @@ def Dormitory():
     r = datetime.datetime.today().weekday()
 
     if t[r] == '토':
-        messages = "학식 기능은 주말에 제공되지 않습니다."
+        messages = "학식 기능은 토요일에 제공되지 않습니다."
         return messages
     elif t[r] == '일':
         messages = "학식 기능은 주말에 제공되지 않습니다."
@@ -192,6 +203,12 @@ def Dormitory():
         messages += (nowdate + ' ' + t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[52].get_text())
         messages += ('\n●중식●\n' + a[53].get_text())
         messages += ('\n●석식●\n' + a[54].get_text())
+        return parser.kik(messages)
+
+    elif t[r] == '일':
+        messages += ('월요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[40].get_text())
+        messages += ('\n●중식●\n' + a[41].get_text())
+        messages += ('\n●석식●\n' + a[42].get_text())
         return parser.kik(messages)
 
 def naver_rank():
