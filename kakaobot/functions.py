@@ -104,9 +104,6 @@ def EastCampus():
     if t[r] == '토':
         messages = "학식 기능은 토요일에 제공되지 않습니다."
         return messages
-    elif t[r] == '일':
-        messages = "학식 기능은 주말에 제공되지 않습니다."
-        return messages
 
     html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
     soup = BeautifulSoup(html, 'html.parser')
@@ -165,9 +162,6 @@ def Dormitory():
 
     if t[r] == '토':
         messages = "학식 기능은 토요일에 제공되지 않습니다."
-        return messages
-    elif t[r] == '일':
-        messages = "학식 기능은 주말에 제공되지 않습니다."
         return messages
 
     html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
