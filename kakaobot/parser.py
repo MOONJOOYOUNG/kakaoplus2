@@ -53,6 +53,7 @@ def dong(string):
     parser = parser.replace("우육:호주산,사골육수-쇠고기:호주산", '')
     parser = parser.replace('/', ' ')
     parser = parser.replace('오징어:페루산', ' ')
+    parser = parser.replace('두부 - 콩: 외국산', ' ')
     parser = parser.replace('스모크햄-계육,', ' ')
     parser = parser.replace('"', ' ')
     return parser
