@@ -23,6 +23,7 @@ def ser(string):
     parser = re.sub('[★]', '', parser)
     parser = parser.replace('"', ' ')
     parser = parser.replace('/', ' ')
+    parser = parser.replace('(돈육: 국내산, 김치 - 배추, 고춧가루: 중국산)', '')
     return parser
 
 def dong(string):
@@ -73,4 +74,5 @@ def kik(string):
     parser = parser.replace('(오징어:페루산)', ' ')
     parser = parser.replace('(배추:국내산,고추분:중국[산)', ' ')
     parser = parser.replace('"', ' ')
+    parser = parser.replace('(배추:국내산,고추분:중국산', ' ')
     return parser
