@@ -23,7 +23,7 @@ def on_message(request):
         response = '멜론 "{}" 검색결과\n\n'.format(query) + functions.melon_search(query)
 
     elif content.startswith('명령어') | content.startswith('명령'):
-        response = '명령어 기능 1.오늘의 학식 메뉴(서캠,동캠,기숙사) 2.우송대 근처 맛집(맛집) 3.오늘의 추천 식당(추천) 4.네이버 실시간 검색(실시간) 5.음악찾기(뮤직 노래제목)'
+        response = '명령어 기능 1.오늘의 학식 메뉴(서캠,동캠,기숙사) 2.우송대 근처 맛집(맛집) 3.오늘의 추천 식당(추천) 4.네이버 실시간 검색(실시간,네이버) 5.노래찾기(뮤직 노래제목)'
 
     elif content.startswith('안형선') | content.startswith('형선'):
         response = '게임멀티미디어학과 11학번 안형선(26 빠른93) 키 181cm 몸무게 102kg 여친구함. 현 경동택배 R&D 근무 연봉 3100'
@@ -49,7 +49,7 @@ def on_message(request):
     elif content.startswith('학식'):
         response = "서캠(서), 동캠(동), 기숙사(긱사) 입력시 해당되는 곳의 오늘의 학식 정보를 알수 있습니다."
 
-    elif content.startswith('실시간'):
+    elif content.startswith('실시간') | content.startswith('네이버'):
         response = '네이버 실시간 검색어\n {}'.format(functions.naver_rank())
 
     else:

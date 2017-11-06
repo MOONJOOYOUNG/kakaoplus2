@@ -215,7 +215,6 @@ def naver_rank():
         message.append(str(idx) + '.' + tag.text)
     return message
 
-
 def melon_search(query):
     params = {
         'jscallback': '_',
