@@ -35,10 +35,7 @@ def alone():
 
 
 def WestCampus():
-    now = datetime.datetime.now()
-    nowdate = now.strftime('%m-%d')
     messages = ''
-
     utcnow = datetime.datetime.utcnow()
     time_gap = datetime.timedelta(hours=9)
     kor_time = utcnow + time_gap
@@ -98,10 +95,7 @@ def WestCampus():
         return parser.ser(messages)
 
 def EastCampus():
-    now = datetime.datetime.now()
-    nowdate = now.strftime('%m-%d')
     messages = ''
-
     utcnow = datetime.datetime.utcnow()
     time_gap = datetime.timedelta(hours=9)
     kor_time = utcnow + time_gap
@@ -161,10 +155,7 @@ def EastCampus():
         return parser.dong(messages)
 
 def Dormitory():
-    now = datetime.datetime.now()
-    nowdate = now.strftime('%m-%d')
     messages = ''
-
     utcnow = datetime.datetime.utcnow()
     time_gap = datetime.timedelta(hours=9)
     kor_time = utcnow + time_gap

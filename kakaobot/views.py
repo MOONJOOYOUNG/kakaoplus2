@@ -52,6 +52,9 @@ def on_message(request):
     elif content.startswith('실시간') | content.startswith('네이버'):
         response = '네이버 실시간 검색어\n {}'.format(functions.naver_rank())
 
+    elif content.startswith('최정헌') | content.startswith('정헌'):
+        response = '최정헌(26) 게임멀티미디어 11학번 학회장출신 파파스에서 안형선한테 외모대결 패배 일명 빵떡사건'
+
     else:
         response = '지원하는 명령어가 아닙니다. "명령어" or "명령" 입력 시 지원되는 기능을 볼 수 있습니다.'
 
