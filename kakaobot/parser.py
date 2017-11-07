@@ -27,10 +27,9 @@ def ser(string):
     parser = parser.replace('(계육:국내산,사골육수-쇠고기:호주산)', '')
     parser = parser.replace('(흑미:국내산) ', '')
     parser = parser.replace('(돈육:국내산,김치-배추,고춧가루:중국산)', '')
-    parser = re.sub('[★]', '', parser)
     parser = parser.replace('"', ' ')
     parser = parser.replace('/', ' ')
-
+    parser = re.sub('[★]', '', parser)
     return parser
 
 def dong(string):
@@ -38,9 +37,9 @@ def dong(string):
     parser = parser.replace("오징어: 페루산 두부 - 콩: 외국산", '')
     parser = parser.replace("김치-배추,고춧가루:중국산", '')
     parser = parser.replace("김치-", '')
-    parser = parser.replace('우육:호주산 ', ' ')
+    parser = parser.replace('우육:호주산', ' ')
     parser = parser.replace('두부-콩:외국산', ' ')
-    parser = parser.replace('/', ' ')
+    parser = parser.replace('부대햄-돈육:국내산/돈육:국내산,우육:호주산', ' ')
     parser = parser.replace("돈육:국내산", '')
     parser = parser.replace("돈육:덴마크", '')
     parser = parser.replace("돈육:국내산 김치-배추,고춧가루:중국산", '')
@@ -62,6 +61,7 @@ def dong(string):
     parser = parser.replace('두부 - 콩: 외국산', ' ')
     parser = parser.replace('스모크햄-계육,', ' ')
     parser = parser.replace('"', ' ')
+    parser = re.sub('[★]', '', parser)
     return parser
 
 def kik(string):
