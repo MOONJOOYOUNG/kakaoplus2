@@ -33,24 +33,24 @@ def alone():
          ]
     return a[idx]
 
+#선언부
+utcnow = datetime.datetime.utcnow()
+time_gap = datetime.timedelta(hours=9)
+kor_time = utcnow + time_gap
+
+t = ['월', '화', '수', '목', '금', '토', '일']
+r = kor_time.weekday()
+
+html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
+soup = BeautifulSoup(html, 'html.parser')
+a = soup.findAll("td", limit=60)
 
 def WestCampus():
     messages = ''
-    utcnow = datetime.datetime.utcnow()
-    time_gap = datetime.timedelta(hours=9)
-    kor_time = utcnow + time_gap
-
-    t = ['월', '화', '수', '목', '금', '토', '일']
-    r = kor_time.weekday()
 
     if t[r] == '토':
         messages = "학식 기능은 토요일에 제공되지 않습니다."
         return messages
-
-    html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
-    soup = BeautifulSoup(html, 'html.parser')
-
-    a = soup.findAll("td", limit=20)
 
     if t[r] == '월':
         messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[0].get_text())
@@ -74,14 +74,14 @@ def WestCampus():
         return parser.ser(messages)
 
     elif t[r] == '목':
-        messages += ([r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[12].get_text())
+        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[12].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[13].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[14].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[15].get_text())
         return parser.ser(messages)
 
     elif t[r] == '금':
-        messages += (nowdate + ' ' + t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[16].get_text())
+        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[16].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[17].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[18].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[19].get_text())
@@ -96,21 +96,10 @@ def WestCampus():
 
 def EastCampus():
     messages = ''
-    utcnow = datetime.datetime.utcnow()
-    time_gap = datetime.timedelta(hours=9)
-    kor_time = utcnow + time_gap
-
-    t = ['월', '화', '수', '목', '금', '토', '일']
-    r = kor_time.weekday()
 
     if t[r] == '토':
         messages = "학식 기능은 토요일에 제공되지 않습니다."
         return messages
-
-    html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
-    soup = BeautifulSoup(html, 'html.parser')
-
-    a = soup.findAll("td", limit=40)
 
     if t[r] == '월':
         messages += (t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[20].get_text())
@@ -156,21 +145,10 @@ def EastCampus():
 
 def Dormitory():
     messages = ''
-    utcnow = datetime.datetime.utcnow()
-    time_gap = datetime.timedelta(hours=9)
-    kor_time = utcnow + time_gap
-
-    t = ['월', '화', '수', '목', '금', '토', '일']
-    r = kor_time.weekday()
 
     if t[r] == '토':
         messages = "학식 기능은 토요일에 제공되지 않습니다."
         return messages
-
-    html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
-    soup = BeautifulSoup(html, 'html.parser')
-
-    a = soup.findAll("td", limit=60)
 
     if t[r] == '월':
         messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[40].get_text())

@@ -73,10 +73,10 @@ def kik(string):
     parser = parser.replace('(가자미:미국산)', ' ')
     parser = parser.replace('(오리:국내산)', ' ')
 
-
     parser = parser.replace('[DIY코너]', '\n[DIY코너]')
     parser = parser.replace('[일품 및 양식]', '\n[일품]')
     parser = parser.replace('[누들]', '\n[누들]')
+
     parser = re.sub('[★]', '', parser)
     parser = parser.replace('"', ' ')
     parser = parser.replace('/', ' ')
