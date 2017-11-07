@@ -44,7 +44,7 @@ def dong(string):
     parser = parser.replace('돈육:덴마크', ' ')
     parser = parser.replace('계육:국내산', ' ')
     parser = parser.replace('계육:국내산,브라질산', ' ')
-    parser = parser.replace('우육: 호주산', ' ')
+    parser = parser.replace('우육:호주산', ' ')
     parser = parser.replace('오징어:페루산 ', ' ')
 
 
