@@ -18,16 +18,16 @@ def on_message(request):
     type = request.JSON['type']
     content = request.JSON['content']  # photo 타입일 경우에는 이미지 URL
 
-    if content.startswith('명령어') | content.startswith('명령'):
+    if content.startswith('명령어'):
         response = '명령어 기능 1.오늘의 학식 메뉴(서캠,동캠,기숙사) 2.우송대 근처 맛집(맛집) 3.오늘의 추천 식당(추천) 4.네이버 실시간 검색(실시간,네이버) 5.노래찾기(뮤직 노래제목)'
 
-    elif content.startswith('서캠') | content.startswith('서'):
+    elif content.startswith('서캠'):
         response = functions.WestCampus()
 
-    elif content.startswith('동캠') | content.startswith('동'):
+    elif content.startswith('동캠'):
         response = functions.EastCampus()
 
-    elif content.startswith('기숙사') | content.startswith('긱사'):
+    elif content.startswith('기숙사'):
         response = functions.Dormitory()
 
     elif content.startswith('맛집'):
