@@ -68,8 +68,7 @@ def kik(string):
     parser = parser.replace('(대두:외국산)', ' ')
     parser = parser.replace('(가자미:미국산)', ' ')
     parser = parser.replace('(오리:국내산)', ' ')
-    parser = parser.replace('', ' ')
-    parser = parser.replace('', ' ')
+
 
     parser = parser.replace('[DIY코너]', '\n[DIY코너]')
     parser = parser.replace('[일품 및 양식]', '\n[일품]')
