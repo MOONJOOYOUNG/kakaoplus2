@@ -13,15 +13,14 @@ def ser(string):
     parser = parser.replace('(돈육:국내산,사골육수-쇠고기:호주산)', ' ')
 
     parser = parser.replace('(배추,고춧가루:중국산)', ' ')
-    parser = parser.replace('(오징어:페루산)', ' ')
-    parser = parser.replace('(계육:국내산)', ' ')
-    parser = parser.replace('(잡채용돈육:국내산)', ' ')
-    parser = parser.replace('(두부-콩:외국산)', ' ')
-    parser = parser.replace('(카레용돈육:덴마크산)', ' ')
     parser = parser.replace('(돈육:덴마크산)', ' ')
     parser = parser.replace('(돈육:국내산)', ' ')
+    parser = parser.replace('(계육:국내산)', ' ')
+    parser = parser.replace('(오징어:페루산)', ' ')
+    parser = parser.replace('(잡채용돈육:국내산)', ' ')
+    parser = parser.replace('(카레용돈육:덴마크산)', ' ')
     parser = parser.replace('(흑미:국내산)', ' ')
-
+    parser = parser.replace('(두부-콩:외국산)', ' ')
 
     parser = parser.replace('"', ' ')
     parser = parser.replace('/', ' ')
@@ -44,7 +43,7 @@ def dong(string):
     parser = parser.replace('돈육:덴마크', ' ')
     parser = parser.replace('계육:국내산', ' ')
     parser = parser.replace('계육:국내산,브라질산', ' ')
-    parser = parser.replace('우육:호주산', ' ')
+    parser = parser.replace('우육:호주산', '')
     parser = parser.replace('오징어:페루산 ', ' ')
 
 
@@ -61,19 +60,21 @@ def kik(string):
     parser = parser.replace('(배추:국내산,고추분:중국산', ' ')
     parser = parser.replace('(돈,계육:국내산)(우육:호주산)', ' ')
 
+    parser = parser.replace('(오리:국내산)', ' ')
     parser = parser.replace('(계육:국내산)', ' ')
     parser = parser.replace('(돈육:국내산)', ' ')
+    parser = parser.replace('(돈육:덴마크산)', ' ')
+    parser = parser.replace('(돈,계육:국내산)', ' ')
+    parser = parser.replace('(우육:호주산)', ' ')
+    parser = parser.replace('(우육,육수:호주산)', ' ')
     parser = parser.replace('(우민찌;호주산)', ' ')
     parser = parser.replace('(오징어:페루산)', ' ')
-    parser = parser.replace('(돈육:덴마크산)', ' ')
-    parser = parser.replace('(우육:호주산)', ' ')
-    parser = parser.replace('(대구:네덜란드산)', ' ')
     parser = parser.replace('(오징어:국내산)', ' ')
-    parser = parser.replace('(돈,계육:국내산)', ' ')
-    parser = parser.replace('(우육,육수:호주산)', ' ')
-    parser = parser.replace('(대두:외국산)', ' ')
+
+    parser = parser.replace('(대구:네덜란드산)', ' ')
     parser = parser.replace('(가자미:미국산)', ' ')
-    parser = parser.replace('(오리:국내산)', ' ')
+
+    parser = parser.replace('(대두:외국산)', ' ')
 
     parser = parser.replace('[DIY코너]', '\n[DIY코너]')
     parser = parser.replace('[일품 및 양식]', '\n[일품]')
