@@ -17,8 +17,8 @@ def on_message(request):
     content = request.JSON['content']  # photo 타입일 경우에는 이미지 URL
 
     if content.startswith('명령어'):
-        response = '명령어는 () 안에 있는 단어를 입력 하시면 됩니다.\n●명령어 기능● \n1.오늘의 학식 메뉴(서캠,동캠,기숙사)\n   내일학식(내일서캠,내일동캠)' \
-                   '\n2.우송대 근처 맛집(맛집)\n3.오늘의 추천 식당(추천)\n4.캠퍼스순환버스(A노선,B노선)\n5.네이버 실시간 검색(실시간,네이버)\n6.노래찾기(뮤직 노래제목)'
+        response = '명령어는 () 안에 있는 단어를 입력 하시면 됩니다.\n●명령어 리스트● \n1.오늘의 학식 메뉴(서캠,동캠,기숙사)\n   내일학식(내일서캠,내일동캠)' \
+                   '\n2.우송대 근처 밥집(밥집)\n3.오늘의 추천 식당(추천)\n4.캠퍼스순환버스(A노선,B노선)\n5.네이버 실시간 검색(실시간,네이버)\n6.노래찾기(뮤직 노래제목)'
 
     elif content.startswith('서캠'):
         response = functions.WestCampus()
@@ -30,7 +30,7 @@ def on_message(request):
         response = functions.Dormitory()
 
     elif content.startswith('맛집'):
-        response = "우송대 근처 맛집 리스트 입니다.\n {}".format(functions.FoodList())
+        response = "우송대 근처 밥집 리스트 입니다.\n {}".format(functions.FoodList())
 
     elif content.startswith('추천'):
         response = "오늘의 추천 식당은 " + functions.NearCampus() + " 입니다."
