@@ -1,8 +1,6 @@
-from django.shortcuts import render
 from .decorators import bot
 from . import functions
-import requests
-from bs4 import BeautifulSoup
+
 
 # myvenv\Scripts\activate
 # cd 프로젝트 경로
