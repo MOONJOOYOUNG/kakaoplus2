@@ -19,7 +19,8 @@ def on_message(request):
     content = request.JSON['content']  # photo 타입일 경우에는 이미지 URL
 
     if content.startswith('명령어'):
-        response = '명령어 기능 1.오늘의 학식 메뉴(서캠,동캠,기숙사) 2.우송대 근처 맛집(맛집) 3.오늘의 추천 식당(추천) 4.네이버 실시간 검색(실시간,네이버) 5.노래찾기(뮤직 노래제목)'
+        response = '명령어는 () 안에 있는 단어를 입력 하시면 됩니다.\n명령어 기능 1.오늘의 학식 메뉴(서캠,동캠,기숙사) 다음날 학식(서캠내일,동캠내일,기숙사내일)' \
+                   '2.우송대 근처 맛집(맛집) 3.오늘의 추천 식당(추천) 4.네이버 실시간 검색(실시간,네이버) 5.노래찾기(뮤직 노래제목)'
 
     elif content.startswith('서캠'):
         response = functions.WestCampus()
@@ -36,6 +37,15 @@ def on_message(request):
     elif content.startswith('추천'):
         response = "오늘의 추천 식당은 " + functions.NearCampus() + " 입니다."
 
+    elif content.startswith('서캠내일'):
+        response = functions.TommorrowWestCampus()
+
+    elif content.startswith('동캠내일'):
+        response = functions.TommorrowEastCampus()
+
+    elif content.startswith('기숙사내일'):
+        response = functions.TommorrowDormitory()
+
     elif content.startswith('혼밥'):
         response = functions.alone()
 
@@ -47,7 +57,7 @@ def on_message(request):
         response = '게임멀티미디어학과 11학번 안형선(26 빠른93) 키 181cm 몸무게 102kg 여친구함. 현 경동택배 R&D 근무 연봉 3100'
 
     elif content.startswith('학식'):
-        response = "서캠(서), 동캠(동), 기숙사(긱사) 입력시 해당되는 곳의 오늘의 학식 정보를 알수 있습니다."
+        response = "서캠, 동캠, 기숙사 입력시 해당되는 곳의 오늘의 학식 정보를 알수 있습니다."
 
     elif content.startswith('실시간') | content.startswith('네이버'):
         response = '네이버 실시간 검색어\n {}'.format(functions.naver_rank())
@@ -56,7 +66,7 @@ def on_message(request):
         response = '최정헌(26) 게임멀티미디어 11학번 학회장출신 파파스에서 안형선한테 외모대결 패배 일명 빵떡사건'
 
     else:
-        response = '지원하는 명령어가 아닙니다. "명령어" or "명령" 입력 시 지원되는 기능을 볼 수 있습니다.'
+        response = '지원하는 명령어가 아닙니다. "명령어" 입력 시 지원되는 기능을 볼 수 있습니다.'
 
     return {
         'message': {
