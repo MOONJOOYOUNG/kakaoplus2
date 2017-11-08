@@ -194,35 +194,35 @@ def TommorrowWestCampus():
         return messages
 
     if t[r] == '일':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[0].get_text())
+        messages += ('내일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[0].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[1].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[2].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[3].get_text())
         return parser.ser(messages)
 
     elif t[r] == '월':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[4].get_text())
+        messages += ( '내일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[4].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[5].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[6].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[7].get_text())
         return parser.ser(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[8].get_text())
+        messages += ('내일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[8].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[9].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[10].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[11].get_text())
         return parser.ser(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[12].get_text())
+        messages += ('내일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[12].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[13].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[14].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[15].get_text())
         return parser.ser(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[16].get_text())
+        messages += ('내일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[16].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[17].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[18].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[19].get_text())
@@ -236,35 +236,35 @@ def TommorrowEastCampus():
         return messages
 
     if t[r] == '일':
-        messages += (t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[20].get_text())
+        messages += ('내일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[20].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[21].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[22].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[23].get_text())
         return parser.dong(messages)
 
     elif t[r] == '월':
-        messages += (t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[24].get_text())
+        messages += ('내일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[24].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[25].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[26].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[27].get_text())
         return parser.dong(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[28].get_text())
+        messages += ('내일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[28].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[29].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[30].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[31].get_text())
         return parser.dong(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[32].get_text())
+        messages += ('내일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[32].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[33].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[34].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[35].get_text())
         return parser.dong(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[36].get_text())
+        messages += ('내일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[36].get_text())
         messages += ('\n●미스터 셰프 메뉴●\n' + a[37].get_text())
         messages += ('\n●누들 및 중국 음식 메뉴●\n' + a[38].get_text())
         messages += ('\n●교직원 메뉴●\n' + a[39].get_text())
@@ -278,31 +278,31 @@ def TommorrowDormitory():
         return messages
 
     if t[r] == '일':
-        messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[40].get_text())
+        messages += ('내일  기숙사 학식 메뉴\n' + '●조식●\n' + a[40].get_text())
         messages += ('\n●중식●\n' + a[41].get_text())
         messages += ('\n●석식●\n' + a[42].get_text())
         return parser.kik(messages)
 
     elif t[r] == '월':
-        messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[43].get_text())
+        messages += ('내일 기숙사 학식 메뉴\n' + '●조식●\n' + a[43].get_text())
         messages += ('\n●중식●\n' + a[44].get_text())
         messages += ('\n●석식●\n' + a[45].get_text())
         return parser.kik(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[46].get_text())
+        messages += ('내일 기숙사 학식 메뉴\n' + '●조식●\n' + a[46].get_text())
         messages += ('\n●중식●\n' + a[47].get_text())
         messages += ('\n●석식●\n' + a[48].get_text())
         return parser.kik(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[49].get_text())
+        messages += ('내일  기숙사 학식 메뉴\n' + '●조식●\n' + a[49].get_text())
         messages += ('\n●중식●\n' + a[50].get_text())
         messages += ('\n●석식●\n' + a[51].get_text())
         return parser.kik(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[52].get_text())
+        messages += ('내일 기숙사 학식 메뉴\n' + '●조식●\n' + a[52].get_text())
         messages += ('\n●중식●\n' + a[53].get_text())
         messages += ('\n●석식●\n' + a[54].get_text())
         return parser.kik(messages)
