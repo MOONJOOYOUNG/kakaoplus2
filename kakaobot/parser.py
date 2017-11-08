@@ -36,8 +36,9 @@ def dong(string):
     parser = parser.replace('사골육수-쇠고기:호주산 ', ' ')
     parser = parser.replace('스모크햄-계육,돈육:국내산', ' ')
     parser = parser.replace('배추,고춧가루:중국산', ' ')
+    parser = parser.replace('배추:국내산,고춧가루:중국산', ' ')
     parser = parser.replace('-배추,고춧가루:중국산', ' ')
-
+    parser = parser.replace('계육:국내산, 브라질산', ' ')
     parser = parser.replace('-콩:외국산', ' ')
     parser = parser.replace('돈육:국내산', ' ')
     parser = parser.replace('돈육:덴마크', ' ')
@@ -46,6 +47,8 @@ def dong(string):
     parser = parser.replace('우육:호주산', '')
     parser = parser.replace('오징어:페루산 ', ' ')
 
+    parser = parser.replace('사골육수-', ' ')
+    parser = parser.replace('쇠고기:호주산', ' ')
 
 
     parser = parser.replace('"', ' ')
