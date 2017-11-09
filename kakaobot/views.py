@@ -61,7 +61,7 @@ def on_message(request):
 
     elif content.startswith('뮤직 '):
         query = content[3:]
-        response = '멜론 "{}" 검색결과\n\n'.format(query) + functions.melon_search2(query)
+        response = '멜론 "{}" 검색결과\n\n'.format(query) + functions.melon_search(query)
 
     elif content.startswith('안형선') | content.startswith('형선'):
         response = '게임멀티미디어학과 11학번 안형선(26 빠른93) 키 181cm 몸무게 102kg 여친구함. 현 경동택배 R&D 근무 연봉 3100'
