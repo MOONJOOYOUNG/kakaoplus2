@@ -43,7 +43,7 @@ r = kor_time.weekday()
 
 html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
 soup = BeautifulSoup(html, 'html.parser')
-a = soup.findAll("td", limit=54)
+a = soup.findAll("td", limit=55)
 
 def WestCampus():
     messages = ''

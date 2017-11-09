@@ -8,7 +8,8 @@ from . import functions
 
 @bot
 def on_init(request):
-    return {'type': 'text' }
+    return {'type': '명령어는 () 안에 있는 단어를 입력 하시면 됩니다.\n●명령어 리스트● \n1.오늘의 학식 메뉴(서캠,동캠,기숙사)\n   내일학식(내일서캠,내일동캠)' \
+                   '\n2.우송대 근처 밥집(밥집)\n3.오늘의 추천 식당(추천)\n4.캠퍼스순환버스(A노선,B노선)\n5.네이버 실시간 검색(실시간,네이버)\n6.노래찾기(뮤직 노래제목)' }
 
 @bot
 def on_message(request):
