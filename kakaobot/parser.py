@@ -75,8 +75,6 @@ def kik(string):
     parser = parser.replace('(우민찌;호주산)', ' ')
     parser = parser.replace('(오징어:페루산)', ' ')
     parser = parser.replace('(오징어:국내산)', ' ')
-    parser = parser.replace('', ' ')
-    parser = parser.replace('', ' ')
 
     parser = parser.replace('(대구:네덜란드산)', ' ')
     parser = parser.replace('(가자미:미국산)', ' ')
