@@ -63,7 +63,7 @@ def kik(string):
     parser = parser.replace('(배추:국내산,고추분:중국산)', ' ')
     parser = parser.replace('(배추:국내산,고추분:중국산', ' ')
     parser = parser.replace('(돈,계육:국내산)(우육:호주산)', ' ')
-
+    parser = parser.replace('(계,돈육:국내산)', ' ')
     parser = parser.replace('(오리:국내산)', ' ')
     parser = parser.replace('(계육:국내산)', ' ')
     parser = parser.replace('(돈육:국내산)', ' ')

@@ -43,7 +43,7 @@ r = kor_time.weekday()
 
 html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
 soup = BeautifulSoup(html, 'html.parser')
-a = soup.findAll("td", limit=55)
+a = soup.findAll("td", limit=61)
 
 def WestCampus():
     messages = ''
@@ -146,10 +146,6 @@ def EastCampus():
 def Dormitory():
     messages = ''
 
-    if t[r] == '토':
-        messages = "학식 기능은 토요일에 제공되지 않습니다."
-        return messages
-
     if t[r] == '월':
         messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[40].get_text())
         messages += ('\n●중식●\n' + a[41].get_text())
@@ -180,17 +176,23 @@ def Dormitory():
         messages += ('\n●석식●\n' + a[54].get_text())
         return parser.kik(messages)
 
+    elif t[r] == '토':
+        messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[55].get_text())
+        messages += ('\n●중식●\n' + a[56].get_text())
+        messages += ('\n●석식●\n' + a[57].get_text())
+        return parser.kik(messages)
+
     elif t[r] == '일':
-        messages += ('월요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[40].get_text())
-        messages += ('\n●중식●\n' + a[41].get_text())
-        messages += ('\n●석식●\n' + a[42].get_text())
+        messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[58].get_text())
+        messages += ('\n●중식●\n' + a[59].get_text())
+        messages += ('\n●석식●\n' + a[60].get_text())
         return parser.kik(messages)
 
 def TommorrowWestCampus():
     messages = ''
 
-    if t[r] == '토':
-        messages = "학식 기능은 토요일에 제공되지 않습니다."
+    if t[r] == '금' | '토':
+        messages = "주말 학식 메뉴는 제공되지 않습니다."
         return messages
 
     if t[r] == '일':
@@ -231,8 +233,8 @@ def TommorrowWestCampus():
 def TommorrowEastCampus():
     messages = ''
 
-    if t[r] == '토':
-        messages = "학식 기능은 토요일에 제공되지 않습니다."
+    if t[r] == '금' | '토':
+        messages = "주말 학식 메뉴는 제공되지 않습니다."
         return messages
 
     if t[r] == '일':
@@ -273,10 +275,6 @@ def TommorrowEastCampus():
 def TommorrowDormitory():
     messages = ''
 
-    if t[r] == '토':
-        messages = "학식 기능은 토요일에 제공되지 않습니다."
-        return messages
-
     if t[r] == '일':
         messages += ('내일  기숙사 학식 메뉴\n' + '●조식●\n' + a[40].get_text())
         messages += ('\n●중식●\n' + a[41].get_text())
@@ -307,6 +305,17 @@ def TommorrowDormitory():
         messages += ('\n●석식●\n' + a[54].get_text())
         return parser.kik(messages)
     
+    elif t[r] == '금':
+        messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[55].get_text())
+        messages += ('\n●중식●\n' + a[56].get_text())
+        messages += ('\n●석식●\n' + a[57].get_text())
+        return parser.kik(messages)
+
+    elif t[r] == '토':
+        messages += (t[r] + '요일 기숙사 학식 메뉴\n' + '●조식●\n' + a[58].get_text())
+        messages += ('\n●중식●\n' + a[59].get_text())
+        messages += ('\n●석식●\n' + a[60].get_text())
+        return parser.kik(messages)
 
 def naver_rank():
     html = requests.get('http://naver.com').text
