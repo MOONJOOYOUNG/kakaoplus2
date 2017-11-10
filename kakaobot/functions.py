@@ -191,7 +191,10 @@ def Dormitory():
 def TommorrowWestCampus():
     messages = ''
 
-    if t[r] == '금' | '토':
+    if t[r] == '금':
+        messages = "주말 학식 메뉴는 제공되지 않습니다."
+        return messages
+    elif t[r] == '토':
         messages = "주말 학식 메뉴는 제공되지 않습니다."
         return messages
 
@@ -233,9 +236,13 @@ def TommorrowWestCampus():
 def TommorrowEastCampus():
     messages = ''
 
-    if t[r] == '금' | '토':
+    if t[r] == '금':
         messages = "주말 학식 메뉴는 제공되지 않습니다."
         return messages
+    elif t[r] == '토':
+        messages = "주말 학식 메뉴는 제공되지 않습니다."
+        return messages
+        
 
     if t[r] == '일':
         messages += ('내일 동캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + a[20].get_text())
