@@ -86,7 +86,7 @@ def kik(string):
     parser = parser.replace('[누들]', '\n[누들]')
 
     parser = re.sub('[★]', '', parser)
-    parser = parser.replace('"', '')
-    parser = parser.replace('/', '')
+    parser = parser.replace('"', ' ')
+    parser = parser.replace('/', ' ')
 
     return parser
