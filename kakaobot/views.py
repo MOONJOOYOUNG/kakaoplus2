@@ -29,7 +29,7 @@ def on_message(request):
     elif content.startswith('기숙사'):
         response = functions.Dormitory()
 
-    elif content.startswith('맛집'):
+    elif content.startswith('밥집'):
         response = "우송대 근처 밥집 리스트 입니다.\n {}".format(functions.FoodList())
 
     elif content.startswith('추천'):
