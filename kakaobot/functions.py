@@ -22,8 +22,9 @@ def FoodList():
 
     for idx, tag in enumerate(a, 1):
         message.append(str(idx) + '.' + a[idx - 1])
-        messages = message.replace("'", '')
-        messages = message.replace(",", ' ')
+
+    messages = message.replace("'", '')
+    messages = message.replace(",", ' ')
 
     return messages
 
