@@ -63,8 +63,8 @@ def dong(string):
 
 def kik(string):
     parser = string.replace('(돈,계육:국내산)', ' ')
-    parser = parser.replace('배추:중국산,고추분:중국산', ' ')
     parser = parser.replace('(배추:중국산,고추분:중국산)', ' ')
+    parser = parser.replace('배추:중국산,고추분:중국산', ' ')
     parser = parser.replace('(배추:국내산,고추분:중국산)', ' ')
     parser = parser.replace('(배추:국내산,고추분:중국산', ' ')
     parser = parser.replace('(배추,고추분:중국산)', ' ')
