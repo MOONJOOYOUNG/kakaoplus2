@@ -12,7 +12,7 @@ insultgenerator==0.3
 konlpy==0.4.4
 loremipsum==1.0.5
 MechanicalSoup==0.8.0
-psycopg2==2.6.2
+psycopg2==2.7.1
 pytz==2017.2
 requests==2.18.4
 selenium==3.6.0
