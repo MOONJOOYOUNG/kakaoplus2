@@ -21,3 +21,4 @@ static3==0.7.0
 urllib3==1.22
 White-Noise==0.1.0
 whitenoise==3.2
+selenium==3.6.0
