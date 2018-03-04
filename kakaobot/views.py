@@ -63,17 +63,11 @@ def on_message(request):
         query = content[3:]
         response = '멜론 "{}" 검색결과\n\n'.format(query) + functions.melon_search(query)
 
-    elif content.startswith('안형선') | content.startswith('형선'):
-        response = '게임멀티미디어학과 11학번 안형선(26 빠른93) 키 181cm 몸무게 102kg 여친구함. 현 경동택배 R&D 근무 연봉 3100'
-
     elif content.startswith('학식'):
         response = "서캠, 동캠, 기숙사 입력시 해당되는 곳의 오늘의 학식 정보를 알수 있습니다."
 
     elif content.startswith('실시간') | content.startswith('네이버'):
         response = '네이버 실시간 검색어\n {}'.format(functions.naver_rank())
-
-    elif content.startswith('최정헌') | content.startswith('정헌'):
-        response = '최정헌(26) 게임멀티미디어 11학번 학회장출신 파파스에서 안형선한테 외모대결 패배 일명 빵떡사건'
 
     else:
         response = '지원하는 명령어가 아닙니다. "명령어" 입력 시 지원되는 기능을 볼 수 있습니다.'

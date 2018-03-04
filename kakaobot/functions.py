@@ -4,8 +4,10 @@ import datetime
 import random
 from bs4 import BeautifulSoup
 from . import parser
-
+import time, requests
+from selenium import webdriver
 def NearCampus():
+
     idx = random.randint(0, 35)
     a = ['원화루', '미가', '문희네', '예다랑', '도스마스', '213버거', '맘스터치', '할머니국밥', '엉터리생고기', '안동찜닭', '그린토마토', '지지고', '서브웨이',
          '알촌',
@@ -28,14 +30,6 @@ def FoodList():
 
     return messages
 
-def alone():
-    idx = random.randint(0, 6)
-    a = ['오늘도 혼자이신가요...???? 친한 친구를 꼬셔 외롭지 않게 밥을 먹어요!','혼밥하면 학식이죠!!!',
-         '사교성을 기르도록 노력합시다.....ㅜㅜ','대세는 혼밥이죠!! 평소 가고싶었던 식당으로 ~~', '혼자 먹는 밥이 무슨 의미가 있을까요?? 굶도록 합시다.'
-         ,'지금 밥먹을 때냐... 다이어트나 하자.....','혼밥이 창피하다면 포장 음식을 추천해드려요!(맘스터치,도스마스,서브웨이,컵밥)'
-         ]
-    return a[idx]
-
 #선언부
 utcnow = datetime.datetime.utcnow()
 time_gap = datetime.timedelta(hours=9)
@@ -44,9 +38,14 @@ kor_time = utcnow + time_gap
 t = ['월', '화', '수', '목', '금', '토', '일']
 r = kor_time.weekday()
 
-html = requests.get('https://www.wsu.ac.kr/page/meal_list.jsp#self').text
-soup = BeautifulSoup(html, 'html.parser')
-a = soup.findAll("td", limit=61)
+driver = webdriver.Chrome('chromedriver')
+driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+
+html = driver.page_source
+driver.close()
+soup = BeautifulSoup(html,'html.parser')
+
+a = soup.findAll("td", limit=8)
 
 def WestCampus():
     messages = ''
