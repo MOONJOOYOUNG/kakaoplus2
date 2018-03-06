@@ -38,7 +38,7 @@ kor_time = utcnow + time_gap
 t = ['월', '화', '수', '목', '금', '토', '일']
 r = kor_time.weekday()
 
-driver = webdriver.Chrome('chromedriver')
+driver = webdriver.PhantomJS()
 driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
 
 html = driver.page_source
