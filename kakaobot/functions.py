@@ -7,7 +7,6 @@ from . import parser
 import time, requests
 from selenium import webdriver
 def NearCampus():
-
     idx = random.randint(0, 35)
     a = ['원화루', '미가', '문희네', '예다랑', '도스마스', '213버거', '맘스터치', '할머니국밥', '엉터리생고기', '안동찜닭', '그린토마토', '지지고', '서브웨이',
          '알촌',
@@ -33,7 +32,7 @@ def FoodList():
 #선언부
 utcnow = datetime.datetime.utcnow()
 time_gap = datetime.timedelta(hours=9)
-kor_time = utcnow + time_gap
+kor_time = utcnow
 
 t = ['월', '화', '수', '목', '금', '토', '일']
 r = kor_time.weekday()
@@ -63,31 +62,31 @@ def Kb_Dormitory():
     messages = ''
 
     if t[r] == '월':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + kb[0].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[0].get_text())
         return parser.ser(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + kb[1].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[1].get_text())
         return parser.ser(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + kb[2].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[2].get_text())
         return parser.ser(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + kb[3].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[3].get_text())
         return parser.ser(messages)
 
     elif t[r] == '금':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + kb[4].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[4].get_text())
         return parser.ser(messages)
 
     elif t[r] == '토':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + kb[5].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[5].get_text())
         return messages
 
     elif t[r] == '일':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + kb[6].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[6].get_text())
         return parser.ser(messages)
 
 # 성림 학사
@@ -95,31 +94,31 @@ def Sungrim_Dormitory():
     messages = ''
 
     if t[r] == '월':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + sung[0].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[0].get_text())
         return parser.ser(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + sung[1].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[1].get_text())
         return parser.ser(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + sung[2].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[2].get_text())
         return parser.ser(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + sung[3].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[3].get_text())
         return parser.ser(messages)
 
     elif t[r] == '금':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + sung[4].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[4].get_text())
         return parser.ser(messages)
 
     elif t[r] == '토':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + sung[5].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[5].get_text())
         return messages
 
     elif t[r] == '일':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + sung[6].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[6].get_text())
         return parser.ser(messages)
 
 # 수림 학사
@@ -127,35 +126,35 @@ def Surim_Dormitory():
     messages = ''
 
     if t[r] == '월':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + surim[0].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[0].get_text())
         return parser.ser(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + surim[1].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[1].get_text())
         return parser.ser(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + surim[2].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[2].get_text())
         return parser.ser(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + surim[3].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[3].get_text())
         return parser.ser(messages)
 
     elif t[r] == '금':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + surim[4].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[4].get_text())
         return parser.ser(messages)
 
     elif t[r] == '토':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + surim[5].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[5].get_text())
         return messages
 
     elif t[r] == '일':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + '●Western Food 양식 메뉴●\n' + surim[6].get_text())
+        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + surim[6].get_text())
         return parser.ser(messages)
 
 #kb 학사 전체
-def TommorrowWestCampus():
+def KB_All():
     messages = ''
 
     messages += ('월요일 학식 메뉴\n' + kb[0].get_text())
@@ -169,7 +168,7 @@ def TommorrowWestCampus():
 
 
 # 성림 학사 전체
-def TommorrowEastCampus():
+def Sungrim_All():
     messages = ''
 
     messages += ('월요일 학식 메뉴\n' + sung[0].get_text())
@@ -183,7 +182,7 @@ def TommorrowEastCampus():
 
 
 # 수림 학사 전체
-def TommorrowDormitory():
+def Surim_All():
     messages = ''
 
     messages += ('월요일 학식 메뉴\n' + surim[0].get_text())

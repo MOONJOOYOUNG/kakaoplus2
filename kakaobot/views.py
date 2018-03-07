@@ -36,13 +36,13 @@ def on_message(request):
         response = "오늘의 추천 식당은 " + functions.NearCampus() + " 입니다."
 
     elif content.startswith('이번주kb') | content.startswith('이번주케이비'):
-        response = functions.TommorrowWestCampus()
+        response = functions.KB_All()
 
     elif content.startswith('이번주수림'):
-        response = functions.TommorrowEastCampus()
+        response = functions.Surim_All()
 
     elif content.startswith('이번주성림'):
-        response = functions.TommorrowDormitory()
+        response = functions.Sungrim_All()
 
     elif content.startswith('A노선') | content.startswith('a노선'):
         response = 'A노선 7회 운행 대전75바2845\n' \
