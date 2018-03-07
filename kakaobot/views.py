@@ -20,14 +20,14 @@ def on_message(request):
         response = '명령어는 () 안에 있는 단어를 입력 하시면 됩니다.\n●명령어 리스트● \n1.오늘의 학식 메뉴(서캠,동캠,기숙사)\n   내일학식(내일서캠,내일동캠)' \
                    '\n2.우송대 근처 밥집(밥집)\n3.오늘의 추천 식당(추천)\n4.캠퍼스순환버스(A노선,B노선)\n5.네이버 실시간 검색(실시간,네이버)\n6.노래찾기(뮤직 노래제목)'
 
-    elif content.startswith('서캠'):
-        response = functions.WestCampus()
+    elif content.startswith('kb') | content.startswith('케이비'):
+        response = functions.Kb_Dormitory()
 
-    elif content.startswith('동캠'):
-        response = functions.EastCampus()
+    elif content.startswith('성림'):
+        response = functions.Sungrim_Dormitory()
 
-    elif content.startswith('기숙사'):
-        response = functions.Dormitory()
+    elif content.startswith('수림'):
+        response = functions.Surim_Dormitory()
 
     elif content.startswith('밥집'):
         response = "우송대 근처 밥집 리스트 입니다.\n{}".format(functions.FoodList())
@@ -35,13 +35,13 @@ def on_message(request):
     elif content.startswith('추천'):
         response = "오늘의 추천 식당은 " + functions.NearCampus() + " 입니다."
 
-    elif content.startswith('내일서캠'):
+    elif content.startswith('이번주kb') | content.startswith('이번주케이비'):
         response = functions.TommorrowWestCampus()
 
-    elif content.startswith('내일동캠'):
+    elif content.startswith('이번주수림'):
         response = functions.TommorrowEastCampus()
 
-    elif content.startswith('내일기숙사'):
+    elif content.startswith('이번주성림'):
         response = functions.TommorrowDormitory()
 
     elif content.startswith('A노선') | content.startswith('a노선'):
