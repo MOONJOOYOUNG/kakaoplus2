@@ -8,7 +8,12 @@ from . import functions
 
 @bot
 def on_init(request):
-    return {'type': 'text' }
+    return {
+        'keyboard': {
+            'type': 'buttons',
+            'buttons': ['KB 학사 식단','성림 학사 식단', '수림 학사 식단', '이번주 KB 식단','이번주 성림 식단','이번주 수림 식단']
+        }
+    }
 
 @bot
 def on_message(request):
@@ -76,11 +81,6 @@ def on_message(request):
     return {
         'message': {
             'text': response,
-        },
-
-        'keyboard': {
-            'type': 'buttons',
-            'buttons': ['KB 학사 식단','성림 학사 식단', '수림 학사 식단', '이번주 KB 식단','이번주 성림 식단','이번주 수림 식단']
         }
 
     }
