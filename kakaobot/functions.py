@@ -2,10 +2,12 @@ import json
 import requests
 import datetime
 import random
+import re
+import time
 from bs4 import BeautifulSoup
 from . import parser
-import time, requests
 from selenium import webdriver
+
 def NearCampus():
     idx = random.randint(0, 35)
     a = ['원화루', '미가', '문희네', '예다랑', '도스마스', '213버거', '맘스터치', '할머니국밥', '엉터리생고기', '안동찜닭', '그린토마토', '지지고', '서브웨이',
@@ -62,31 +64,31 @@ def Kb_Dormitory():
     messages = ''
 
     if t[r] == '월':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[1].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[1].get_text())
         return parser.ser(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[2].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[2].get_text())
         return parser.ser(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[3].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[3].get_text())
         return parser.ser(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[4].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[4].get_text())
         return parser.ser(messages)
 
     elif t[r] == '금':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[5].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[5].get_text())
         return parser.ser(messages)
 
     elif t[r] == '토':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[6].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[6].get_text())
         return messages
 
     elif t[r] == '일':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴\n' + kb[7].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[7].get_text())
         return parser.ser(messages)
 
 # 성림 학사
@@ -94,31 +96,31 @@ def Sungrim_Dormitory():
     messages = ''
 
     if t[r] == '월':
-        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[1].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[1].get_text())
         return parser.ser(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[2].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[2].get_text())
         return parser.ser(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[3].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[3].get_text())
         return parser.ser(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[4].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[4].get_text())
         return parser.ser(messages)
 
     elif t[r] == '금':
-        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[5].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[5].get_text())
         return parser.ser(messages)
 
     elif t[r] == '토':
-        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[6].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[6].get_text())
         return messages
 
     elif t[r] == '일':
-        messages += (t[r] + '요일 성림 학사 학식 메뉴\n' + sung[7].get_text())
+        messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[7].get_text())
         return parser.ser(messages)
 
 # 수림 학사
@@ -126,72 +128,70 @@ def Surim_Dormitory():
     messages = ''
 
     if t[r] == '월':
-        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[1].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[1].get_text())
         return parser.ser(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[2].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[2].get_text())
         return parser.ser(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[3].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[3].get_text())
         return parser.ser(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[4].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[4].get_text())
         return parser.ser(messages)
 
     elif t[r] == '금':
-        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[5].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[5].get_text())
         return parser.ser(messages)
 
     elif t[r] == '토':
-        messages += (t[r] + '요일 수림 학사 학식 메뉴\n' + surim[6].get_text())
+        messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[6].get_text())
         return messages
 
     elif t[r] == '일':
-        messages += (t[r] + '요일 서캠퍼스 학식 메뉴\n' + surim[7].get_text())
+        messages += (t[r] + '요일 서캠퍼스 학식 메뉴' + surim[7].get_text())
         return parser.ser(messages)
 
 #kb 학사 전체
 def KB_All():
     messages = ''
 
-    messages += ('◎월요일 학식 메뉴◎\n' + kb[1].get_text())
-    messages += ('◎화요일 학식 메뉴◎\n' + kb[2].get_text())
-    messages += ('◎수요일 학식 메뉴◎\n' + kb[3].get_text())
-    messages += ('◎목요일 학식 메뉴◎\n' + kb[4].get_text())
-    messages += ('◎금요일 학식 메뉴◎\n' + kb[5].get_text())
-    messages += ('◎토요일 학식 메뉴◎\n' + kb[6].get_text())
-    messages += ('◎일요일 학식 메뉴◎\n' + kb[7].get_text())
+    messages += ('◎월요일 학식 메뉴◎' + kb[1].get_text())
+    messages += ('◎화요일 학식 메뉴◎' + kb[2].get_text())
+    messages += ('◎수요일 학식 메뉴◎' + kb[3].get_text())
+    messages += ('◎목요일 학식 메뉴◎' + kb[4].get_text())
+    messages += ('◎금요일 학식 메뉴◎' + kb[5].get_text())
+    messages += ('◎토요일 학식 메뉴◎' + kb[6].get_text())
+    messages += ('◎일요일 학식 메뉴◎' + kb[7].get_text())
     return parser.ser(messages)
-
 
 # 성림 학사 전체
 def Sungrim_All():
     messages = ''
 
-    messages += ('◎월요일 학식 메뉴◎\n' + sung[1].get_text())
-    messages += ('◎화요일 학식 메뉴◎\n' + sung[2].get_text())
-    messages += ('◎수요일 학식 메뉴◎\n' + sung[3].get_text())
-    messages += ('◎목요일 학식 메뉴◎\n' + sung[4].get_text())
-    messages += ('◎금요일 학식 메뉴◎\n' + sung[5].get_text())
-    messages += ('◎토요일 학식 메뉴◎\n' + sung[6].get_text())
-    messages += ('◎일요일 학식 메뉴◎\n' + sung[7].get_text())
+    messages += ('◎월요일 학식 메뉴◎' + sung[1].get_text())
+    messages += ('◎화요일 학식 메뉴◎' + sung[2].get_text())
+    messages += ('◎수요일 학식 메뉴◎' + sung[3].get_text())
+    messages += ('◎목요일 학식 메뉴◎' + sung[4].get_text())
+    messages += ('◎금요일 학식 메뉴◎' + sung[5].get_text())
+    messages += ('◎토요일 학식 메뉴◎' + sung[6].get_text())
+    messages += ('◎일요일 학식 메뉴◎' + sung[7].get_text())
     return parser.dong(messages)
-
 
 # 수림 학사 전체
 def Surim_All():
     messages = ''
 
-    messages += ('◎월요일 학식 메뉴◎\n' + surim[1].get_text())
-    messages += ('◎화요일 학식 메뉴◎\n' + surim[2].get_text())
-    messages += ('◎수요일 학식 메뉴◎\n' + surim[3].get_text())
-    messages += ('◎목요일 학식 메뉴◎\n' + surim[4].get_text())
-    messages += ('◎금요일 학식 메뉴◎\n' + surim[5].get_text())
-    messages += ('◎토요일 학식 메뉴◎\n' + surim[6].get_text())
-    messages += ('◎일요일 학식 메뉴◎\n' + surim[7].get_text())
+    messages += ('◎월요일 학식 메뉴◎' + surim[1].get_text())
+    messages += ('◎화요일 학식 메뉴◎' + surim[2].get_text())
+    messages += ('◎수요일 학식 메뉴◎' + surim[3].get_text())
+    messages += ('◎목요일 학식 메뉴◎' + surim[4].get_text())
+    messages += ('◎금요일 학식 메뉴◎' + surim[5].get_text())
+    messages += ('◎토요일 학식 메뉴◎' + surim[6].get_text())
+    messages += ('◎일요일 학식 메뉴◎' + surim[7].get_text())
     return parser.kik(messages)
 
 # 네이버 실시간 검색.
@@ -202,7 +202,12 @@ def naver_rank():
     tag_list = soup.select('.PM_CL_realtimeKeyword_rolling .ah_item .ah_k')
 
     for idx, tag in enumerate(tag_list, 1):
-        message.append(str(idx) + '.' + tag.text)
+        message.append(str(idx) + '.' + tag.text + "\n")
+        message = re.sub('[', '', message)
+        message = re.sub(']', '', message)
+        message = re.sub("'", '', message)
+        message = re.sub(',', '', message)
+
     return message
 
 # 멜론 음악 검색.

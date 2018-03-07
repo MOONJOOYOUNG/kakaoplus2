@@ -8,7 +8,12 @@ from . import functions
 
 @bot
 def on_init(request):
-    return {'type': 'text' }
+    return {
+        'keyboard': {
+            'type': 'buttons',
+            'buttons': ['KB 학사 식단','성림 학사 식단', '수림 학사 식단', '이번주 KB 식단','이번주 성림 식단','이번주 수림 식단']
+        }
+    }
 
 @bot
 def on_message(request):
@@ -17,7 +22,8 @@ def on_message(request):
     content = request.JSON['content']  # photo 타입일 경우에는 이미지 URL
 
     if content.startswith('명령어'):
-        response = '명령어는 () 안에 있는 단어를 입력 하시면 됩니다.\n●명령어 리스트● \n1.오늘의 학식 메뉴(kb,성림,수림)\n   이번주 학식(이번주kb,이번주성림,이번주수림)' \
+        response = '명령어는 "" 안에 있는 단어를 입력 하시면 됩니다. ex) -> 수림\n●명령어 리스트● \n1.오늘의 학식 메뉴 "케이비" "성림" "수림"\n' \
+                   '이번주학식"이번주kb,이번주성림,이번주수림"' \
                    '\n2.네이버 실시간 검색(실시간,네이버)'
     #\n2.과기대 근처 밥집(밥집)\n3.오늘의 추천 식당(추천)
     elif content.startswith('kb') | content.startswith('케이비'):
@@ -76,6 +82,7 @@ def on_message(request):
         'message': {
             'text': response,
         }
+
     }
 
 @bot
