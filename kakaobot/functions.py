@@ -202,11 +202,7 @@ def naver_rank():
     tag_list = soup.select('.PM_CL_realtimeKeyword_rolling .ah_item .ah_k')
 
     for idx, tag in enumerate(tag_list, 1):
-        message.append(str(idx) + '.' + tag.text + "\n")
-        message = re.sub('[', '', message)
-        message = re.sub(']', '', message)
-        message = re.sub("'", '', message)
-        message = re.sub(',', '', message)
+        message.append(str(idx) + '.' + tag.text)
 
     return message
 
