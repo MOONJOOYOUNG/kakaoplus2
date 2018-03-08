@@ -85,6 +85,10 @@ def on_message(request):
     return {
         'message': {
             'text': response,
+        },
+        'keyboard': {
+            'type': 'buttons',
+            'buttons': ['카테고리', '검색']
         }
 
     }
