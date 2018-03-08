@@ -30,6 +30,9 @@ def on_message(request):
     elif content.startswith('kb') | content.startswith('케이비'):
         response = functions.Kb_Dormitory()
 
+    elif content.startswith('카테고리'):
+        response = "테스트 중입니다"
+
     elif content.startswith('성림'):
         response = functions.Sungrim_Dormitory()
 
