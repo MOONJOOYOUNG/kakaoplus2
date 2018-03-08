@@ -212,7 +212,10 @@ def melon_search(query):
         'jscallback': '_',
         'query': query,
     }
-    jsonp_string = requests.get('http://www.melon.com/search/keyword/index.json', params=params).text
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36',
+    }
+    jsonp_string = requests.get('http://www.melon.com/search/keyword/index.json', headers=headers, params=params).text
     json_string = jsonp_string.replace('_(', '').replace(');', '')
     meta = json.loads(json_string)
     messages = []
