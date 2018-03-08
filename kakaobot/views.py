@@ -8,7 +8,10 @@ from . import functions
 
 @bot
 def on_init(request):
-    return {'type': 'text' }
+    return {'type' : 'buttons',
+            'buttons' : ['카테고리', '검색']
+ }
+
 
 @bot
 def on_message(request):
