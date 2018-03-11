@@ -8,12 +8,9 @@ from . import functions
 
 @bot
 def on_init(request):
-    return {
-        'keyboard': {
-            'type': 'buttons',
-            'buttons': ['KB 학사 식단','성림 학사 식단', '수림 학사 식단', '이번주 KB 식단','이번주 성림 식단','이번주 수림 식단']
-        }
-    }
+    return {'type' : 'buttons',
+            'buttons' : ['카테고리', '검색']
+ }
 
 @bot
 def on_message(request):
@@ -26,13 +23,13 @@ def on_message(request):
                    '이번주학식"이번주kb,이번주성림,이번주수림"' \
                    '\n2.네이버 실시간 검색(실시간,네이버)'
     #\n2.과기대 근처 밥집(밥집)\n3.오늘의 추천 식당(추천)
-    elif content.startswith('kb') | content.startswith('케이비'):
+    elif content.startswith('케이비') | content.startswith('KB 학사 식단'):
         response = functions.Kb_Dormitory()
 
-    elif content.startswith('성림'):
+    elif content.startswith('성림') | content.startswith('성림 학사 식단'):
         response = functions.Sungrim_Dormitory()
 
-    elif content.startswith('수림'):
+    elif content.startswith('수림') | content.startswith('수림 학사 식단'):
         response = functions.Surim_Dormitory()
 
     elif content.startswith('밥집'):
@@ -41,13 +38,13 @@ def on_message(request):
     elif content.startswith('추천'):
         response = "오늘의 추천 식당은 " + functions.NearCampus() + " 입니다."
 
-    elif content.startswith('이번주kb') | content.startswith('이번주케이비'):
+    elif content.startswith('이번주케이비') | content.startswith('이번주 KB 식단'):
         response = functions.KB_All()
 
-    elif content.startswith('이번주수림'):
+    elif content.startswith('이번주수림') | content.startswith('이번주 수림 식단'):
         response = functions.Surim_All()
 
-    elif content.startswith('이번주성림'):
+    elif content.startswith('이번주성림') | content.startswith('이번주 성림 식단'):
         response = functions.Sungrim_All()
 
     elif content.startswith('A노선') | content.startswith('a노선'):
@@ -62,15 +59,9 @@ def on_message(request):
                    '학생회관(동캠)→학술정보센터(동캠)→동문입구(서캠)→도서정보센터(서캠)→학술정보센터(동캠)→학생회관(동캠)' \
                    '\n●배차 시간●\n09:00   10:00   11:00   11:30  14:00   14:30   15:00   15:30   17:00 \n●각 정류장별 2~4분 소요●'
 
-    elif content.startswith('혼밥'):
-        response = functions.alone()
-
     elif content.startswith('뮤직 '):
         query = content[3:]
         response = '멜론 "{}" 검색결과\n\n'.format(query) + functions.melon_search(query)
-
-    elif content.startswith('학식'):
-        response = "서캠, 동캠, 기숙사 입력시 해당되는 곳의 오늘의 학식 정보를 알수 있습니다."
 
     elif content.startswith('실시간') | content.startswith('네이버'):
         response = '네이버 실시간 검색어\n {}'.format(functions.naver_rank())
@@ -81,6 +72,10 @@ def on_message(request):
     return {
         'message': {
             'text': response,
+        },
+        'keyboard': {
+            'type': 'buttons',
+            'buttons': ['KB 학사 식단','성림 학사 식단', '수림 학사 식단', '이번주 KB 식단','이번주 성림 식단','이번주 수림 식단', '네이버 실시간 검색']
         }
 
     }
