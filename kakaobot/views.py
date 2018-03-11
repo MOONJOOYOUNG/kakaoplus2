@@ -11,7 +11,7 @@ def on_init(request):
     return {
         'keyboard': {
             'type': 'buttons',
-            'buttons': ['KB 학사 식단','성림 학사 식단', '수림 학사 식단', '이번주 KB 식단','이번주 성림 식단','이번주 수림 식단', '네이버 실시간 검색']
+            'buttons': ['KB 학사 식단','성림 학사 식단']
         }
     }
 
@@ -81,7 +81,7 @@ def on_message(request):
         },
         'keyboard': {
             'type': 'buttons',
-            'buttons': ['KB 학사 식단','성림 학사 식단', '수림 학사 식단', '이번주 KB 식단','이번주 성림 식단','이번주 수림 식단', '네이버 실시간 검색']
+            'buttons': ['KB 학사 식단','성림 학사 식단']
         }
 
     }
