@@ -65,31 +65,31 @@ def Kb_Dormitory():
 
     if t[r] == '월':
         messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[1].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '화':
         messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[2].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '수':
         messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[3].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '목':
         messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[4].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '금':
         messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[5].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '토':
         messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[6].get_text())
-        return messages
+        return parser.dom_parser(messages)
 
     elif t[r] == '일':
         messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[7].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
 # 성림 학사
 def Sungrim_Dormitory():
@@ -97,31 +97,31 @@ def Sungrim_Dormitory():
 
     if t[r] == '월':
         messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[1].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '화':
         messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[2].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '수':
         messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[3].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '목':
         messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[4].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '금':
         messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[5].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '토':
         messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[6].get_text())
-        return messages
+        return parser.dom_parser(messages)
 
     elif t[r] == '일':
         messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[7].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
 # 수림 학사
 def Surim_Dormitory():
@@ -129,15 +129,15 @@ def Surim_Dormitory():
 
     if t[r] == '월':
         messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[1].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '화':
         messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[2].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '수':
         messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[3].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '목':
         messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[4].get_text())
@@ -145,15 +145,15 @@ def Surim_Dormitory():
 
     elif t[r] == '금':
         messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[5].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '토':
         messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[6].get_text())
-        return messages
+        return parser.dom_parser(messages)
 
     elif t[r] == '일':
         messages += (t[r] + '요일 서캠퍼스 학식 메뉴' + surim[7].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
 #kb 학사 전체
 def KB_All():
@@ -166,7 +166,7 @@ def KB_All():
     messages += ('◎금요일 학식 메뉴◎' + kb[5].get_text())
     messages += ('◎토요일 학식 메뉴◎' + kb[6].get_text())
     messages += ('◎일요일 학식 메뉴◎' + kb[7].get_text())
-    return parser.ser(messages)
+    return parser.dom_parser(messages)
 
 # 성림 학사 전체
 def Sungrim_All():
@@ -179,7 +179,7 @@ def Sungrim_All():
     messages += ('◎금요일 학식 메뉴◎' + sung[5].get_text())
     messages += ('◎토요일 학식 메뉴◎' + sung[6].get_text())
     messages += ('◎일요일 학식 메뉴◎' + sung[7].get_text())
-    return parser.dong(messages)
+    return parser.dom_parser(messages)
 
 # 수림 학사 전체
 def Surim_All():
@@ -192,7 +192,7 @@ def Surim_All():
     messages += ('◎금요일 학식 메뉴◎' + surim[5].get_text())
     messages += ('◎토요일 학식 메뉴◎' + surim[6].get_text())
     messages += ('◎일요일 학식 메뉴◎' + surim[7].get_text())
-    return parser.kik(messages)
+    return parser.dom_parser(messages)
 
 # 네이버 실시간 검색.
 def naver_rank():
@@ -202,7 +202,11 @@ def naver_rank():
     tag_list = soup.select('.PM_CL_realtimeKeyword_rolling .ah_item .ah_k')
 
     for idx, tag in enumerate(tag_list, 1):
-        message.append(str(idx) + '.' + tag.text)
+        message.append(str(idx) + '.' + tag.text + "\n")
+        message = re.sub('[', '', message)
+        message = re.sub(']', '', message)
+        message = re.sub("'", '', message)
+        message = re.sub(',', '', message)
 
     return message
 
@@ -212,10 +216,7 @@ def melon_search(query):
         'jscallback': '_',
         'query': query,
     }
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36',
-    }
-    jsonp_string = requests.get('http://www.melon.com/search/keyword/index.json', headers=headers, params=params).text
+    jsonp_string = requests.get('http://www.melon.com/search/keyword/index.json', params=params).text
     json_string = jsonp_string.replace('_(', '').replace(');', '')
     meta = json.loads(json_string)
     messages = []
