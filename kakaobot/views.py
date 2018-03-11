@@ -8,12 +8,9 @@ from . import functions
 
 @bot
 def on_init(request):
-    return {
-        'keyboard': {
-            'type': 'buttons',
-            'buttons': ['KB 학사 식단','성림 학사 식단']
-        }
-    }
+    return {'type' : 'buttons',
+            'buttons' : ['카테고리', '검색']
+ }
 
 @bot
 def on_message(request):
@@ -62,9 +59,6 @@ def on_message(request):
                    '학생회관(동캠)→학술정보센터(동캠)→동문입구(서캠)→도서정보센터(서캠)→학술정보센터(동캠)→학생회관(동캠)' \
                    '\n●배차 시간●\n09:00   10:00   11:00   11:30  14:00   14:30   15:00   15:30   17:00 \n●각 정류장별 2~4분 소요●'
 
-    elif content.startswith('혼밥'):
-        response = functions.alone()
-
     elif content.startswith('뮤직 '):
         query = content[3:]
         response = '멜론 "{}" 검색결과\n\n'.format(query) + functions.melon_search(query)
@@ -78,7 +72,12 @@ def on_message(request):
     return {
         'message': {
             'text': response,
+        },
+        'keyboard': {
+            'type': 'buttons',
+            'buttons': ['KB 학사 식단','성림 학사 식단', '수림 학사 식단', '이번주 KB 식단','이번주 성림 식단','이번주 수림 식단', '네이버 실시간 검색']
         }
+
     }
 
 @bot
