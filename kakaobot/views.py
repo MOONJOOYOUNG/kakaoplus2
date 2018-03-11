@@ -78,12 +78,7 @@ def on_message(request):
     return {
         'message': {
             'text': response,
-        },
-        'keyboard': {
-            'type': 'buttons',
-            'buttons': ['KB 학사 식단','성림 학사 식단']
         }
-
     }
 
 @bot
