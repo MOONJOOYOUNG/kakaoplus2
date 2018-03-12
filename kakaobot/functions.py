@@ -38,6 +38,12 @@ t = ['월', '화', '수', '목', '금', '토', '일']
 r = kor_time.weekday()
 driver = webdriver.PhantomJS()
 
+# 제2 학식
+driver.get('http://www.seoultech.ac.kr/life/student/food/')
+html = driver.page_source
+soup = BeautifulSoup(html, 'html.parser')
+food_two = soup.findAll("td", limit=130)
+
 #kb 학사
 driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
 html = driver.page_source
@@ -55,12 +61,6 @@ driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
 html = driver.page_source
 soup = BeautifulSoup(html,'html.parser')
 surim = soup.findAll("td", limit=8)
-
-# 제2 학식
-driver.get('http://www.seoultech.ac.kr/life/student/food/')
-html = driver.page_source
-soup = BeautifulSoup(html, 'html.parser')
-food_two = soup.findAll("td", limit=130)
 
 # kb 학사
 def Kb_Dormitory():
