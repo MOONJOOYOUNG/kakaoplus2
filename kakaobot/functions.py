@@ -2,8 +2,6 @@ import json
 import requests
 import datetime
 import random
-import re
-import time
 from bs4 import BeautifulSoup
 from . import parser
 from selenium import webdriver
@@ -51,7 +49,6 @@ driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
 html = driver.page_source
 soup = BeautifulSoup(html,'html.parser')
 sung = soup.findAll("td", limit=8)
-
 
 # 수림 학사.
 driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
@@ -284,12 +281,7 @@ def naver_rank():
     tag_list = soup.select('.PM_CL_realtimeKeyword_rolling .ah_item .ah_k')
 
     for idx, tag in enumerate(tag_list, 1):
-        message.append(str(idx) + '.' + tag.text + "\n")
-    message = message.replace('[', '')
-    message = message.replace(']', '')
-    message = message.replace("'", '')
-    message = message.replace(',', '')
-
+        message.append(str(idx) + '.' + tag.text)
     return message
 
 # 멜론 음악 검색.

@@ -28,13 +28,9 @@ def dom_parser(string):
     return parser
 
 def food_parser(string):
-    parser = string.replace('	 				', '')
+    parser = string.replace('			        ', '')
     parser = parser.replace('       ', '')
-    parser = parser.replace('      ', '')
-    parser = parser.replace('     ', '')
-    parser = parser.replace('    ', '')
-    parser = parser.replace('   ', '')
-    parser = parser.replace('  ', ' ')
-
+    parser = parser.replace(' 　 ', ' ')
+    parser = parser.replace('    ', ' ')
     return parser
 
