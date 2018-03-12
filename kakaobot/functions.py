@@ -59,9 +59,13 @@ html = driver.page_source
 soup = BeautifulSoup(html,'html.parser')
 surim = soup.findAll("td", limit=8)
 
+# 제2 학식
+driver.get('http://www.seoultech.ac.kr/life/student/food/')
+html = driver.page_source
+soup = BeautifulSoup(html, 'html.parser')
+food_two = soup.findAll("td", limit=130)
+
 # kb 학사
-
-
 def Kb_Dormitory():
     messages = ''
 
@@ -159,10 +163,6 @@ def Surim_Dormitory():
 
 # 제 2학생 식단
 def Food_two():
-    driver.get('http://www.seoultech.ac.kr/life/student/food/')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    food_two = soup.findAll("td", limit=130)
     messages = ''
 
     if t[r] == '월':
