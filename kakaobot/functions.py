@@ -162,7 +162,7 @@ def Food_two():
     driver.get('http://www.seoultech.ac.kr/life/student/food/')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    food_two = soup.findAll("td", limit=150)
+    food_two = soup.findAll("td", limit=130)
     messages = ''
 
     if t[r] == '월':
@@ -285,13 +285,12 @@ def naver_rank():
 
     for idx, tag in enumerate(tag_list, 1):
         message.append(str(idx) + '.' + tag.text + "\n")
+    message = message.replace('[', '')
+    message = message.replace(']', '')
+    message = message.replace("'", '')
+    message = message.replace(',', '')
+
     return message
-
-
-#message = re.sub('[', '', message)
-#message = re.sub(']', '', message)
-#message = re.sub("'", '', message)
-#message = re.sub(',', '', message)
 
 # 멜론 음악 검색.
 def melon_search(query):
