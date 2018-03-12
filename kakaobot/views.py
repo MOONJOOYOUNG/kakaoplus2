@@ -9,7 +9,7 @@ from . import functions
 @bot
 def on_init(request):
     return {'type' : 'buttons',
-            'buttons' : ['KB 학사 식단','성림 학사 식단', '수림 학사 식단','제2 학생 식당 메뉴' ,'이번주 KB 식단','이번주 성림 식단','이번주 수림 식단']
+            'buttons' : ['KB 학사 식단','성림 학사 식단', '수림 학사 식단','제2 학생 식당 메뉴']
  }
 
 @bot
@@ -82,7 +82,7 @@ def on_message(request):
         },
         'keyboard': {
             'type': 'buttons',
-            'buttons' : ['KB 학사 식단','성림 학사 식단', '수림 학사 식단','제2 학생 식당 메뉴' ,'이번주 KB 식단','이번주 성림 식단','이번주 수림 식단']
+            'buttons' : ['KB 학사 식단','성림 학사 식단', '수림 학사 식단','제2 학생 식당 메뉴']
         }
     }
 
