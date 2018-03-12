@@ -5,6 +5,7 @@ def dom_parser(string):
     parser = parser.replace('점심 :', '◎점심◎\n')
     parser = parser.replace('저녁 :', '◎저녁◎\n')
 
+    parser = parser.replace('(동태: 러시아산)', '')
     parser = parser.replace('(돈육.계육:국산) ', '')
     parser = parser.replace('(계육:국산)', '')
     parser = parser.replace('(돈육:국산)', '')
@@ -26,5 +27,14 @@ def dom_parser(string):
     parser = re.sub('[★]', '', parser)
     return parser
 
+def food_parser(string):
+    parser = string.replace('	 				', '')
+    parser = parser.replace('       ', '')
+    parser = parser.replace('      ', '')
+    parser = parser.replace('     ', '')
+    parser = parser.replace('    ', '')
+    parser = parser.replace('   ', '')
+    parser = parser.replace('  ', ' ')
 
+    return parser
 
