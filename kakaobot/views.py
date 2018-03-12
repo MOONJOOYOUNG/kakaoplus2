@@ -37,7 +37,7 @@ def on_message(request):
         response = functions.Surim_Dormitory()
 
     elif content.startswith('제2') | content.startswith('제2 학생 식당 메뉴'):
-        response = functions.Food_two()
+        response = "현재 테스트 중입니다." #functions.Food_two()
 
     elif content.startswith('밥집'):
         response = "과기대 근처 밥집 리스트 입니다.\n{}".format(functions.FoodList())
