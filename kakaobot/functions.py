@@ -31,6 +31,7 @@ def FoodList():
 
 #선언부
 
+# 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
     time_gap = datetime.timedelta(hours=9)
@@ -39,7 +40,7 @@ def today():
 
     r = kor_time.weekday()
     return r
-r = today()
+
 t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
 
@@ -66,6 +67,7 @@ surim = soup.findAll("td", limit=8)
 
 # kb 학사
 def Kb_Dormitory():
+    r = today()
     messages = ''
 
     if t[r] == '월':
@@ -98,6 +100,7 @@ def Kb_Dormitory():
 
 # 성림 학사
 def Sungrim_Dormitory():
+    r = today()
     messages = ''
 
     if t[r] == '월':
@@ -130,6 +133,7 @@ def Sungrim_Dormitory():
 
 # 수림 학사
 def Surim_Dormitory():
+    r = today()
     messages = ''
 
     if t[r] == '월':
@@ -162,6 +166,8 @@ def Surim_Dormitory():
 
 # 제 2학생 식단
 def Food_two():
+    r = today()
+
     driver.get('http://www.seoultech.ac.kr/life/student/food/')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
