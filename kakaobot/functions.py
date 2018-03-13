@@ -34,11 +34,10 @@ def FoodList():
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
-    time_gap = datetime.timedelta(hours=9)
+    time_gap = datetime.timedelta()
     kor_time = utcnow + time_gap
-
-
     r = kor_time.weekday()
+
     return r
 
 t = ['월', '화', '수', '목', '금', '토', '일']
