@@ -1,9 +1,9 @@
 import re
 
 def dom_parser(string):
-    parser = string.replace('아침 :', '◎아침◎\n')
-    parser = parser.replace('점심 :', '◎점심◎\n')
-    parser = parser.replace('저녁 :', '◎저녁◎\n')
+    parser = string.replace('아침 :', '◈아침◈\n')
+    parser = parser.replace('점심 :', '◈점심◈\n')
+    parser = parser.replace('저녁 :', '◈저녁◈\n')
 
     parser = parser.replace('(동태:러시아산)', '')
     parser = parser.replace('(오징어.돈육:국산)', '')

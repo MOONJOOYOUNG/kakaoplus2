@@ -9,7 +9,8 @@ from . import functions
 @bot
 def on_init(request):
     return {'type' : 'buttons',
-            'buttons' : ['KB 학사 식단','성림 학사 식단', '수림 학사 식단','제2 학생 식당 메뉴','이번주 KB 식단','이번주 수림 식단','이번주 성림 식단']
+            'buttons' : ['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴'
+                ,'이번주 KB 학식 메뉴','이번주 수림 학식 메뉴','이번주 성림 학식 메뉴']
  }
 
 @bot
@@ -27,17 +28,20 @@ def on_message(request):
                        '\n4.네이버 실시간 검색 "실시간,네이버"\n5.음악 검색 "뮤직 노래제목"' \
                        '\n  ex)뮤직 박원'
     #\n2.과기대 근처 밥집(밥집)\n3.오늘의 추천 식당(추천)
-    elif content.startswith('케이비') | content.startswith('KB 학사 식단'):
+    elif content.startswith('케이비') | content.startswith('KB 학사 학식 메뉴'):
         response = functions.Kb_Dormitory()
 
-    elif content.startswith('성림') | content.startswith('성림 학사 식단'):
+    elif content.startswith('성림') | content.startswith('성림 학사 학식 메뉴'):
         response = functions.Sungrim_Dormitory()
 
-    elif content.startswith('수림') | content.startswith('수림 학사 식단'):
+    elif content.startswith('수림') | content.startswith('수림 학사 학식 메뉴'):
         response = functions.Surim_Dormitory()
 
     elif content.startswith('제2') | content.startswith('제2 학생 식당 메뉴'):
         response = functions.Food_two()
+
+    elif content.startswith('내일 제2 학생 식당 메뉴'):
+        response = functions.Food_two_tomorrow()
 
     elif content.startswith('밥집'):
         response = "과기대 근처 밥집 리스트 입니다.\n{}".format(functions.FoodList())
@@ -45,13 +49,13 @@ def on_message(request):
     elif content.startswith('추천'):
         response = "오늘의 추천 식당은 " + functions.NearCampus() + " 입니다."
 
-    elif content.startswith('이번주케이비') | content.startswith('이번주 KB 식단'):
+    elif content.startswith('이번주케이비') | content.startswith('이번주 KB 학식 메뉴'):
         response = functions.KB_All()
 
-    elif content.startswith('이번주수림') | content.startswith('이번주 수림 식단'):
+    elif content.startswith('이번주수림') | content.startswith('이번주 수림 학식 메뉴'):
         response = functions.Surim_All()
 
-    elif content.startswith('이번주성림') | content.startswith('이번주 성림 식단'):
+    elif content.startswith('이번주성림') | content.startswith('이번주 성림 학식 메뉴'):
         response = functions.Sungrim_All()
 
     elif content.startswith('지하철'):
@@ -82,7 +86,8 @@ def on_message(request):
         },
         'keyboard': {
             'type': 'buttons',
-            'buttons' : ['KB 학사 식단','성림 학사 식단', '수림 학사 식단','제2 학생 식당 메뉴','이번주 KB 식단','이번주 수림 식단','이번주 성림 식단']
+            'buttons' : ['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴'
+                ,'이번주 KB 학식 메뉴','이번주 수림 학식 메뉴','이번주 성림 학식 메뉴']
         }
     }
 
