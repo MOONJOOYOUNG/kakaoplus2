@@ -13,7 +13,7 @@ driver = webdriver.PhantomJS()
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
-    time_gap = datetime.timedelta()
+    time_gap = datetime.timedelta(hours=9)
     kor_time = utcnow + time_gap
     r = kor_time.weekday()
 
