@@ -30,12 +30,17 @@ def FoodList():
     return messages
 
 #선언부
-utcnow = datetime.datetime.utcnow()
-time_gap = datetime.timedelta(hours=9)
-kor_time = utcnow + time_gap
 
+def today():
+    utcnow = datetime.datetime.utcnow()
+    time_gap = datetime.timedelta(hours=9)
+    kor_time = utcnow + time_gap
+
+
+    r = kor_time.weekday()
+    return r
+r = today()
 t = ['월', '화', '수', '목', '금', '토', '일']
-r = kor_time.weekday()
 driver = webdriver.PhantomJS()
 
 # 제2 학식
