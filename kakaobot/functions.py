@@ -52,9 +52,9 @@ def Library_seat():
 # kb 학사
 def Kb_Dormitory():
     driver = webdriver.PhantomJS()
+    time.sleep(1)
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
     html = driver.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
     driver.close()
@@ -92,9 +92,9 @@ def Kb_Dormitory():
 # 성림 학사
 def Sungrim_Dormitory():
     driver = webdriver.PhantomJS()
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
-    html = driver.page_source
     time.sleep(1)
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+    html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
     driver.close()
@@ -132,9 +132,9 @@ def Sungrim_Dormitory():
 # 수림 학사
 def Surim_Dormitory():
     driver = webdriver.PhantomJS()
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
-    html = driver.page_source
     time.sleep(1)
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+    html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
     driver.close()
@@ -349,9 +349,9 @@ def Food_two_tomorrow():
 #kb 학사 전체
 def KB_All():
     driver = webdriver.PhantomJS()
+    time.sleep(1)
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
     html = driver.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
     driver.close()
@@ -369,9 +369,9 @@ def KB_All():
 # 성림 학사 전체
 def Sungrim_All():
     driver = webdriver.PhantomJS()
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
-    html = driver.page_source
     time.sleep(1)
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+    html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
     driver.close()
@@ -389,9 +389,9 @@ def Sungrim_All():
 # 수림 학사 전체
 def Surim_All():
     driver = webdriver.PhantomJS()
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
-    html = driver.page_source
     time.sleep(1)
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+    html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
     driver.close()
