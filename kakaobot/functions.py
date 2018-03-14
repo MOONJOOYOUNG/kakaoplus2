@@ -26,13 +26,12 @@ def Library_seat():
     time.sleep(1)
     tag_id = driver.find_element_by_id('userid2')
     tag_id.send_keys("18510068")
-    time.sleep(1)
     tag_pw = driver.find_element_by_id('password2')
     tag_pw.send_keys("answndud12#")
     tag_id.submit()
-    time.sleep(1)
+    time.sleep(2)
     driver.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
-    time.sleep(1)
+    time.sleep(2)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -52,7 +51,6 @@ def Library_seat():
 def Kb_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
     html = driver.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
 
@@ -91,7 +89,6 @@ def Kb_Dormitory():
 def Sungrim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
     html = driver.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
 
@@ -130,7 +127,6 @@ def Sungrim_Dormitory():
 def Surim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
     html = driver.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
 
@@ -346,7 +342,6 @@ def Food_two_tomorrow():
 def KB_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
     html = driver.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
 
@@ -365,7 +360,6 @@ def KB_All():
 def Sungrim_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
     html = driver.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
     messages = ''
@@ -383,7 +377,6 @@ def Sungrim_All():
 def Surim_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
     html = driver.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
     messages = ''
