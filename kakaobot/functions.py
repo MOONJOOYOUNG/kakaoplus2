@@ -32,7 +32,7 @@ def today():
 def Library_seat():
     time.sleep(1)
     driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
-    time.sleep(1)
+    time.sleep(2)
     html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
