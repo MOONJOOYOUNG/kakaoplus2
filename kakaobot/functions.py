@@ -14,6 +14,11 @@ driver = webdriver.PhantomJS()
 # 도서관.
 driver2 = webdriver.PhantomJS()
 driver2.get('https://library.seoultech.ac.kr/#/login')
+tag_id = driver2.find_element_by_id('userid2')
+tag_id.send_keys("18510068")
+tag_pw = driver2.find_element_by_id('password2')
+tag_pw.send_keys("answndud12#")
+tag_id.submit()
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
@@ -25,18 +30,12 @@ def today():
 
 # 도서관 열람실 자리
 def Library_seat():
-    tag_id = driver2.find_element_by_id('userid2')
-    tag_id.send_keys("18510068")
-    tag_pw = driver2.find_element_by_id('password2')
-    tag_pw.send_keys("answndud12#")
-    tag_id.submit()
-    time.sleep(2)
+    time.sleep(1)
     driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
     time.sleep(1)
     html = driver2.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
-    
+
     seat = soup.select('.ikc-main span')
 
     messages = "◎도서관 열람실 사용 현황◎\n" \
