@@ -31,7 +31,7 @@ def today():
 
 # 도서관 열람실 자리
 def Library_seat():
-    time.sleep(2)
+    time.sleep(1)
     driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
     time.sleep(2)
     html = driver2.page_source
@@ -52,6 +52,7 @@ def Library_seat():
 # kb 학사
 def Kb_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
@@ -90,6 +91,7 @@ def Kb_Dormitory():
 # 성림 학사
 def Sungrim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
@@ -128,6 +130,7 @@ def Sungrim_Dormitory():
 # 수림 학사
 def Surim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
@@ -343,6 +346,7 @@ def Food_two_tomorrow():
 #kb 학사 전체
 def KB_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
@@ -361,6 +365,7 @@ def KB_All():
 # 성림 학사 전체
 def Sungrim_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
@@ -378,6 +383,7 @@ def Sungrim_All():
 # 수림 학사 전체
 def Surim_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
