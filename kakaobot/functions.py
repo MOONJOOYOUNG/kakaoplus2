@@ -40,8 +40,8 @@ def Library_seat():
               "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[26].text + " 이용률 " + seat[28].text + \
               "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[42].text + " 이용률 " + seat[44].text + \
               "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[58].text + " 이용률 " + seat[60].text + \
-              "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[74].text + " 이용률 " + seat[76].text + \
-              "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[90].text + " 이용률 " + seat[92].text
+              "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[74].text + " 이용률 " + seat[76].text #+ \
+              #"\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[90].text + " 이용률 " + seat[92].text
 
     return messages
 
