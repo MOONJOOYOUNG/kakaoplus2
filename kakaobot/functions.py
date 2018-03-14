@@ -23,16 +23,14 @@ def today():
 # 도서관 열람실 자리
 def Library_seat():
     driver.get('https://library.seoultech.ac.kr/#/login')
-    time.sleep(1)
     tag_id = driver.find_element_by_id('userid2')
     tag_id.send_keys("18510068")
     tag_pw = driver.find_element_by_id('password2')
     tag_pw.send_keys("answndud12#")
     tag_id.submit()
+    time.sleep(3)
     driver.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
-    time.sleep(1)
     html = driver.page_source
-    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
 
     seat = soup.select('.ikc-main span')
@@ -52,6 +50,7 @@ def Library_seat():
 def Kb_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
     html = driver.page_source
+    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
 
@@ -90,6 +89,7 @@ def Kb_Dormitory():
 def Sungrim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
     html = driver.page_source
+    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
 
@@ -128,6 +128,7 @@ def Sungrim_Dormitory():
 def Surim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
     html = driver.page_source
+    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
 
@@ -343,6 +344,7 @@ def Food_two_tomorrow():
 def KB_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
     html = driver.page_source
+    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
 
@@ -361,6 +363,7 @@ def KB_All():
 def Sungrim_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
     html = driver.page_source
+    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
     messages = ''
@@ -378,6 +381,7 @@ def Sungrim_All():
 def Surim_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
     html = driver.page_source
+    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
     messages = ''
@@ -408,7 +412,10 @@ def melon_search(query):
         'jscallback': '_',
         'query': query,
     }
-    jsonp_string = requests.get('http://www.melon.com/search/keyword/index.json', params=params).text
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36',
+    }
+    jsonp_string = requests.get('http://www.melon.com/search/keyword/index.json', headers=headers, params=params).text
     json_string = jsonp_string.replace('_(', '').replace(');', '')
     meta = json.loads(json_string)
     messages = []
