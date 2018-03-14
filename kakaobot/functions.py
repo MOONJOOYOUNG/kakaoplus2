@@ -20,22 +20,6 @@ tag_pw = driver2.find_element_by_id('password2')
 tag_pw.send_keys("answndud12#")
 tag_id.submit()
 
-# 식단
-driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
-html = driver.page_source
-soup = BeautifulSoup(html, 'html.parser')
-kb = soup.findAll("td", limit=8)
-
-driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
-html = driver.page_source
-soup = BeautifulSoup(html, 'html.parser')
-sung = soup.findAll("td", limit=8)
-
-driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
-html = driver.page_source
-soup = BeautifulSoup(html, 'html.parser')
-surim = soup.findAll("td", limit=8)
-
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
@@ -67,6 +51,11 @@ def Library_seat():
 
 # kb 학사
 def Kb_Dormitory():
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    kb = soup.findAll("td", limit=8)
+
     r = today()
     messages = ''
 
@@ -100,6 +89,11 @@ def Kb_Dormitory():
 
 # 성림 학사
 def Sungrim_Dormitory():
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    sung = soup.findAll("td", limit=8)
+
     r = today()
     messages = ''
 
@@ -133,6 +127,11 @@ def Sungrim_Dormitory():
 
 # 수림 학사
 def Surim_Dormitory():
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    surim = soup.findAll("td", limit=8)
+
     r = today()
     messages = ''
 
@@ -343,6 +342,11 @@ def Food_two_tomorrow():
 
 #kb 학사 전체
 def KB_All():
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    kb = soup.findAll("td", limit=8)
+
     messages = ''
 
     messages += ('◎월요일 학식 메뉴◎' + kb[1].get_text())
@@ -356,6 +360,10 @@ def KB_All():
 
 # 성림 학사 전체
 def Sungrim_All():
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    sung = soup.findAll("td", limit=8)
     messages = ''
 
     messages += ('◎월요일 학식 메뉴◎' + sung[1].get_text())
@@ -369,6 +377,10 @@ def Sungrim_All():
 
 # 수림 학사 전체
 def Surim_All():
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    surim = soup.findAll("td", limit=8)
     messages = ''
 
     messages += ('◎월요일 학식 메뉴◎' + surim[1].get_text())
