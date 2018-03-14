@@ -11,6 +11,9 @@ from selenium import webdriver
 t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
 
+# 도서관.
+driver2 = webdriver.PhantomJS()
+driver2.get('https://library.seoultech.ac.kr/#/login')
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
@@ -22,17 +25,16 @@ def today():
 
 # 도서관 열람실 자리
 def Library_seat():
-    driver.get('https://library.seoultech.ac.kr/#/login')
-    time.sleep(1)
-    tag_id = driver.find_element_by_id('userid2')
+    tag_id = driver2.find_element_by_id('userid2')
     tag_id.send_keys("18510068")
-    tag_pw = driver.find_element_by_id('password2')
+    time.sleep(1)
+    tag_pw = driver2.find_element_by_id('password2')
     tag_pw.send_keys("answndud12#")
     tag_id.submit()
     time.sleep(2)
-    driver.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
+    driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
     time.sleep(2)
-    html = driver.page_source
+    html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
     seat = soup.select('.ikc-main span')
@@ -44,7 +46,8 @@ def Library_seat():
               "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[58].text + " 이용률 " + seat[60].text + \
               "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[74].text + " 이용률 " + seat[76].text + \
               "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[90].text + " 이용률 " + seat[92].text
-    return messages
+
+    return (messages)
 
 
 # kb 학사
