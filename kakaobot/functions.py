@@ -19,6 +19,23 @@ tag_id.send_keys("18510068")
 tag_pw = driver2.find_element_by_id('password2')
 tag_pw.send_keys("answndud12#")
 tag_id.submit()
+
+# 식단
+driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+html = driver.page_source
+soup = BeautifulSoup(html, 'html.parser')
+kb = soup.findAll("td", limit=8)
+
+driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
+html = driver.page_source
+soup = BeautifulSoup(html, 'html.parser')
+sung = soup.findAll("td", limit=8)
+
+driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
+html = driver.page_source
+soup = BeautifulSoup(html, 'html.parser')
+surim = soup.findAll("td", limit=8)
+
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
@@ -35,27 +52,21 @@ def Library_seat():
     time.sleep(2)
     html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
-
     seat = soup.select('.ikc-main span')
 
     messages = "◎도서관 열람실 사용 현황◎\n" \
-              "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[10].text + " 이용률 " + seat[12].text + \
-              "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[26].text + " 이용률 " + seat[28].text + \
-              "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[42].text + " 이용률 " + seat[44].text + \
-              "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[58].text + " 이용률 " + seat[60].text + \
-              "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[74].text + " 이용률 " + seat[76].text + \
-              "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[90].text + " 이용률 " + seat[92].text
+              "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[10].text + " 이용율 " + seat[12].text + \
+              "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[26].text + " 이용율 " + seat[28].text + \
+              "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[42].text + " 이용율 " + seat[44].text + \
+              "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[58].text + " 이용율 " + seat[60].text + \
+              "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[74].text + " 이용율 " + seat[76].text + \
+              "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[90].text + " 이용율 " + seat[92].text
 
     return (messages)
 
 
 # kb 학사
 def Kb_Dormitory():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    kb = soup.findAll("td", limit=8)
-
     r = today()
     messages = ''
 
@@ -89,11 +100,6 @@ def Kb_Dormitory():
 
 # 성림 학사
 def Sungrim_Dormitory():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    sung = soup.findAll("td", limit=8)
-
     r = today()
     messages = ''
 
@@ -127,11 +133,6 @@ def Sungrim_Dormitory():
 
 # 수림 학사
 def Surim_Dormitory():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    surim = soup.findAll("td", limit=8)
-
     r = today()
     messages = ''
 
@@ -342,11 +343,6 @@ def Food_two_tomorrow():
 
 #kb 학사 전체
 def KB_All():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    kb = soup.findAll("td", limit=8)
-
     messages = ''
 
     messages += ('◎월요일 학식 메뉴◎' + kb[1].get_text())
@@ -360,10 +356,6 @@ def KB_All():
 
 # 성림 학사 전체
 def Sungrim_All():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    sung = soup.findAll("td", limit=8)
     messages = ''
 
     messages += ('◎월요일 학식 메뉴◎' + sung[1].get_text())
@@ -377,10 +369,6 @@ def Sungrim_All():
 
 # 수림 학사 전체
 def Surim_All():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    surim = soup.findAll("td", limit=8)
     messages = ''
 
     messages += ('◎월요일 학식 메뉴◎' + surim[1].get_text())
