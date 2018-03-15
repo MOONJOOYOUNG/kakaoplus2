@@ -25,7 +25,6 @@ def dom_parser(string):
 
     parser = parser.replace(',', ' ')
     parser = parser.replace(', ', ' ')
-    parser = re.sub('[★]', '', parser)
     return parser
 
 def food_parser(string):

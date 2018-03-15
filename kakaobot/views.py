@@ -20,13 +20,14 @@ def on_message(request):
     content = request.JSON['content']  # photo 타입일 경우에는 이미지 URL
 
     if content.startswith('명령어'):
-        if content.startswith('명령어'):
-            response = '명령어는 " " 안에 있는 단어를 입력 하시면 됩니다. ex) -> 수림\n●명령어 리스트● \n' \
-                       '1.이번주 학식 메뉴 \n"케이비, 성림, 수림"\n' \
-                       '2.학교 교통 노선 \n"지하철, 버스"' \
-                       '\n3.네이버 실시간 검색\n"실시간,네이버"\n4.음악 검색 \n"뮤직 노래제목"' \
-                       ' ex)뮤직 박원'
-    #\n2.과기대 근처 밥집(밥집)\n3.오늘의 추천 식당(추천)
+        response = '명령어는 " " 안에 있는 단어를 입력 하시면 됩니다. ex) -> 수림\n●명령어 리스트● \n' \
+                   '1.이번주 학식 메뉴 \n"케이비, 성림, 수림"\n' \
+                   '2.학교 교통 노선 \n"지하철, 버스"' \
+                   '\n3.네이버 실시간 검색\n"실시간,네이버"\n4.음악 검색 \n"뮤직 노래제목"' \
+                   ' ex)뮤직 박원'
+
+    elif content.startswith('도서관 열람실 좌석 현황'):
+        response = functions.Library_seat()
 
     elif content.startswith('KB 학사 학식 메뉴'):
         response = functions.Kb_Dormitory()
