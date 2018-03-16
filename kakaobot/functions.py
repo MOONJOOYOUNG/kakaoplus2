@@ -30,14 +30,16 @@ def Library_seat():
         tag_pw = driver2.find_element_by_id('password2')
         tag_pw.send_keys("answndud12#")
         tag_id.submit()
+    time.sleep(1)
     driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
     print(driver2.current_url)
     time.sleep(2)
     html = driver2.page_source
     time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
+    print(soup)
     seat = soup.select('.ikc-main span')
-
+    print(seat)
     messages = "◎도서관 열람실 사용 현황◎\n" \
               "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[10].text + " 이용율 " + seat[12].text + \
               "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[26].text + " 이용율 " + seat[28].text + \
