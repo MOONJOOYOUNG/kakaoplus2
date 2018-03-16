@@ -30,11 +30,10 @@ def Library_seat():
         tag_pw = driver2.find_element_by_id('password2')
         tag_pw.send_keys("answndud12#")
         tag_id.submit()
-        time.sleep(1)
     driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
-    time.sleep(1)
-    html = driver2.page_source
     time.sleep(2)
+    html = driver2.page_source
+    time.sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
     seat = soup.select('.ikc-main span')
 
