@@ -33,8 +33,9 @@ def Library_seat():
         tag_id.submit()
         time.sleep(1)
     driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
-    time.sleep(2)
+    time.sleep(1)
     html = driver2.page_source
+    time.sleep(2)
     soup = BeautifulSoup(html, 'html.parser')
     seat = soup.select('.ikc-main span')
 
