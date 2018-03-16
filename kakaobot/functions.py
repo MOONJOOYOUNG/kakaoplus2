@@ -11,6 +11,9 @@ from selenium import webdriver
 t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
 
+driver2 = webdriver.PhantomJS()
+driver2.get('https://library.seoultech.ac.kr/#/login')
+
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
@@ -22,17 +25,16 @@ def today():
 
 # 도서관 열람실 자리
 def Library_seat():
-    driver.get('https://library.seoultech.ac.kr/#/login')
-    if(driver.find_element_by_id('userid2')):
-        tag_id = driver.find_element_by_id('userid2')
+    if(driver2.find_element_by_id('userid2')):
+        tag_id = driver2.find_element_by_id('userid2')
         tag_id.send_keys("18510068")
-        tag_pw = driver.find_element_by_id('password2')
+        tag_pw = driver2.find_element_by_id('password2')
         tag_pw.send_keys("answndud12#")
         tag_id.submit()
         time.sleep(1)
-    driver.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
-    time.sleep(1)
-    html = driver.page_source
+    driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
+    time.sleep(2)
+    html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
     seat = soup.select('.ikc-main span')
 
