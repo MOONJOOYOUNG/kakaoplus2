@@ -32,6 +32,7 @@ def today():
 
 # 도서관 열람실 자리
 def Library_seat():
+    time.sleep(1)
     driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
     time.sleep(1)
     html = driver2.page_source
