@@ -12,7 +12,6 @@ t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
 
 driver2 = webdriver.PhantomJS()
-driver2.get('https://library.seoultech.ac.kr/#/login')
 
 # 요일 구하기.
 def today():
@@ -25,6 +24,7 @@ def today():
 
 # 도서관 열람실 자리
 def Library_seat():
+    driver2.get('https://library.seoultech.ac.kr/#/login')
     if(driver2.find_element_by_id('userid2')):
         tag_id = driver2.find_element_by_id('userid2')
         tag_id.send_keys("18510068")
