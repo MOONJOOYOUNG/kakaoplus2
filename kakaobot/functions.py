@@ -24,8 +24,7 @@ def today():
 
 # 도서관 열람실 자리
 def Library_seat():
-    driver2.get('https://library.seoultech.ac.kr/#/login')
-    if(driver2.find_element_by_id('userid2')):
+    if(driver2.current_url=='https://library.seoultech.ac.kr/#/login'):
         tag_id = driver2.find_element_by_id('userid2')
         tag_id.send_keys("18510068")
         tag_pw = driver2.find_element_by_id('password2')
