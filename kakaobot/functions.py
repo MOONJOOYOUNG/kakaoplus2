@@ -30,9 +30,7 @@ def Library_seat():
         tag_pw = driver2.find_element_by_id('password')
         tag_pw.send_keys("answndud12#")
         tag_id.submit()
-        time.sleep(1)
     driver2.get('http://portal.seoultech.ac.kr/portal')
-    time.sleep(2)
     html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
     seat = soup.select('.gauge span')
