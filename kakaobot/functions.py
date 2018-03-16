@@ -31,6 +31,7 @@ def Library_seat():
         tag_pw.send_keys("answndud12#")
         tag_id.submit()
     driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
+    print(driver2.current_url)
     time.sleep(2)
     html = driver2.page_source
     time.sleep(1)
