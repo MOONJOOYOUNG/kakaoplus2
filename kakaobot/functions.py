@@ -33,7 +33,6 @@ def Library_seat():
     driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
     print(driver2.current_url)
     html = driver2.page_source
-    time.sleep(2)
     soup = BeautifulSoup(html, 'html.parser')
     time.sleep(1)
     seat = soup.select('.ikc-main span')
