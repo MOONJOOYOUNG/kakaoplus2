@@ -23,6 +23,7 @@ def today():
 # 도서관 열람실 자리
 def Library_seat():
     driver.get('https://library.seoultech.ac.kr/#/login')
+    time.sleep(1)
     if(driver.find_element_by_id('userid2')):
         tag_id = driver.find_element_by_id('userid2')
         tag_id.send_keys("18510068")
