@@ -24,7 +24,7 @@ def on_message(request):
                    '1.이번주 학식 메뉴 \n"케이비, 성림, 수림"\n' \
                    '2.학교 교통 노선 \n"지하철, 버스"' \
                    '\n3.네이버 실시간 검색\n"실시간,네이버"\n4.음악 검색 \n"뮤직 노래제목"' \
-                   ' ex)뮤직 박원'
+                   ' ex)뮤직 노력'
 
     elif content.startswith('도서관 열람실 좌석 현황'):
         response = functions.Library_seat()
@@ -75,14 +75,13 @@ def on_message(request):
     elif content.startswith('실시간') | content.startswith('네이버'):
         response = '네이버 실시간 검색어\n {}'.format(functions.naver_rank())
 
-    elif content.startswith('밥집'):
-        response = "과기대 근처 밥집 리스트 입니다.\n{}".format(functions.FoodList())
-
-    elif content.startswith('추천'):
-        response = "오늘의 추천 식당은 " + functions.NearCampus() + " 입니다."
-
     else:
-        response = '지원하는 명령어가 아닙니다. "명령어" 입력 시 지원되는 기능을 볼 수 있습니다.'
+        response = '지원하는 명령어가 아닙니다. "명령어" 입력 시 지원되는 기능을 볼 수 있습니다.\n' \
+                   '명령어는 " " 안에 있는 단어를 입력 하시면 됩니다. ex) -> 수림\n●명령어 리스트● \n' \
+                   '1.이번주 학식 메뉴 \n"케이비, 성림, 수림"\n' \
+                   '2.학교 교통 노선 \n"지하철, 버스"' \
+                   '\n3.네이버 실시간 검색\n"실시간,네이버"\n4.음악 검색 \n"뮤직 노래제목"' \
+                   ' ex)뮤직 노력'     
 
     return {
         'message': {
