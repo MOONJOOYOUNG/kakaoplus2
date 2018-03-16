@@ -35,7 +35,7 @@ def Library_seat():
     time.sleep(2)
     html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    seat = soup.select('.ikc-main span')
+    seat = soup.select('.gauge span')
     print(seat)
     messages = "◎도서관 열람실 사용 현황◎\n" \
                "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[0].text + \
