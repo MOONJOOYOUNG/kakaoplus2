@@ -12,7 +12,7 @@ t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
 
 driver2 = webdriver.PhantomJS()
-driver2.get('https://library.seoultech.ac.kr/#/login')
+driver2.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
@@ -24,28 +24,26 @@ def today():
 
 # 도서관 열람실 자리
 def Library_seat():
-    if(driver2.current_url=='https://library.seoultech.ac.kr/#/login'):
-        tag_id = driver2.find_element_by_id('userid2')
+    if(driver2.current_url=='http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
+        tag_id = driver2.find_element_by_id('userId')
         tag_id.send_keys("18510068")
-        tag_pw = driver2.find_element_by_id('password2')
+        tag_pw = driver2.find_element_by_id('password')
         tag_pw.send_keys("answndud12#")
         tag_id.submit()
         time.sleep(1)
-    driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
-    print(driver2.current_url)
+    driver2.get('http://portal.seoultech.ac.kr/portal')
     time.sleep(2)
     html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    print(soup)
     seat = soup.select('.ikc-main span')
     print(seat)
     messages = "◎도서관 열람실 사용 현황◎\n" \
-              "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[10].text + " 이용율 " + seat[12].text + \
-              "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[26].text + " 이용율 " + seat[28].text + \
-              "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[42].text + " 이용율 " + seat[44].text + \
-              "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[58].text + " 이용율 " + seat[60].text + \
-              "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[74].text + " 이용율 " + seat[76].text + \
-              "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[90].text + " 이용율 " + seat[92].text
+               "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[0].text + \
+               "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[1].text +  \
+               "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[2].text +  \
+               "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[3].text +  \
+               "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[4].text +  \
+               "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[5].text
 
     return (messages)
 
