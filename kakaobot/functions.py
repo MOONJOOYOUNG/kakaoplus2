@@ -52,6 +52,7 @@ def Library_seat():
 def Kb_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
     r = today()
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
@@ -90,6 +91,7 @@ def Kb_Dormitory():
 def Sungrim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
     r = today()
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
@@ -128,6 +130,7 @@ def Sungrim_Dormitory():
 def Surim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
     r = today()
+    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
