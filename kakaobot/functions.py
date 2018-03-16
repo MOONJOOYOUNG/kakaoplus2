@@ -11,6 +11,9 @@ from selenium import webdriver
 t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
 
+while(1):
+    print("a")
+
 driver2 = webdriver.PhantomJS()
 driver2.get('https://library.seoultech.ac.kr/#/login')
 # 요일 구하기.
