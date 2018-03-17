@@ -90,7 +90,7 @@ def on_message(request):
                    '정문-다산관-붕어방-다산관-주차로터리')
 
     elif content.startswith('네이버 실시간 검색어'):
-        response = ('네이버 실시간 검색어\n {}'.format(functions.naver_rank()))
+        response = functions.naver_rank()
 
     else:
         response = ('지원하는 명령어가 아닙니다.')
