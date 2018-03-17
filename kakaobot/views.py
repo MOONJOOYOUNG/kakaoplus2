@@ -10,7 +10,7 @@ from . import functions
 def on_init(request):
     return {
         'message': {
-            'text': response,
+            "type": "text"
         },
         'keyboard': {
             'type': 'buttons',
