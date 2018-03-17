@@ -11,15 +11,8 @@ from selenium import webdriver
 t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
 
-# 도서관.
 driver2 = webdriver.PhantomJS()
-driver2.get('https://library.seoultech.ac.kr/#/login')
-tag_id = driver2.find_element_by_id('userid2')
-tag_id.send_keys("18510068")
-tag_pw = driver2.find_element_by_id('password2')
-tag_pw.send_keys("answndud12#")
-tag_id.submit()
-
+driver2.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
@@ -29,22 +22,24 @@ def today():
 
     return r
 
-# 도서관 열람실 자리
 def Library_seat():
-    time.sleep(1)
-    driver2.get('https://library.seoultech.ac.kr/#/smuf/seat/status')
-    time.sleep(2)
+    if(driver2.current_url=='http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
+        tag_id = driver2.find_element_by_id('userId')
+        tag_id.send_keys("18510068")
+        tag_pw = driver2.find_element_by_id('password')
+        tag_pw.send_keys("answndud12#")
+        tag_id.submit()
+    driver2.get('http://portal.seoultech.ac.kr/portal')
     html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    seat = soup.select('.ikc-main span')
-
+    seat = soup.select('.gauge span')
     messages = "◎도서관 열람실 사용 현황◎\n" \
-              "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[10].text + " 이용율 " + seat[12].text + \
-              "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[26].text + " 이용율 " + seat[28].text + \
-              "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[42].text + " 이용율 " + seat[44].text + \
-              "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[58].text + " 이용율 " + seat[60].text + \
-              "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[74].text + " 이용율 " + seat[76].text + \
-              "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[90].text + " 이용율 " + seat[92].text
+               "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[0].text + \
+               "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[1].text +  \
+               "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[2].text +  \
+               "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[3].text +  \
+               "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[4].text +  \
+               "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[5].text
 
     return (messages)
 
@@ -52,12 +47,10 @@ def Library_seat():
 # kb 학사
 def Kb_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
-    time.sleep(1)
+    r = today()
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
-
-    r = today()
     messages = ''
 
     if t[r] == '월':
@@ -91,12 +84,10 @@ def Kb_Dormitory():
 # 성림 학사
 def Sungrim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
-    time.sleep(1)
+    r = today()
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
-
-    r = today()
     messages = ''
 
     if t[r] == '월':
@@ -130,12 +121,10 @@ def Sungrim_Dormitory():
 # 수림 학사
 def Surim_Dormitory():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
-    time.sleep(1)
+    r = today()
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
-
-    r = today()
     messages = ''
 
     if t[r] == '월':
@@ -346,7 +335,6 @@ def Food_two_tomorrow():
 #kb 학사 전체
 def KB_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
-    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
@@ -365,7 +353,6 @@ def KB_All():
 # 성림 학사 전체
 def Sungrim_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
-    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
@@ -383,7 +370,6 @@ def Sungrim_All():
 # 수림 학사 전체
 def Surim_All():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
-    time.sleep(1)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
@@ -434,25 +420,4 @@ def melon_search(query):
         message = '검색어 "{}"에 대한 노래 검색결과가 없습니다.'.format(query)
     return message
 
-def NearCampus():
-    idx = random.randint(0, 35)
-    a = ['원화루', '미가', '문희네', '예다랑', '도스마스', '213버거', '맘스터치', '할머니국밥', '엉터리생고기', '안동찜닭', '그린토마토', '지지고', '서브웨이',
-         '알촌',
-         '돈다리', '일미닭갈비', '낭만순두부', '해뜨는집', '솔뫼해장국', '오늘은닭', '통통우동&컵밥', '강청골 순대국밥', '솔바람 꽃내음', '마루',
-         '민동', '엽기떡볶이', '빨봉분식', '우리들족발', '고향집', '고향의맛', '덤', '또또와 식당', '할머니 족발보쌈', '뒤집어진 뚝배기', '피자스쿨', '도깨비장터']
-    return a[idx]
 
-def FoodList():
-    message = ''
-    a = ['원화루', '미가', '문희네', '예다랑', '도스마스', '213버거', '맘스터치', '할머니국밥', '엉터리생고기', '안동찜닭', '그린토마토', '지지고', '서브웨이',
-         '알촌',
-         '돈다리', '일미닭갈비', '낭만순두부', '해뜨는집', '솔뫼해장국', '오늘은닭', '통통우동&컵밥', '강청골 순대국밥', '솔바람 꽃내음', '마루',
-         '민동', '엽기떡볶이', '빨봉분식', '우리들족발', '고향집', '고향의맛', '덤', '또또와 식당', '할머니 족발보쌈', '뒤집어진 뚝배기', '피자스쿨', '도깨비장터']
-
-    for idx, tag in enumerate(a, 1):
-        message += (str(idx) + '.' + a[idx - 1] + " ")
-
-    messages = message.replace("'", '')
-    messages = message.replace(",", ' ')
-
-    return messages
