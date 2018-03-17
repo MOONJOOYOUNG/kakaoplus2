@@ -52,7 +52,6 @@ def Kb_Dormitory():
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
-    print(kb)
     messages = ''
 
     if t[r] == '월':
@@ -90,7 +89,6 @@ def Sungrim_Dormitory():
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
-    print(sung)
     messages = ''
 
     if t[r] == '월':
@@ -128,7 +126,6 @@ def Surim_Dormitory():
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
-    print(surim)
     messages = ''
 
     if t[r] == '월':
