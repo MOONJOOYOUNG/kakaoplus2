@@ -22,7 +22,6 @@ def today():
 
     return r
 
-# 도서관 열람실 자리
 def Library_seat():
     if(driver2.current_url=='http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
         tag_id = driver2.find_element_by_id('userId')
