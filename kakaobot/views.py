@@ -30,13 +30,13 @@ def on_message(request):
                    '\n3.네이버 실시간 검색\n"실시간,네이버"\n4.음악 검색 \n"뮤직 노래제목"' \
                    ' ex)뮤직 노력')
     elif content.startswith('식단'):
-        return response({
+        return ({
 			'message':{
 				'text':'장소를 골라주세요.'
 			},
 			'keyboard':{
 				'type':'buttons',
-				'buttons':['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴']
+				'buttons':['제1후생관', '제2후생관', '제3후생관', '상록회관', '생활과학대학', '처음으로']
 			}
 		})
     elif content.startswith('도서관 열람실 좌석 현황'):
