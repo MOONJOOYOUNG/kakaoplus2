@@ -30,7 +30,7 @@ def on_message(request):
                    '\n3.네이버 실시간 검색\n"실시간,네이버"\n4.음악 검색 \n"뮤직 노래제목"' \
                    ' ex)뮤직 노력')
     elif content.startswith('식단'):
-        return JsonResponse({
+        return response({
 			'message':{
 				'text':'장소를 골라주세요.'
 			},
