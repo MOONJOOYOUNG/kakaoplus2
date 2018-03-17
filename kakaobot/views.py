@@ -12,7 +12,7 @@ def on_init(request):
         'type': 'text',
         'keyboard': {
             'type': 'buttons',
-            'buttons' : ['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴'
+            'buttons' : ['식단','KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴'
                 , '도서관 열람실 좌석 현황', '명령어']
         }
  }
@@ -29,7 +29,16 @@ def on_message(request):
                    '2.학교 교통 노선 \n"지하철, 버스"' \
                    '\n3.네이버 실시간 검색\n"실시간,네이버"\n4.음악 검색 \n"뮤직 노래제목"' \
                    ' ex)뮤직 노력')
-
+    elif content.startswith('식단'):
+        return JsonResponse({
+			'message':{
+				'text':'장소를 골라주세요.'
+			},
+			'keyboard':{
+				'type':'buttons',
+				'buttons':['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴']
+			}
+		})
     elif content.startswith('도서관 열람실 좌석 현황'):
         response = functions.Library_seat()
 
@@ -93,7 +102,7 @@ def on_message(request):
         },
         'keyboard': {
             'type': 'buttons',
-            'buttons' : ['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴'
+            'buttons' : ['식단','KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴'
                 , '도서관 열람실 좌석 현황', '명령어']
         }
     }
