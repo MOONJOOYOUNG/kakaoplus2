@@ -36,7 +36,7 @@ def on_message(request):
 			},
 			'keyboard':{
 				'type':'buttons',
-				'buttons':['제1후생관', '제2후생관', '제3후생관', '상록회관', '생활과학대학', '처음으로']
+				'buttons':['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴']
 			}
 		})
     elif content.startswith('도서관 열람실 좌석 현황'):
