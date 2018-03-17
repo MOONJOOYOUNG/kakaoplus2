@@ -9,9 +9,7 @@ from . import functions
 @bot
 def on_init(request):
     return {
-        'message': {
-            "type": "text"
-        },
+        'type': 'text',
         'keyboard': {
             'type': 'buttons',
             'buttons' : ['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','내일 제2 학생 식당 메뉴'
