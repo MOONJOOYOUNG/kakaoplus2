@@ -9,7 +9,7 @@ from . import functions
 @bot
 def on_init(request):
     return {'type' : 'buttons',
-            'buttons' : ['오늘 식단표','이번주 식단표','도서관 열람실 좌석 현황','네이버 실시간 검색어']
+            'buttons' : ['오늘 식단표','이번주 식단표','도서관 열람실 좌석 현황','버스 정류장','네이버 실시간 검색어']
  }
 
 @bot
@@ -45,7 +45,17 @@ def on_message(request):
 				'buttons':['케이비','성림', '수림','제2 학생 식당']
 			}
 		})
-   
+
+   elif content.startswith('버스 정류장'):
+        return ({
+			'message':{
+				'text':'장소를 골라주세요.'
+			},
+			'keyboard':{
+				'type':'buttons',
+				'buttons':['공릉역 2번 출구','석계역 1번 출구', '과기대 붕어방']
+			}
+		})   
 
     elif content.startswith('도서관 열람실 좌석 현황'):
         response = functions.Library_seat()
@@ -101,7 +111,7 @@ def on_message(request):
         },
         'keyboard': {
             'type': 'buttons',
-            'buttons' : ['오늘 식단표','이번주 식단표','도서관 열람실 좌석 현황','네이버 실시간 검색어']
+            'buttons' : ['오늘 식단표','이번주 식단표','도서관 열람실 좌석 현황','버스 정류장','네이버 실시간 검색어']
         }
     }
 
