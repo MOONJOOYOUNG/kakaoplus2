@@ -22,6 +22,30 @@ def today():
 
     return r
 
+#버스정류장
+#공릉역
+def bus_Gongneung():
+    driver.get('https://m.map.naver.com/bus/station.nhn?stationID=124079')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    bus = soup.select('.end_list_info span')
+
+    messages = ''
+    messages = '◎공릉역 2번출구◎\n' + '☞노원 03번 버스☜\n' + bus[1].get_text() + \
+               '\n☞노원 13번 버스☜\n' + bus[5].get_text()
+    return messages
+#붕어방
+def bus_bnag():
+    driver.get('https://m.map.naver.com/bus/station.nhn?stationID=81706&busID=566')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    bus = soup.select('.end_list_info span')
+
+    messages = ''
+    messages = '◎과기대 붕어방◎\n' + '☞노원 13번 버스☜\n' + bus[1].get_text()
+    return messages
+
+#열람실
 def Library_seat():
     if(driver2.current_url=='http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
         tag_id = driver2.find_element_by_id('userId')
