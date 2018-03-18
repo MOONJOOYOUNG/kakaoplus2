@@ -53,7 +53,7 @@ def on_message(request):
 			},
 			'keyboard':{
 				'type':'buttons',
-				'buttons':['공릉역 2번 출구','석계역 1번 출구', '과기대 붕어방']
+				'buttons':['공릉역 2번 출구', '과기대 붕어방']
 			}
 		})   
 
@@ -87,18 +87,12 @@ def on_message(request):
     elif content.startswith('성림'):
         response = functions.Sungrim_All()
 
-    elif content.startswith('지하철'):
-        response = ('●7호선 공릉역 2번 출구●\n' \
-                   '마을버스 03번, 13번(교내 경유)\n' \
-                   '●1, 6호선 석계역 1,4,6번 출구●\n' \
-                   '마을버스 03번, 13번(교내 경유)')
+    elif content.startswith('공릉역 2번 출구'):
+        response = functions.bus_Gongneung()
 
-    elif content.startswith('버스'):
-        response = ('●지선버스(초록버스)●\n1136번,1141번,1224번,1227번\n' \
-                   '●마을버스 - 03번●\n' \
-                   '●교내 경유 마을버스 - 13번●\n' \
-                   '정문-다산관-붕어방-다산관-주차로터리')
-
+    elif content.startswith('과기대 붕어방'):
+        response = functions.bus_bnag()
+	
     elif content.startswith('네이버 실시간 검색어'):
         response = functions.naver_rank()
 
