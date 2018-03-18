@@ -46,7 +46,7 @@ def on_message(request):
 			}
 		})
 
-   elif content.startswith('버스 정류장'):
+    elif content.startswith('버스 정류장'):
         return ({
 			'message':{
 				'text':'장소를 골라주세요.'
