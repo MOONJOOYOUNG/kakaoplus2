@@ -446,7 +446,6 @@ def naver_rank():
     html = requests.get('http://naver.com').text
     soup = BeautifulSoup(html, 'html.parser')
     tag_list = soup.select('.PM_CL_realtimeKeyword_rolling .ah_item .ah_k')
-    print(tag_list[0].get_text())
     message = '◎네이버 실시간 검색어◎\n'
     for i in range(20):
         message += str(i + 1) + '.' + tag_list[i].get_text() + '\n'
