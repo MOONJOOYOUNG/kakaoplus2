@@ -67,16 +67,34 @@ def Library_seat():
 
     return (messages)
 
-
-# kb 학사
-def Kb_Dormitory():
+def get_kb():
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
-    r = today()
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
-    messages = ''
+    return kb
 
+def get_sung():
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    sung = soup.findAll("td", limit=8)
+    return sung
+
+def get_surim():
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    surim = soup.findAll("td", limit=8)
+    return surim
+
+kb = get_kb()
+sung = get_sung()
+surim = get_surim()
+
+def Kb_Dormitory():
+    r = today()
+    messages = ''
     if t[r] == '월':
         messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[1].get_text())
         return parser.dom_parser(messages)
@@ -102,16 +120,14 @@ def Kb_Dormitory():
         return parser.dom_parser(messages)
 
     elif t[r] == '일':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[7].get_text())
+        messages += ("식단표가 업데이트 되어 저번주 식단표로 확인해주세요.")
+        get_kb()
         return parser.dom_parser(messages)
+
 
 # 성림 학사
 def Sungrim_Dormitory():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
     r = today()
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    sung = soup.findAll("td", limit=8)
     messages = ''
 
     if t[r] == '월':
@@ -139,16 +155,14 @@ def Sungrim_Dormitory():
         return parser.dom_parser(messages)
 
     elif t[r] == '일':
-        messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[7].get_text())
+        messages += ("식단표가 업데이트 되어 저번주 식단표로 확인해주세요.")
+        get_sung()
         return parser.dom_parser(messages)
+
 
 # 수림 학사
 def Surim_Dormitory():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
     r = today()
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    surim = soup.findAll("td", limit=8)
     messages = ''
 
     if t[r] == '월':
@@ -176,7 +190,8 @@ def Surim_Dormitory():
         return parser.dom_parser(messages)
 
     elif t[r] == '일':
-        messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[7].get_text())
+        messages += ("식단표가 업데이트 되어 저번주 식단표로 확인해주세요.")
+        get_surim()
         return parser.dom_parser(messages)
 
 # 제 2학생 식단
@@ -311,15 +326,9 @@ def Food_two_tomorrow():
 
     return parser.food_parser(messages)
 
-#kb 학사 전체
+# kb 학사 전체
 def KB_All():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    kb = soup.findAll("td", limit=8)
-
     messages = ''
-
     messages += ('◎월요일 학식 메뉴◎' + kb[1].get_text())
     messages += ('◎화요일 학식 메뉴◎' + kb[2].get_text())
     messages += ('◎수요일 학식 메뉴◎' + kb[3].get_text())
@@ -329,14 +338,10 @@ def KB_All():
     messages += ('◎일요일 학식 메뉴◎' + kb[7].get_text())
     return parser.dom_parser(messages)
 
+
 # 성림 학사 전체
 def Sungrim_All():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    sung = soup.findAll("td", limit=8)
     messages = ''
-
     messages += ('◎월요일 학식 메뉴◎' + sung[1].get_text())
     messages += ('◎화요일 학식 메뉴◎' + sung[2].get_text())
     messages += ('◎수요일 학식 메뉴◎' + sung[3].get_text())
@@ -346,14 +351,10 @@ def Sungrim_All():
     messages += ('◎일요일 학식 메뉴◎' + sung[7].get_text())
     return parser.dom_parser(messages)
 
+
 # 수림 학사 전체
 def Surim_All():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    surim = soup.findAll("td", limit=8)
     messages = ''
-
     messages += ('◎월요일 학식 메뉴◎' + surim[1].get_text())
     messages += ('◎화요일 학식 메뉴◎' + surim[2].get_text())
     messages += ('◎수요일 학식 메뉴◎' + surim[3].get_text())
