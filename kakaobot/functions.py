@@ -81,7 +81,7 @@ sung_idx = 0
 surim_idx = 0
 # kb 학사
 def Kb_Dormitory():
-    global  kb_idx
+    global  kb_idx, kb
     r = today()
     messages = ''
 
@@ -124,7 +124,7 @@ def Kb_Dormitory():
 
 # 성림 학사
 def Sungrim_Dormitory():
-    global sung_idx
+    global sung_idx,sung
     r = today()
     messages = ''
 
@@ -167,7 +167,7 @@ def Sungrim_Dormitory():
 
 # 수림 학사
 def Surim_Dormitory():
-    global surim_idx
+    global surim_idx,surim
     r = today()
     messages = ''
     if(surim_idx == 0):
