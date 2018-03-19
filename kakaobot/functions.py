@@ -10,9 +10,12 @@ from selenium import webdriver
 #선언부
 t = ['월', '화', '수', '목', '금', '토', '일']
 #크롤링
+
 driver = webdriver.PhantomJS()
+
 #도서관
-driver.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
+driver2 = webdriver.PhantomJS()
+driver2.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
 
 # 요일 구하기.
 def today():
@@ -48,14 +51,14 @@ def bus_bnag():
 
 #열람실
 def Library_seat():
-    if(driver.current_url=='http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
-        tag_id = driver.find_element_by_id('userId')
+    if(driver2.current_url=='http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
+        tag_id = driver2.find_element_by_id('userId')
         tag_id.send_keys("18510068")
-        tag_pw = driver.find_element_by_id('password')
+        tag_pw = driver2.find_element_by_id('password')
         tag_pw.send_keys("answndud12#")
         tag_id.submit()
-    driver.get('http://portal.seoultech.ac.kr/portal')
-    html = driver.page_source
+    driver2.get('http://portal.seoultech.ac.kr/portal')
+    html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
     seat = soup.select('.gauge span')
     messages = "◎도서관 열람실 사용 현황◎\n" \
