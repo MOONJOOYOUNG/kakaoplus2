@@ -384,6 +384,7 @@ def Food_two_tomorrow():
 
 # kb 학사 전체
 def KB_All():
+    global kb
     if (kb_idx == 0):
         driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
         html = driver.page_source
@@ -403,6 +404,7 @@ def KB_All():
 
 # 성림 학사 전체
 def Sungrim_All():
+    global sung
     if(sung_idx==0):
         driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
         html = driver.page_source
@@ -423,6 +425,7 @@ def Sungrim_All():
 
 # 수림 학사 전체
 def Surim_All():
+    global surim
     if(surim_idx == 0):
         driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
         html = driver.page_source
