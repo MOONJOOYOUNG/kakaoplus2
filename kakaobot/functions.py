@@ -410,7 +410,6 @@ def Sungrim_All():
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser')
         sung = soup.findAll("td", limit=8)
-        sung_idx = 1
         
     messages = ''
     messages += ('◎월요일 학식 메뉴◎' + sung[1].get_text())
