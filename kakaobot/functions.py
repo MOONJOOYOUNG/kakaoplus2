@@ -12,7 +12,6 @@ t = ['월', '화', '수', '목', '금', '토', '일']
 #크롤링
 
 driver = webdriver.PhantomJS()
-
 #도서관
 driver2 = webdriver.PhantomJS()
 driver2.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
