@@ -403,7 +403,7 @@ def KB_All():
 
 # 성림 학사 전체
 def Sungrim_All():
-     if(sung_idx==0):
+    if(sung_idx==0):
         driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser')
