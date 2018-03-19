@@ -11,10 +11,8 @@ from selenium import webdriver
 t = ['월', '화', '수', '목', '금', '토', '일']
 #크롤링
 driver = webdriver.PhantomJS()
-
 #도서관
-driver2 = webdriver.PhantomJS()
-driver2.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
+driver.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
 
 # 요일 구하기.
 def today():
@@ -50,14 +48,14 @@ def bus_bnag():
 
 #열람실
 def Library_seat():
-    if(driver2.current_url=='http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
-        tag_id = driver2.find_element_by_id('userId')
+    if(driver.current_url=='http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
+        tag_id = driver.find_element_by_id('userId')
         tag_id.send_keys("18510068")
-        tag_pw = driver2.find_element_by_id('password')
+        tag_pw = driver.find_element_by_id('password')
         tag_pw.send_keys("answndud12#")
         tag_id.submit()
-    driver2.get('http://portal.seoultech.ac.kr/portal')
-    html = driver2.page_source
+    driver.get('http://portal.seoultech.ac.kr/portal')
+    html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     seat = soup.select('.gauge span')
     messages = "◎도서관 열람실 사용 현황◎\n" \
@@ -72,8 +70,8 @@ def Library_seat():
 
 # kb 학사
 def Kb_Dormitory():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
     r = today()
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
@@ -109,8 +107,8 @@ def Kb_Dormitory():
 
 # 성림 학사
 def Sungrim_Dormitory():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
     r = today()
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
@@ -146,8 +144,8 @@ def Sungrim_Dormitory():
 
 # 수림 학사
 def Surim_Dormitory():
-    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
     r = today()
+    driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
