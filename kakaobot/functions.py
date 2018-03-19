@@ -384,6 +384,12 @@ def Food_two_tomorrow():
 
 # kb 학사 전체
 def KB_All():
+    if (kb_idx == 0):
+        driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+        html = driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        kb = soup.findAll("td", limit=8)
+        
     messages = ''
     messages += ('◎월요일 학식 메뉴◎' + kb[1].get_text())
     messages += ('◎화요일 학식 메뉴◎' + kb[2].get_text())
@@ -397,6 +403,13 @@ def KB_All():
 
 # 성림 학사 전체
 def Sungrim_All():
+     if(sung_idx==0):
+        driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
+        html = driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        sung = soup.findAll("td", limit=8)
+        sung_idx = 1
+        
     messages = ''
     messages += ('◎월요일 학식 메뉴◎' + sung[1].get_text())
     messages += ('◎화요일 학식 메뉴◎' + sung[2].get_text())
@@ -410,6 +423,12 @@ def Sungrim_All():
 
 # 수림 학사 전체
 def Surim_All():
+    if(surim_idx == 0):
+        driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
+        html = driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        surim = soup.findAll("td", limit=8)
+        
     messages = ''
 
     messages += ('◎월요일 학식 메뉴◎' + surim[1].get_text())
