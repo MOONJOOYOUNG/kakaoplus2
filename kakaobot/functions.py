@@ -9,13 +9,10 @@ from selenium import webdriver
 
 #선언부
 t = ['월', '화', '수', '목', '금', '토', '일']
-#크롤링
-
 driver = webdriver.PhantomJS()
-#도서관
+
 driver2 = webdriver.PhantomJS()
 driver2.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
-
 # 요일 구하기.
 def today():
     utcnow = datetime.datetime.utcnow()
@@ -70,10 +67,11 @@ def Library_seat():
 
     return (messages)
 
+
 # kb 학사
 def Kb_Dormitory():
-    r = today()
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=kb')
+    r = today()
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     kb = soup.findAll("td", limit=8)
@@ -109,8 +107,8 @@ def Kb_Dormitory():
 
 # 성림 학사
 def Sungrim_Dormitory():
-    r = today()
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=sung')
+    r = today()
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     sung = soup.findAll("td", limit=8)
@@ -146,8 +144,8 @@ def Sungrim_Dormitory():
 
 # 수림 학사
 def Surim_Dormitory():
-    r = today()
     driver.get('http://domi.seoultech.ac.kr/support/food/?foodtype=surim')
+    r = today()
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     surim = soup.findAll("td", limit=8)
