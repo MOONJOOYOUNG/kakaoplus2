@@ -41,7 +41,7 @@ def bus_Gongneung():
     soup = BeautifulSoup(html, 'html.parser')
     bus = soup.select('.end_list_info span')
 
-    messages = ''은
+    messages = ''
     messages = '◎공릉역 2번출구◎\n' + '☞노원 03번 버스☜\n' + bus[1].get_text() + \
                '\n☞노원 13번 버스☜\n' + bus[5].get_text()
     return messages
