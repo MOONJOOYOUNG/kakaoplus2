@@ -50,7 +50,7 @@ def bus_Gongneung():
 
 # 붕어방
 def bus_bnag():
-    driver.get('https://m.map.daum.net/actions/busStationInfo?busStopId=BS115424&busId=B9865&busOrder=8')
+    driver.get('https://m.map.daum.net/actions/busStationInfo?busStopId=BS155715&busId=B15040&busOrder=13')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     bus = soup.select('.list_content_wrap span.info_situation')
