@@ -41,7 +41,7 @@ def bus_Gongneung():
     soup = BeautifulSoup(html, 'html.parser')
     bus = soup.select('.end_list_info span')
 
-    messages = ''
+    messages = ''은
     messages = '◎공릉역 2번출구◎\n' + '☞노원 03번 버스☜\n' + bus[1].get_text() + \
                '\n☞노원 13번 버스☜\n' + bus[5].get_text()
     return messages
@@ -280,7 +280,7 @@ def TechPark():
         return messages
 
     elif t[r] == '일':
-        messages += ('토요일 제공하지 않습니다.\n')
+        messages += ('일요일은 제공하지 않습니다.\n')
         return messages
     
 
@@ -377,11 +377,11 @@ def Food_two():
         return parser.food_parser(messages)
 
     elif t[r] == '토':
-        messages += ('토요일 제공하지 않습니다.\n')
+        messages += ('토요일은 제공하지 않습니다.\n')
         return messages
 
     elif t[r] == '일':
-        messages += ('토요일 제공하지 않습니다.\n')
+        messages += ('일요일은 제공하지 않습니다.\n')
         return messages
 
 
