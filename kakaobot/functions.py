@@ -60,8 +60,7 @@ def bus_bnag():
 
 #과기대 정문
 def front_door():
-    driver.get('https://m.map.daum.net/actions/busStationInfo?busStopId=11110561014')
-    html = driver.page_source
+    html = requests.get('https://m.map.daum.net/actions/busStationInfo?busStopId=11110561014').text
     soup = BeautifulSoup(html, 'html.parser')
     bus = soup.select('.list_content_wrap span.info_situation')
 
@@ -72,8 +71,7 @@ def front_door():
 
 #과기대 정문 GS 방면
 def front_door_gs():
-    driver.get('https://m.map.daum.net/actions/busStationInfo?busStopId=11110561007')
-    html = driver.page_source
+    html = requests.get('https://m.map.daum.net/actions/busStationInfo?busStopId=11110561007').text
     soup = BeautifulSoup(html, 'html.parser')
     bus = soup.select('.list_content_wrap span.info_situation')
 
