@@ -242,7 +242,7 @@ def Surim_Dormitory():
 
 # 제 2학생 식단
 def Food_two():
-    html = requests.get('http://coop.seoultech.ac.kr/bbs/board.php?bo_table=restaurant2&wr_id=101').text
+    html = requests.get('http://coop.seoultech.ac.kr/bbs/board.php?bo_table=restaurant2&wr_id=102').text
     soup = BeautifulSoup(html, 'html.parser')
     food_two = soup.findAll("td", limit=130)
 
@@ -342,7 +342,7 @@ def Food_two():
 
 
 def Food_two_tomorrow():
-    html = requests.get('http://coop.seoultech.ac.kr/bbs/board.php?bo_table=restaurant2&wr_id=101').text
+    html = requests.get('http://coop.seoultech.ac.kr/bbs/board.php?bo_table=restaurant2&wr_id=102').text
     soup = BeautifulSoup(html, 'html.parser')
     food_two = soup.findAll("td", limit=130)
 
