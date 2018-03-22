@@ -35,28 +35,27 @@ def bus_parser(string):
 
 
 # 버스정류장
-# 공릉역
 def bus_Gongneung():
-    driver.get('https://m.map.daum.net/actions/busStationInfo?busStopId=BS115424&busId=B9865&busOrder=8')
+    driver.get('https://m.map.naver.com/bus/station.nhn?stationID=124079')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    bus = soup.select('.list_content_wrap span.info_situation')
+    bus = soup.select('.end_list_info span')
 
-    messages = '◎공릉역 2번 출구◎\n' + '☞지선 1136번 버스☜\n' + (bus_parser(bus[0].getText())) + \
-               '\n☞노원 03번 버스☜\n' + (bus_parser(bus[1].getText())) + '\n☞노원 04번 버스☜\n' + (
-               bus_parser(bus[2].getText())) + \
-               '\n☞노원 01번 버스☜\n' + (bus_parser(bus[3].getText()))
-    return (messages)
+    messages = ''
+    messages = '◎공릉역 2번출구◎\n' + '☞노원 03번 버스☜\n' + bus[1].get_text() + \
+               '\n☞노원 13번 버스☜\n' + bus[5].get_text()
+    return messages
 
 # 붕어방
 def bus_bnag():
-    driver.get('https://m.map.daum.net/actions/busStationInfo?busStopId=BS155715&busId=B15040&busOrder=13')
+    driver.get('https://m.map.naver.com/bus/station.nhn?stationID=81706&busID=566')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    bus = soup.select('.list_content_wrap span.info_situation')
+    bus = soup.select('.end_list_info span')
 
-    messages = '◎과기대 붕어방◎\n' + '☞마을 13번 버스☜\n' + (bus_parser(bus[0].getText()))
-    return (messages)
+    messages = ''
+    messages = '◎과기대 붕어방◎\n' + '☞노원 13번 버스☜\n' + bus[1].get_text()
+    return messages
 
 #과기대 정문
 def front_door():
