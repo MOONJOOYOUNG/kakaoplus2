@@ -53,7 +53,7 @@ def on_message(request):
 			},
 			'keyboard':{
 				'type':'buttons',
-				'buttons':['공릉역 2번 출구', '과기대 붕어방','과기대 정문','과기대 정문(GS 편의점']
+				'buttons':['공릉역 2번 출구', '과기대 붕어방','과기대 정문','과기대 정문(GS 편의점)']
 			}
 		})   
 
