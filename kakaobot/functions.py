@@ -235,7 +235,54 @@ def Surim_Dormitory():
         messages += '식단표가 다음주 식단표로 업데이트 되었습니다. 저번주 식단표를 확인해 주세요.'
         surim_idx = 0
         return parser.dom_parser(messages)
+#테크노 파크 파서
+def park_parser(string):
+    parser = string.replace('        ', '')
+    parser = parser.replace('\n', '')
+    return parser
 
+#테크노 파크 식단
+def TechPark():
+    html = requests.get('https://bds.bablabs.com/restaurants/LTI0NTI2NjU2?campus_id=o8RPQZ7Zme').text
+    soup = BeautifulSoup(html, 'html.parser')
+    park = soup.select('.card-body span')
+
+    r = today()
+    messages = ''
+
+    if t[r] == '월':
+        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+        return (messages)
+
+    elif t[r] == '화':
+        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+        return (messages)
+
+    elif t[r] == '수':
+        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+        return (messages)
+
+    elif t[r] == '목':
+        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+        return (messages)
+
+    elif t[r] == '금':
+        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+        return (messages)
+
+    elif t[r] == '토':
+        messages += ('토요일 제공하지 않습니다.\n')
+        return messages
+
+    elif t[r] == '일':
+        messages += ('토요일 제공하지 않습니다.\n')
+        return messages
+    
 
 # 제 2학생 식단
 def Food_two():
