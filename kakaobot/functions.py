@@ -224,7 +224,7 @@ def Surim_Dormitory():
 
     elif t[r] == '목':
         messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[4].get_text())
-        return parser.ser(messages)
+        return parser.dom_parser(messages)
 
     elif t[r] == '금':
         messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[5].get_text())
