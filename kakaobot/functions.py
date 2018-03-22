@@ -83,10 +83,8 @@ def front_door_gs():
 # 열람실
 def Library_seat():
     if (driver2.current_url == 'http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
-        tag_id = driver2.find_element_by_id('userId')
-        tag_id.send_keys("18510068")
-        tag_pw = driver2.find_element_by_id('password')
-        tag_pw.send_keys("answndud12#")
+        tag_id = driver2.find_element_by_id('userId').send_keys("18510068")
+        tag_pw = driver2.find_element_by_id('password').send_keys("answndud12#")
         tag_id.submit()
     driver2.get('http://portal.seoultech.ac.kr/portal')
     html = driver2.page_source
