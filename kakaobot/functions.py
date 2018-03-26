@@ -104,10 +104,13 @@ def Library_seat():
 kb = ''
 surim = ''
 sung = ''
+food_two = ''
 
 kb_idx = 0
 sung_idx = 0
 surim_idx = 0
+food_two_idx = 0
+
 # kb 학사
 def Kb_Dormitory():
     global  kb_idx, kb
@@ -285,11 +288,16 @@ def TechPark():
 
 # 제 2학생 식단
 def Food_two():
-    html = requests.get('http://coop.seoultech.ac.kr/bbs/board.php?bo_table=restaurant2&wr_id=102').text
-    soup = BeautifulSoup(html, 'html.parser')
-    food_two = soup.findAll("td", limit=130)
-
+    global  food_two, food_two_idx
     r = today()
+        
+    if(student_two_idx == 0):
+        driver.get('http://www.seoultech.ac.kr/life/student/food/')
+        html = driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        food_two = soup.select(".dts_design td", limit=130)
+        food_two_idx = 1
+
     messages = ''
 
     if t[r] == '월':
@@ -381,13 +389,17 @@ def Food_two():
 
     elif t[r] == '일':
         messages += ('일요일은 제공하지 않습니다.\n')
+        food_two_idx = 0
         return messages
 
 
 def Food_two_tomorrow():
-    html = requests.get('http://coop.seoultech.ac.kr/bbs/board.php?bo_table=restaurant2&wr_id=102').text
-    soup = BeautifulSoup(html, 'html.parser')
-    food_two = soup.findAll("td", limit=130)
+    global food_two, food_two_idx
+    if(food_two_idx == 0):
+        driver.get('http://www.seoultech.ac.kr/life/student/food/')
+        html = driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        food_two = soup.select(".dts_design td", limit=130)
 
     messages = ''
 
@@ -455,7 +467,8 @@ def Food_two_tomorrow():
     messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
     messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
 
-    return parser.food_parser(messages)
+    return food_parser(messages)
+
 
 
 # kb 학사 전체
