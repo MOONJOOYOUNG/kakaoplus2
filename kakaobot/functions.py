@@ -87,19 +87,21 @@ def Library_seat():
         driver2.find_element_by_id('password').send_keys("answndud12#")
         driver2.find_element_by_id('lok').click()
         time.sleep(1)
-    driver2.get('http://portal.seoultech.ac.kr/portal')
-    html = driver2.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    seat = soup.select('.gauge span')
-    messages = "◎도서관 열람실 사용 현황◎\n" \
-               "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[0].text + \
-               "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[1].text + \
-               "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[2].text + \
-               "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[3].text + \
-               "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[4].text + \
-               "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[5].text
-
-    return (messages)
+    try:
+        driver2.get('http://portal.seoultech.ac.kr/portal')
+        html = driver2.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        seat = soup.select('.gauge span')
+        messages = "◎도서관 열람실 사용 현황◎\n" \
+                   "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[0].text + \
+                   "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[1].text + \
+                   "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[2].text + \
+                   "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[3].text + \
+                   "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[4].text + \
+                   "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[5].text
+        return (messages)
+    except:
+        return ('서버 성능 에러입니다. 다른 기능을 누른 후 버튼을 다시 눌러주세요.')
 
 kb = ''
 surim = ''
@@ -251,40 +253,41 @@ def TechPark():
 
     r = today()
     messages = ''
+    try:
+        if t[r] == '월':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+            return (messages)
 
-    if t[r] == '월':
-        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
-        return (messages)
+        elif t[r] == '화':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+            return (messages)
 
-    elif t[r] == '화':
-        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
-        return (messages)
+        elif t[r] == '수':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+            return (messages)
 
-    elif t[r] == '수':
-        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
-        return (messages)
+        elif t[r] == '목':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+            return (messages)
 
-    elif t[r] == '목':
-        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
-        return (messages)
+        elif t[r] == '금':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+            return (messages)
 
-    elif t[r] == '금':
-        messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                     + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
-        return (messages)
+        elif t[r] == '토':
+            messages += ('토요일 제공하지 않습니다.\n')
+            return messages
 
-    elif t[r] == '토':
-        messages += ('토요일 제공하지 않습니다.\n')
-        return messages
-
-    elif t[r] == '일':
-        messages += ('일요일은 제공하지 않습니다.\n')
-        return messages
-    
+        elif t[r] == '일':
+            messages += ('일요일은 제공하지 않습니다.\n')
+            return messages
+    except:
+        return ('홈페이지의 학식 메뉴가 업로드 되지 않았습니다.')
 
 # 제 2학생 식단
 def Food_two():
