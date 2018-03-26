@@ -291,7 +291,7 @@ def Food_two():
     global  food_two, food_two_idx
     r = today()
         
-    if(student_two_idx == 0):
+    if(food_two_idx == 0):
         driver.get('http://www.seoultech.ac.kr/life/student/food/')
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser')
