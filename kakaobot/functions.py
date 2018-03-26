@@ -467,7 +467,7 @@ def Food_two_tomorrow():
     messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
     messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
 
-    return food_parser(messages)
+    return parser.food_parser(messages)
 
 
 
