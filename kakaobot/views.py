@@ -9,7 +9,7 @@ from . import functions
 @bot
 def on_init(request):
     return {'type' : 'buttons',
-            'buttons' : ['오늘 식단표','이번주 식단표','도서관 열람실 좌석 현황','버스 정류장','네이버 실시간 검색어']
+            'buttons' : ['오늘 식단표','이번주 식단표','버스 정류장','네이버 실시간 검색어']
  }
 
 @bot
