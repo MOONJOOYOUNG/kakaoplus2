@@ -11,8 +11,8 @@ from selenium import webdriver
 t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
 
-driver2 = webdriver.PhantomJS()
-driver2.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
+#driver2 = webdriver.PhantomJS()
+#driver2.get('http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN')
 
 # 요일 구하기.
 def today():
