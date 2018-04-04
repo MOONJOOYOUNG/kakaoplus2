@@ -78,8 +78,8 @@ def on_message(request):
     elif content.startswith('테크노 파크 식단'):
         response = functions.TechPark()
 
-    elif content.startswith('도서관 열람실 좌석 현황'):
-        response = functions.Library_seat()
+    #elif content.startswith('도서관 열람실 좌석 현황'):
+    #    response = functions.Library_seat()
 
     elif content.startswith('케이비'):
         response = functions.KB_All()
