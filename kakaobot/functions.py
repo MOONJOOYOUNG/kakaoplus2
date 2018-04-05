@@ -93,9 +93,9 @@ def front_door_gs():
     bus = soup.select('.list_content_wrap span.info_situation')
 
     messages = '◎과기대 정문 GS편의점◎\n' + '☞지선 1141번 버스☜\n' + (bus_parser(bus[0].getText())) + \
-               '\n☞지선 1224번 버스☜\n' + (bus_parser(bus[1].getText())) + '☞지선 1227번 버스☜\n' + (
+               '☞지선 1224번 버스☜\n' + (bus_parser(bus[1].getText())) + '☞지선 1227번 버스☜\n' + (
                bus_parser(bus[2].getText())) + \
-               '☞노원 03번 버스☜\n' + (bus_parser(bus[3].getText()))
+               '\n☞노원 03번 버스☜\n' + (bus_parser(bus[3].getText()))
     return (messages)
 
 # 열람실
