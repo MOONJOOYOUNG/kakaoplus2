@@ -33,6 +33,24 @@ def bus_parser(string):
     parser = parser.replace('\n', ' ')
     return parser
 
+#공릉동 미세먼지 체크
+def check_dust():
+    driver.get('https://m.search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B3%B5%EB%A6%89%EB%8F%99+%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    dust = soup.select('.air_today span')
+    value = int(dust[3].getText())
+    message = "미세먼지 수치 : "+ dust[0].getText()
+    if value < 31:
+        message += ("\n공릉동 미세먼지는 좋음 입니다.")
+    elif value < 81:
+        message += ("\n공릉동 미세먼지는 보통 입니다")
+    elif value < 151:
+        message += ("\n공릉동 미세먼지는 나쁨 입니다")
+    else:
+        message +=("\n공릉동 미세먼지는 매우나쁨 입니다")
+    return message
+
 
 # 버스정류장
 def bus_Gongneung():
@@ -81,27 +99,27 @@ def front_door_gs():
     return (messages)
 
 # 열람실
-def Library_seat():
-    if (driver2.current_url == 'http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
-        driver2.find_element_by_id('userId').send_keys("18510068")
-        driver2.find_element_by_id('password').send_keys("answndud12#")
-        driver2.find_element_by_id('lok').click()
-        time.sleep(1)
-    try:
-        driver2.get('http://portal.seoultech.ac.kr/portal')
-        html = driver2.page_source
-        soup = BeautifulSoup(html, 'html.parser')
-        seat = soup.select('.gauge span')
-        messages = "◎도서관 열람실 사용 현황◎\n" \
-                   "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[0].text + \
-                   "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[1].text + \
-                   "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[2].text + \
-                   "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[3].text + \
-                   "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[4].text + \
-                   "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[5].text
-        return (messages)
-    except:
-        return ('서버 성능 에러입니다. 다른 기능을 누른 후 버튼을 다시 눌러주세요.')
+#def Library_seat():
+#    if (driver2.current_url == 'http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
+#        driver2.find_element_by_id('userId').send_keys("18510068")
+#        driver2.find_element_by_id('password').send_keys("answndud12#")
+#        driver2.find_element_by_id('lok').click()
+#        time.sleep(1)
+#    try:
+#        driver2.get('http://portal.seoultech.ac.kr/portal')
+#        html = driver2.page_source
+#        soup = BeautifulSoup(html, 'html.parser')
+#        seat = soup.select('.gauge span')
+#        messages = "◎도서관 열람실 사용 현황◎\n" \
+#                   "◎ 1층 일반열람실1 ◎\n잔여 좌석 " + seat[0].text + \
+#                   "\n◎ 1층 노트북열람실1 ◎\n잔여 좌석 " + seat[1].text + \
+#                   "\n◎ 2층 일반열람실2 ◎\n잔여 좌석 " + seat[2].text + \
+#                   "\n◎ 2층 노트북열람실 ◎\n잔여 좌석 " + seat[3].text + \
+#                   "\n◎ 2층 일반열람실3 ◎\n잔여 좌석 " + seat[4].text + \
+#                   "\n◎ 2층 별관스터디실 ◎\n잔여 좌석 " + seat[5].text
+#        return (messages)
+#    except:
+#        return ('서버 성능 에러입니다. 다른 기능을 누른 후 버튼을 다시 눌러주세요.')
 
 kb = ''
 surim = ''
@@ -535,14 +553,3 @@ def Surim_All():
     messages += ('◎토요일 학식 메뉴◎' + surim[6].get_text())
     messages += ('◎일요일 학식 메뉴◎' + surim[7].get_text())
     return parser.dom_parser(messages)
-
-
-# 네이버 실시간 검색.
-def naver_rank():
-    html = requests.get('http://naver.com').text
-    soup = BeautifulSoup(html, 'html.parser')
-    tag_list = soup.select('.PM_CL_realtimeKeyword_rolling .ah_item .ah_k')
-    message = '◎네이버 실시간 검색어◎\n'
-    for i in range(20):
-        message += str(i + 1) + '.' + tag_list[i].get_text() + '\n'
-    return message
