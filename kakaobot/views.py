@@ -9,7 +9,7 @@ from . import functions
 @bot
 def on_init(request):
     return {'type' : 'buttons',
-            'buttons' : ['오늘 식단표','이번주 식단표','버스 정류장','네이버 실시간 검색어']
+            'buttons' : ['오늘 식단표','이번주 식단표','버스 정류장','공릉동 미세먼지']
  }
 
 @bot
@@ -102,8 +102,8 @@ def on_message(request):
     elif content.startswith('정문(GS 편의점)'):
         response = functions.front_door_gs()
 	
-    elif content.startswith('네이버 실시간 검색어'):
-        response = functions.naver_rank()
+    elif content.startswith('공릉동 미세먼지'):
+        response = functions.check_dust()
 
     else:
         response = ('지원하는 명령어가 아닙니다.')
@@ -114,7 +114,7 @@ def on_message(request):
         },
         'keyboard': {
             'type': 'buttons',
-            'buttons' : ['오늘 식단표','이번주 식단표','도서관 열람실 좌석 현황','버스 정류장','네이버 실시간 검색어']
+            'buttons' : ['오늘 식단표','이번주 식단표','버스 정류장','공릉동 미세먼지']
         }
     }
 
