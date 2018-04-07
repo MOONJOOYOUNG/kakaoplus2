@@ -12,7 +12,7 @@ t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
 
 driver2 = webdriver.PhantomJS()
-driver2.get(https://m.search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B3%B5%EB%A6%89%EB%8F%99+%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80')
+driver2.get('https://m.search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B3%B5%EB%A6%89%EB%8F%99+%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80')
 
 # 요일 구하기.
 def today():
