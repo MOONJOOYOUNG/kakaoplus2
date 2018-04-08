@@ -164,6 +164,7 @@ def Kb_Dormitory():
 
     elif t[r] == '토':
         messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[6].get_text())
+        messages += ('\n일요일 KB 학사 학식 메뉴' + kb[7].get_text())
         return parser.dom_parser(messages)
 
     elif t[r] == '일':
@@ -207,6 +208,7 @@ def Sungrim_Dormitory():
 
     elif t[r] == '토':
         messages += (t[r] + '요일 성림 학사 학식 메뉴' + sung[6].get_text())
+        messages += ('\n일요일 성림 학사 학식 메뉴' + sung[7].get_text())
         return parser.dom_parser(messages)
 
     elif t[r] == '일':
@@ -249,6 +251,7 @@ def Surim_Dormitory():
 
     elif t[r] == '토':
         messages += (t[r] + '요일 수림 학사 학식 메뉴' + surim[6].get_text())
+        messages += ('\n일요일 수림 학사 학식 메뉴' + surim[7].get_text())
         return parser.dom_parser(messages)
 
     elif t[r] == '일':
