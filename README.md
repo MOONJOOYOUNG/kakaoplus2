@@ -1,3 +1,7 @@
+# 서울과학기술대학교 아점저
+
+Python, Djanngo, heroku
+
 # Heroku Django Starter Template
 
 An utterly fantastic project starter template for Django 1.11.
