@@ -53,7 +53,7 @@ def on_message(request):
 			},
 			'keyboard':{
 				'type':'buttons',
-				'buttons':['공릉역 2번 출구', '과기대 붕어방','과기대 정문','정문(GS 편의점)']
+				'buttons':['공릉역 2번 출구', '과기대 붕어방','과기대 정문','정문(GS 편의점)','과기대 정문 13번']
 			}
 		})   
 
@@ -98,6 +98,9 @@ def on_message(request):
     
     elif content.startswith('과기대 정문'):
         response = functions.front_door()
+    
+    elif content.startswith('과기대 정문 13번'):
+	response = functions.front_door_13()
 
     elif content.startswith('정문(GS 편의점)'):
         response = functions.front_door_gs()
