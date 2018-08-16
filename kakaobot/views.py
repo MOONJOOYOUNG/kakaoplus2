@@ -105,9 +105,9 @@ def on_message(request):
     elif content.startswith('공릉동 미세먼지'):
         response = functions.check_dust()
 	
-    elif content.startswith('과기대 정문 13번'):
-	response = functions.front_door_13()
-
+    elif content.startswith('공릉동 미세먼지'):
+        response = functions.check_dust()
+	
     else:
         response = ('지원하는 명령어가 아닙니다.')
 
