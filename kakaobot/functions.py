@@ -96,6 +96,15 @@ def front_door_gs():
                '\n☞노원 03번 버스☜\n' + (bus_parser(bus[3].getText()))
     return (messages)
 
+#과기대 정문 13번
+def front_door_13():
+    html = requests.get("https://m.map.daum.net/actions/busStationInfo?busStopId=BS155717").text
+    soup = BeautifulSoup(html, 'html.parser')
+    bus = soup.select('.list_content_wrap span.info_situation')
+    
+    messages = '◎과기대 정문 13번◎\n' + (bus_parser(bus[0].getText())) 
+    return (messages)
+
 # 열람실
 #def Library_seat():
 #    if (driver2.current_url == 'http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
