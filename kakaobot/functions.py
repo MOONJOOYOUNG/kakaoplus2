@@ -273,6 +273,55 @@ def park_parser(string):
     parser = parser.replace('\n', '')
     return parser
 
+#2학 방학.
+def vacation_two():
+    html = requests.get('https://bds.bablabs.com/restaurants/LTI0NTI4MDMx?campus_id=o8RPQZ7Zme').text
+    soup = BeautifulSoup(html, 'html.parser')
+    park = soup.select('.card-body span')
+
+    r = today()
+    messages = ''
+    try:
+        if t[r] == '월':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n'+ '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+                         + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
+             + '\n' + park_parser(food_two[12].get_text()))
+            return (messages)
+
+        elif t[r] == '화':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+                         + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
+             + '\n' + park_parser(food_two[12].get_text()))
+            return (messages)
+
+        elif t[r] == '수':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+                         + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
+             + '\n' + park_parser(food_two[12].get_text()))
+            return (messages)
+
+        elif t[r] == '목':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+                         + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
+             + '\n' + park_parser(food_two[12].get_text()))
+            return (messages)
+
+        elif t[r] == '금':
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+                         + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
+             + '\n' + park_parser(food_two[12].get_text()))
+            return (messages)
+
+        elif t[r] == '토':
+            messages += ('토요일 제공하지 않습니다.\n')
+            return messages
+
+        elif t[r] == '일':
+            messages += ('일요일은 제공하지 않습니다.\n')
+            return messages
+    except:
+        return ('홈페이지의 학식 메뉴가 업로드 되지 않았습니다.')
+
 #테크노 파크 식단
 def TechPark():
     html = requests.get('https://bds.bablabs.com/restaurants/LTI0NTI2NjU2?campus_id=o8RPQZ7Zme').text
