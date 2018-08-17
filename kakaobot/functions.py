@@ -281,33 +281,34 @@ def vacation_two():
 
     r = today()
     messages = ''
+    print(t[r])
     try:
         if t[r] == '월':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n'+ '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+            messages += ('◎' + t[r] + '요일 제2학생 식당 메뉴\n'+ '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
                          + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
              + '\n' + park_parser(food_two[12].get_text()))
             return (messages)
 
         elif t[r] == '화':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+            messages += ('◎' + t[r] + '요일 제2학생 식당 메뉴\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
                          + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
              + '\n' + park_parser(food_two[12].get_text()))
             return (messages)
 
         elif t[r] == '수':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+            messages += ('◎' + t[r] + '요일 제2학생 식당 메뉴\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
                          + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
              + '\n' + park_parser(food_two[12].get_text()))
             return (messages)
 
         elif t[r] == '목':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+            messages += ('◎' + t[r] + '요일 제2학생 식당 메뉴\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
                          + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
              + '\n' + park_parser(food_two[12].get_text()))
             return (messages)
 
         elif t[r] == '금':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
+            messages += ('◎' + t[r] + '요일 제2학생 식당 메뉴\n' + '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
                          + park_parser(food_two[7].get_text()) + '\n◎저녁◎\n' + park_parser(food_two[10].get_text()) 
              + '\n' + park_parser(food_two[12].get_text()))
             return (messages)
