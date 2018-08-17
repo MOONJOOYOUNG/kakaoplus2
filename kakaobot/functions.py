@@ -277,11 +277,10 @@ def park_parser(string):
 def vacation_two():
     html = requests.get('https://bds.bablabs.com/restaurants/LTI0NTI4MDMx?campus_id=o8RPQZ7Zme').text
     soup = BeautifulSoup(html, 'html.parser')
-    park = soup.select('.card-body span')
-
+    food_two = soup.select('.card-body span')
+    
     r = today()
     messages = ''
-    print(t[r])
     try:
         if t[r] == '월':
             messages += ('◎' + t[r] + '요일 제2학생 식당 메뉴\n'+ '◎점심◎\n' + park_parser(food_two[5].get_text()) + '\n'
