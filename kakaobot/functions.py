@@ -108,8 +108,8 @@ def front_door_13():
 # 열람실
 #def Library_seat():
 #    if (driver2.current_url == 'http://portal.seoultech.ac.kr/portal/default/SEOULTECH/LOGIN'):
-#        driver2.find_element_by_id('userId').send_keys("18510068")
-#        driver2.find_element_by_id('password').send_keys("answndud12#")
+#        driver2.find_element_by_id('userId').send_keys("id")
+#        driver2.find_element_by_id('password').send_keys("pw")
 #        driver2.find_element_by_id('lok').click()
 #        time.sleep(1)
 #    try:
