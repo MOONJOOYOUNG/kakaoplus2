@@ -53,7 +53,7 @@ def on_message(request):
 			},
 			'keyboard':{
 				'type':'buttons',
-				'buttons':['공릉역 2번 출구', '과기대 붕어방','정문 13번 공릉방향','과기대 정문','정문(교촌치킨)']
+				'buttons':['공릉역 2번 출구', '과기대 붕어방','정문 13번 공릉방향','과기대 정문','정문(교촌치킨)','1번 출구 석계역','4번 출구 석계역']
 			}
 		})   
 
@@ -106,6 +106,12 @@ def on_message(request):
 	
     elif content.startswith('정문 13번 공릉방향'):
         response = functions.front_door_13()
+	
+    elif content.startswith('1번 출구 석계역'):
+        response = functions.seok_1()
+	
+    elif content.startswith('4번 출구 석계역'):
+        response = functions.seok_2()
 	
     elif content.startswith('공릉동 미세먼지'):
         response = functions.check_dust()
