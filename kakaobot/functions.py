@@ -73,6 +73,28 @@ def bus_bnag():
     messages = '◎과기대 붕어방◎\n' + '☞노원 13번 버스☜\n' + bus[1].get_text()
     return messages
 
+def seok_1():
+    driver.get('https://m.map.daum.net/actions/busStationInfo?busStopId=BS30329')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    bus = soup.select('.list_content_wrap span.info_situation')
+
+    messages = '◎석계역 1번출구◎\n' + '☞지선 1136번 버스☜\n' +(bus_parser(bus[5].getText())) + \
+                   '\n☞지선 1141번 버스☜\n' + (bus_parser(bus[6].getText())) + '\n☞노원 03번 버스☜\n' + (bus_parser(bus[17].getText())) + \
+                   '\n☞노원 04번 버스☜\n' + (bus_parser(bus[18].getText())) + '\n☞노원 13번 버스☜\n' + (bus_parser(bus[19].getText()))        
+    return messages  
+
+def seok_2():
+    driver.get('https://m.map.daum.net/actions/busStationInfo?busStopId=BS30743')
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    bus = soup.select('.list_content_wrap span.info_situation')
+
+    messages = '◎석계역 4번출구◎\n' + '☞지선 1136번 버스☜\n' +(bus_parser(bus[5].getText())) + \
+                   '\n☞지선 1141번 버스☜\n' + (bus_parser(bus[7].getText())) + '\n☞노원 03번 버스☜\n' + (bus_parser(bus[22].getText())) + \
+                   '\n☞노원 04번 버스☜\n' + (bus_parser(bus[23].getText())) + '\n☞노원 13번 버스☜\n' + (bus_parser(bus[24].getText()))
+    return messages
+
 #과기대 정문
 def front_door():
     html = requests.get('https://m.map.daum.net/actions/busStationInfo?busStopId=11110561014').text
