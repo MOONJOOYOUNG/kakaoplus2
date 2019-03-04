@@ -160,9 +160,15 @@ sung_idx = 0
 surim_idx = 0
 food_two_idx = 0
 
+kb_list = []
+surim_list = []
+sung_list = []
+food_two_list = []
+
 # kb 학사
 def Kb_Dormitory():
     global  kb_idx, kb
+    global kb_list
     r = today()
     messages = ''
 
@@ -171,34 +177,37 @@ def Kb_Dormitory():
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser')
         kb = soup.findAll("td", limit=8)
+        for i in kb:
+            kb_list.append(i.get_text())
         kb_idx = 1
 
     if t[r] == '월':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[1].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb_list[1])
         return parser.dom_parser(messages)
 
     elif t[r] == '화':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[2].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb_list[2])
         return parser.dom_parser(messages)
 
     elif t[r] == '수':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[3].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb_list[3])
         return parser.dom_parser(messages)
 
     elif t[r] == '목':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[4].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb_list[4])
         return parser.dom_parser(messages)
 
     elif t[r] == '금':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[5].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb_list[5])
         return parser.dom_parser(messages)
 
     elif t[r] == '토':
-        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb[6].get_text())
-        messages += ('\n일요일 KB 학사 학식 메뉴' + kb[7].get_text())
+        messages += (t[r] + '요일 KB 학사 학식 메뉴' + kb_list[6])
+        messages += ('\n일요일 KB 학사 학식 메뉴' + kb_list[7])
         return parser.dom_parser(messages)
 
     elif t[r] == '일':
+        messages += ('\n일요일 KB 학사 학식 메뉴' + kb_list[7])
         messages += '식단표가 다음주 식단표로 업데이트 되었습니다. 저번주 식단표를 확인해 주세요.'
         kb_idx == 0
         return parser.dom_parser(messages)
@@ -634,3 +643,4 @@ def Surim_All():
     messages += ('◎토요일 학식 메뉴◎' + surim[6].get_text())
     messages += ('◎일요일 학식 메뉴◎' + surim[7].get_text())
     return parser.dom_parser(messages)
+
