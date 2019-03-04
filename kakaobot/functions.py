@@ -429,7 +429,7 @@ def Food_two():
                          food_two_list[33] + '\n')
             messages += ('◎중식 푸짐 4200원◎\n' + food_two_list[39] + ' ' + food_two_list[44] + ' ' + food_two_list[
                 49] + ' ' + food_two_list[54] + ' ' +
-                         food_two[59] + ' ' + food_two[64] + ' ' + food_two[69] + '\n')
+                         food_two_list[59] + ' ' + food_two_list[64] + ' ' + food_two_list[69] + '\n')
             messages += ('◎석식 푸짐 3500◎\n' + food_two_list[102] + ' ' + food_two_list[107] + ' ' + food_two_list[
                 112] + ' ' +
                          food_two_list[117] + ' ' + food_two_list[122] + ' ' + food_two_list[127] +'\n')
@@ -445,7 +445,7 @@ def Food_two():
                          food_two_list[34] + '\n')
             messages += ('◎푸짐 4200원◎\n' + food_two_list[40] + ' ' + food_two_list[45] + ' ' + food_two_list[50] + ' ' +
                          food_two_list[55] + ' ' + food_two_list[60] + ' ' + food_two_list[65] + ' ' + food_two_list[70] +'\n')
-            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[103] + ' ' + food_two_list[108] + ' ' + food_two[
+            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[103] + ' ' + food_two_list[108] + ' ' + food_two_list[
                          113] + ' ' + food_two_list[118] + ' ' +
                          food_two_list[123] + ' ' + food_two_list[128] + '\n')
             messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
@@ -535,7 +535,7 @@ def Food_two_tomorrow():
                          food_two_list[33] + '\n')
         messages += ('◎중식 푸짐 4200원◎\n' + food_two_list[39] + ' ' + food_two_list[44] + ' ' + food_two_list[
             49] + ' ' + food_two_list[54] + ' ' +
-                     food_two[59] + ' ' + food_two[64] + ' ' + food_two[69] + '\n')
+                     food_two_list[59] + ' ' + food_two_list[64] + ' ' + food_two_list[69] + '\n')
         messages += ('◎석식 푸짐 3500◎\n' + food_two_list[102] + ' ' + food_two_list[107] + ' ' + food_two_list[
             112] + ' ' +
                      food_two_list[117] + ' ' + food_two_list[122] + ' ' + food_two_list[127] +'\n')
@@ -546,10 +546,10 @@ def Food_two_tomorrow():
                          food_two_list[34] + '\n')
         messages += ('◎푸짐 4200원◎\n' + food_two_list[40] + ' ' + food_two_list[45] + ' ' + food_two_list[50] + ' ' +
                      food_two_list[55] + ' ' + food_two_list[60] + ' ' + food_two_list[65] + ' ' + food_two_list[70] +'\n')
-        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[103] + ' ' + food_two_list[108] + ' ' + food_two[
+        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[103] + ' ' + food_two_list[108] + ' ' + food_two_list[
                      113] + ' ' + food_two_list[118] + ' ' +
                      food_two_list[123] + ' ' + food_two_list[128] + '\n')
-        messages += ('\n수요일 제2학생 식당 메뉴\n' + '◎든든 ' +  + food_two_list[10] + '◎\n'
+        messages += ('\n수요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[10] + '◎\n'
                          + food_two_list[15] + ' ' + food_two_list[20] + ' ' + food_two_list[25] + ' ' +
                          food_two_list[30] + ' ' +
                          food_two_list[35] + '\n')
