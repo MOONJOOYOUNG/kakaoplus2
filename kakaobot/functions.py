@@ -415,7 +415,8 @@ def Food_two():
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser')
         food_two = soup.select(".dts_design td", limit=132)
-        for i in food_two:
+        for idx,i in enumerate(food_two):
+            print(idx,i.get_text())
             food_two_list.append(i.get_text())
         food_two_idx = 1
 
