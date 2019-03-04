@@ -512,7 +512,6 @@ def Food_two():
             food_two_idx = 0
             return messages
     except:
-        food_two_idx = 0
         return ('식당 메뉴가 업로드 되지 않았습니다.')    
 
 
