@@ -442,12 +442,10 @@ def Food_two():
                          + food_two_list[9] + ' ' + food_two_list[19 + ' ' + food_two_list[24] + ' ' +
                          food_two_list[29] + ' ' +
                          food_two_list[34] + '\n')
-            messages += (
-            '◎푸짐 4200원◎\n' + food_two_list[40] + ' ' + food_two_list[45] + ' ' + food_two_list[50] + ' ' +
-            food_two_list[55] + ' ' +
-            food_two_list[60] + ' ' + food_two_list[65] + '\n')
+            messages += ('◎푸짐 4200원◎\n' + food_two_list[40] + ' ' + food_two_list[45] + ' ' + food_two_list[50] + ' ' +
+                         food_two_list[55] + ' ' + food_two_list[60] + ' ' + food_two_list[65] + '\n')
             messages += ('◎석식 푸짐 3500◎\n' + food_two_list[99] + ' ' + food_two_list[104] + ' ' + food_two[
-                109] + ' ' + food_two_list[114] + ' ' +
+                         109] + ' ' + food_two_list[114] + ' ' +
                          food_two_list[119] + ' ' + food_two_list[124] + '\n')
             messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
             messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
