@@ -540,7 +540,7 @@ def Food_two_tomorrow():
                      food_two_list[118] + ' ' + food_two_list[123] + '\n')
 
         messages += ('\n화요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[14] + '◎\n'
-                             + food_two_list[9] + ' ' + food_two_list[19 + ' ' + food_two_list[24] + ' ' +
+                             + food_two_list[9] + ' ' + food_two_list[19] + ' ' + food_two_list[24] + ' ' +
                                                                       food_two_list[29] + ' ' +
                                                                       food_two_list[34] + '\n')
         messages += (
