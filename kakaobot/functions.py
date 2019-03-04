@@ -439,7 +439,7 @@ def Food_two():
 
         elif t[r] == '화':
             messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[14] + '◎\n'
-                         + food_two_list[9] + ' ' + food_two_list[19 + ' ' + food_two_list[24] + ' ' +
+                         + food_two_list[9] + ' ' + food_two_list[19] + ' ' + food_two_list[24] + ' ' +
                          food_two_list[29] + ' ' +
                          food_two_list[34] + '\n')
             messages += ('◎푸짐 4200원◎\n' + food_two_list[40] + ' ' + food_two_list[45] + ' ' + food_two_list[50] + ' ' +
