@@ -414,7 +414,7 @@ def Food_two():
         driver.get('http://www.seoultech.ac.kr/life/student/food/')
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser')
-        food_two = soup.select(".dts_design td", limit=130)
+        food_two = soup.select(".dts_design td", limit=132)
         for i in food_two:
             food_two_list.append(i.get_text())
         food_two_idx = 1
@@ -422,81 +422,81 @@ def Food_two():
     messages = ''
     try:
         if t[r] == '월':
-            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎중식 든든 ' + food_two_list[13] + '◎\n'
-                         + food_two_list[8] + ' ' + food_two_list[18] + ' ' + food_two_list[23] + ' ' +
+            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎중식 든든 ' + food_two_list[8] + '◎\n'
+                         + food_two_list[13] + ' ' + food_two_list[18] + ' ' + food_two_list[23] + ' ' +
                          food_two_list[28]+ ' ' +
                          food_two_list[33] + '\n')
             messages += ('◎중식 푸짐 4200원◎\n' + food_two_list[39] + ' ' + food_two_list[44] + ' ' + food_two_list[
                 49] + ' ' + food_two_list[54] + ' ' +
-                         food_two[59] + ' ' + food_two[65] + '\n')
-            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[98] + ' ' + food_two_list[103] + ' ' + food_two_list[
-                108] + ' ' + food_two_list[113] + ' ' +
-                         food_two_list[118] + ' ' + food_two_list[123] + '\n')
+                         food_two[59] + ' ' + food_two[64] + ' ' + food_two[69] + '\n')
+            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[102] + ' ' + food_two_list[107] + ' ' + food_two_list[
+                112] + ' ' +
+                         food_two_list[117] + ' ' + food_two_list[122] + ' ' + food_two_list[127] +'\n')
             messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
             messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
 
             return parser.food_parser(messages)
 
         elif t[r] == '화':
-            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[14] + '◎\n'
-                         + food_two_list[9] + ' ' + food_two_list[19] + ' ' + food_two_list[24] + ' ' +
+            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[9] + '◎\n'
+                         + food_two_list[14] + ' ' + food_two_list[19] + ' ' + food_two_list[24] + ' ' +
                          food_two_list[29] + ' ' +
                          food_two_list[34] + '\n')
             messages += ('◎푸짐 4200원◎\n' + food_two_list[40] + ' ' + food_two_list[45] + ' ' + food_two_list[50] + ' ' +
-                         food_two_list[55] + ' ' + food_two_list[60] + ' ' + food_two_list[65] + '\n')
-            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[99] + ' ' + food_two_list[104] + ' ' + food_two[
-                         109] + ' ' + food_two_list[114] + ' ' +
-                         food_two_list[119] + ' ' + food_two_list[124] + '\n')
+                         food_two_list[55] + ' ' + food_two_list[60] + ' ' + food_two_list[65] + ' ' + food_two_list[70] +'\n')
+            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[103] + ' ' + food_two_list[108] + ' ' + food_two[
+                         113] + ' ' + food_two_list[118] + ' ' +
+                         food_two_list[123] + ' ' + food_two_list[128] + '\n')
             messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
             messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
             return parser.food_parser(messages)
 
         elif t[r] == '수':
-            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[15] + '◎\n'
-                         + food_two_list[10] + ' ' + food_two_list[20] + ' ' + food_two_list[25] + ' ' +
+            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[10] + '◎\n'
+                         + food_two_list[15] + ' ' + food_two_list[20] + ' ' + food_two_list[25] + ' ' +
                          food_two_list[30] + ' ' +
                          food_two_list[35] + '\n')
             messages += (
             '◎푸짐 4200원◎\n' + food_two_list[41] + ' ' + food_two_list[46] + ' ' + food_two_list[51] + ' ' +
             food_two_list[56] + ' ' +
-            food_two_list[61] + ' ' + food_two_list[66] + '\n')
-            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[100] + ' ' + food_two_list[105] + ' ' + food_two_list[
-                110] + ' ' + food_two_list[115] + ' ' +
-                         food_two_list[120] + ' ' + food_two_list[125] + '\n')
+            food_two_list[61] + ' ' + food_two_list[66] + ' ' + food_two_list[71] +'\n')
+            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[104] + ' ' + food_two_list[109] + ' ' + food_two_list[
+                114] + ' ' + food_two_list[119] + ' ' +
+                         food_two_list[124] + ' ' + food_two_list[129] + '\n')
             messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
             messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
 
             return parser.food_parser(messages)
 
         elif t[r] == '목':
-            messages += (t[r] + '요일 제2학생 식당 메뉴◎\n' + '◎든든 ' + food_two_list[16] + '◎\n'
-                         + food_two_list[11] + ' ' + food_two_list[21] + ' ' + food_two_list[26] + ' ' +
+            messages += (t[r] + '요일 제2학생 식당 메뉴◎\n' + '◎든든 ' + food_two_list[11] + '◎\n'
+                         + food_two_list[16] + ' ' + food_two_list[21] + ' ' + food_two_list[26] + ' ' +
                          food_two_list[31] + ' ' +
                          food_two_list[36] + '\n')
             messages += (
             '◎푸짐 4200원◎\n' + food_two_list[42] + ' ' + food_two_list[47] + ' ' + food_two_list[52] + ' ' +
             food_two_list[57] + ' ' +
-            food_two_list[62] + ' ' + food_two_list[67] + '\n')
-            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[101] + ' ' + food_two_list[106] + ' ' + food_two_list[
-                111] + ' ' + food_two_list[116] + ' ' +
-                         food_two_list[121] + ' ' + food_two_list[126] + '\n')
+            food_two_list[62] + ' ' + food_two_list[67] + ' ' + food_two_list[72] +'\n')
+            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[105] + ' ' + food_two_list[110] + ' ' + food_two_list[
+                115] + ' ' + food_two_list[120] + ' ' +
+                         food_two_list[125] + ' ' + food_two_list[130] + '\n')
             messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
             messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
 
             return parser.food_parser(messages)
 
         elif t[r] == '금':
-            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[17] + '◎\n'
-                         + food_two_list[12] + ' ' + food_two_list[22] + ' ' + food_two_list[27] + ' ' +
+            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[12] + '◎\n'
+                         + food_two_list[17] + ' ' + food_two_list[22] + ' ' + food_two_list[27] + ' ' +
                          food_two_list[32] + ' ' +
                          food_two_list[37] + '\n')
             messages += (
             '◎푸짐 4200원◎\n' + food_two_list[43] + ' ' + food_two_list[48] + ' ' + food_two_list[53] + ' ' +
             food_two_list[58] + ' ' +
-            food_two_list[63] + ' ' + food_two_list[68] + '\n')
-            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[102] + ' ' + food_two_list[107] + ' ' + food_two_list[
-                112] + ' ' + food_two_list[117] + ' ' +
-                         food_two_list[122] + ' ' + food_two_list[127] + '\n')
+            food_two_list[63] + ' ' + food_two_list[68] + ' ' + food_two_list[73] +'\n')
+            messages += ('◎석식 푸짐 3500◎\n' + food_two_list[106] + ' ' + food_two_list[111] + ' ' + food_two_list[
+                116] + ' ' + food_two_list[121] + ' ' +
+                         food_two_list[126] + ' ' + food_two_list[131] + '\n')
             messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
             messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
 
@@ -511,6 +511,7 @@ def Food_two():
             food_two_idx = 0
             return messages
     except:
+        food_two_idx = 0
         return ('식당 메뉴가 업로드 되지 않았습니다.')    
 
 
@@ -522,69 +523,68 @@ def Food_two_tomorrow():
         driver.get('http://www.seoultech.ac.kr/life/student/food/')
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser')
-        food_two = soup.select(".dts_design td", limit=130)
+        food_two = soup.select(".dts_design td", limit=132)
         for i in food_two:
             food_two_list.append(i.get_text())
 
     messages = ''
     try:
-        messages += ('월요일 제2학생 식당 메뉴\n' + '◎중식 든든 ' +  food_two_list[13] + '◎\n'
-                             + food_two_list[8] + ' ' + food_two_list[18] + ' ' + food_two_list[23] + ' ' +
-                             food_two_list[28] + ' ' +
-                             food_two_list[33] + '\n')
+        messages += ('월요일 제2학생 식당 메뉴\n' + '◎중식 든든 ' +  food_two_list[8] + '◎\n'
+                         + food_two_list[13] + ' ' + food_two_list[18] + ' ' + food_two_list[23] + ' ' +
+                         food_two_list[28]+ ' ' +
+                         food_two_list[33] + '\n')
         messages += ('◎중식 푸짐 4200원◎\n' + food_two_list[39] + ' ' + food_two_list[44] + ' ' + food_two_list[
             49] + ' ' + food_two_list[54] + ' ' +
-                     food_two[59] + ' ' + food_two[65] + '\n')
-        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[98] + ' ' + food_two_list[103] + ' ' + food_two_list[
-            108] + ' ' + food_two_list[113] + ' ' +
-                     food_two_list[118] + ' ' + food_two_list[123] + '\n')
-
-        messages += ('\n화요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[14] + '◎\n'
-                             + food_two_list[9] + ' ' + food_two_list[19] + ' ' + food_two_list[24] + ' ' +
-                                                                      food_two_list[29] + ' ' +
-                                                                      food_two_list[34] + '\n')
-        messages += (
-                '◎푸짐 4200원◎\n' + food_two_list[40] + ' ' + food_two_list[45] + ' ' + food_two_list[50] + ' ' +
-                food_two_list[55] + ' ' +
-                food_two_list[60] + ' ' + food_two_list[65] + '\n')
-        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[99] + ' ' + food_two_list[104] + ' ' + food_two[
-            109] + ' ' + food_two_list[114] + ' ' +
-                     food_two_list[119] + ' ' + food_two_list[124] + '\n')
-        messages += ('\n수요일 제2학생 식당 메뉴\n' + '◎든든 ' +  + food_two_list[15] + '◎\n'
-                             + food_two_list[10] + ' ' + food_two_list[20] + ' ' + food_two_list[25] + ' ' +
-                             food_two_list[30] + ' ' +
-                             food_two_list[35] + '\n')
-        messages += (
-                '◎푸짐 4200원◎\n' + food_two_list[41] + ' ' + food_two_list[46] + ' ' + food_two_list[51] + ' ' +
-                food_two_list[56] + ' ' +
-                food_two_list[61] + ' ' + food_two_list[66] + '\n')
-        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[100] + ' ' + food_two_list[105] + ' ' + food_two_list[
-            110] + ' ' + food_two_list[115] + ' ' +
-                     food_two_list[120] + ' ' + food_two_list[125] + '\n')
-
-        messages += ('\n목요일 제2학생 식당 메뉴◎\n' + '◎든든 ' + food_two_list[16] + '◎\n'
-                             + food_two_list[11] + ' ' + food_two_list[21] + ' ' + food_two_list[26] + ' ' +
-                             food_two_list[31] + ' ' +
-                             food_two_list[36] + '\n')
-        messages += (
-                '◎푸짐 4200원◎\n' + food_two_list[42] + ' ' + food_two_list[47] + ' ' + food_two_list[52] + ' ' +
-                food_two_list[57] + ' ' +
-                food_two_list[62] + ' ' + food_two_list[67] + '\n')
-        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[101] + ' ' + food_two_list[106] + ' ' + food_two_list[
-            111] + ' ' + food_two_list[116] + ' ' +
-                     food_two_list[121] + ' ' + food_two_list[126] + '\n')
-
-        messages += ('\n금요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[17] + '◎\n'
-                             + food_two_list[12] + ' ' + food_two_list[22] + ' ' + food_two_list[27] + ' ' +
-                             food_two_list[32] + ' ' +
-                             food_two_list[37] + '\n')
-        messages += (
-                '◎푸짐 4200원◎\n' + food_two_list[43] + ' ' + food_two_list[48] + ' ' + food_two_list[53] + ' ' +
-                food_two_list[58] + ' ' +
-                food_two_list[63] + ' ' + food_two_list[68] + '\n')
+                     food_two[59] + ' ' + food_two[64] + ' ' + food_two[69] + '\n')
         messages += ('◎석식 푸짐 3500◎\n' + food_two_list[102] + ' ' + food_two_list[107] + ' ' + food_two_list[
-            112] + ' ' + food_two_list[117] + ' ' +
-                     food_two_list[122] + ' ' + food_two_list[127] + '\n')
+            112] + ' ' +
+                     food_two_list[117] + ' ' + food_two_list[122] + ' ' + food_two_list[127] +'\n')
+
+        messages += ('\n화요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[9] + '◎\n'
+                         + food_two_list[14] + ' ' + food_two_list[19] + ' ' + food_two_list[24] + ' ' +
+                         food_two_list[29] + ' ' +
+                         food_two_list[34] + '\n')
+        messages += ('◎푸짐 4200원◎\n' + food_two_list[40] + ' ' + food_two_list[45] + ' ' + food_two_list[50] + ' ' +
+                     food_two_list[55] + ' ' + food_two_list[60] + ' ' + food_two_list[65] + ' ' + food_two_list[70] +'\n')
+        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[103] + ' ' + food_two_list[108] + ' ' + food_two[
+                     113] + ' ' + food_two_list[118] + ' ' +
+                     food_two_list[123] + ' ' + food_two_list[128] + '\n')
+        messages += ('\n수요일 제2학생 식당 메뉴\n' + '◎든든 ' +  + food_two_list[10] + '◎\n'
+                         + food_two_list[15] + ' ' + food_two_list[20] + ' ' + food_two_list[25] + ' ' +
+                         food_two_list[30] + ' ' +
+                         food_two_list[35] + '\n')
+        messages += (
+        '◎푸짐 4200원◎\n' + food_two_list[41] + ' ' + food_two_list[46] + ' ' + food_two_list[51] + ' ' +
+        food_two_list[56] + ' ' +
+        food_two_list[61] + ' ' + food_two_list[66] + ' ' + food_two_list[71] +'\n')
+        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[104] + ' ' + food_two_list[109] + ' ' + food_two_list[
+            114] + ' ' + food_two_list[119] + ' ' +
+                     food_two_list[124] + ' ' + food_two_list[129] + '\n')
+
+        messages += ('\n목요일 제2학생 식당 메뉴◎\n' + '◎든든 ' + food_two_list[11] + '◎\n'
+                         + food_two_list[16] + ' ' + food_two_list[21] + ' ' + food_two_list[26] + ' ' +
+                         food_two_list[31] + ' ' +
+                         food_two_list[36] + '\n')
+        messages += (
+        '◎푸짐 4200원◎\n' + food_two_list[42] + ' ' + food_two_list[47] + ' ' + food_two_list[52] + ' ' +
+        food_two_list[57] + ' ' +
+        food_two_list[62] + ' ' + food_two_list[67] + ' ' + food_two_list[72] +'\n')
+        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[105] + ' ' + food_two_list[110] + ' ' + food_two_list[
+            115] + ' ' + food_two_list[120] + ' ' +
+                     food_two_list[125] + ' ' + food_two_list[130] + '\n')
+
+        messages += ('\n금요일 제2학생 식당 메뉴\n' + '◎든든 ' + food_two_list[12] + '◎\n'
+                         + food_two_list[17] + ' ' + food_two_list[22] + ' ' + food_two_list[27] + ' ' +
+                         food_two_list[32] + ' ' +
+                         food_two_list[37] + '\n')
+        messages += (
+        '◎푸짐 4200원◎\n' + food_two_list[43] + ' ' + food_two_list[48] + ' ' + food_two_list[53] + ' ' +
+        food_two_list[58] + ' ' +
+        food_two_list[63] + ' ' + food_two_list[68] + ' ' + food_two_list[73] +'\n')
+        messages += ('◎석식 푸짐 3500◎\n' + food_two_list[106] + ' ' + food_two_list[111] + ' ' + food_two_list[
+            116] + ' ' + food_two_list[121] + ' ' +
+                     food_two_list[126] + ' ' + food_two_list[131] + '\n')
+        messages
         messages += '◎간단 메뉴 + 공깃밥◎\n계란라면 2800원\n떡계란라면 치즈계란라면\n물만두계란라면 3200원\n'
         messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
 
