@@ -31,7 +31,7 @@ def on_message(request):
 			},
 			'keyboard':{
 				'type':'buttons',
-				'buttons':['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','테크노 파크 식단','방학-2학식단']
+				'buttons':['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','테크노 파크 식단']
 			}
 		})
 
@@ -77,9 +77,7 @@ def on_message(request):
 
     elif content.startswith('테크노 파크 식단'):
         response = functions.TechPark()
-
-    elif content.startswith('방학-2학식'):
-        response = functions.vacation_two()
+	
     #elif content.startswith('도서관 열람실 좌석 현황'):
     #    response = functions.Library_seat()
 
