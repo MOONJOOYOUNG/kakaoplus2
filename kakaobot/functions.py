@@ -34,21 +34,14 @@ def bus_parser(string):
 #공릉동 미세먼지 체크
 def check_dust():
     driver2.get('https://m.search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B3%B5%EB%A6%89%EB%8F%99+%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80')
-    html = driver2.page_source
+    html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    dust = soup.select('.air_today span')
-    value = int(dust[3].getText())
-    message = "미세먼지 수치 : "+ dust[0].getText()
-    if value < 31:
-        message += ("\n공릉동 미세먼지는 좋음 입니다.")
-    elif value < 81:
-        message += ("\n공릉동 미세먼지는 보통 입니다")
-    elif value < 151:
-        message += ("\n공릉동 미세먼지는 나쁨 입니다")
-    else:
-        message +=("\n공릉동 미세먼지는 매우나쁨 입니다")
+    level = soup.find_all("span",{"class":"number"},limit=2)
+    state_1 = soup.find_all("strong",{"class":"summary_text level2"})
+    state_2 = soup.find_all("strong",{"class":"summary_text level3"})
+    message = "공릉동 미세먼지 : {0} {1}\n초미세먼지 : {2} {3}".format(level[0].getText(),state_1[0].getText(),level[1].getText(),state_2[0].getText())
+    
     return message
-
 
 # 버스정류장
 def bus_Gongneung():
