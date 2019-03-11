@@ -34,7 +34,7 @@ def bus_parser(string):
 #공릉동 미세먼지 체크
 def check_dust(): 
     driver2.get('http://m.airkorea.or.kr/main;jsessionid=pMxjk2oapu1rDdBqR3ezaqH7MG6IAejaGsIKw0853HmOJeD1UoMIvxzwUQ2zAzGG.airwas2_servlet_newmobile')
-    html = driver.page_source
+    html = driver2.page_source
     soup = BeautifulSoup(html, 'html.parser')
     state = soup.find_all("span",{"class":"t2"},limit=2)
     level = soup.find_all("span",{"class":"t"},limit=2)
