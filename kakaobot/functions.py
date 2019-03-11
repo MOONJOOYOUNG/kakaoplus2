@@ -32,15 +32,15 @@ def bus_parser(string):
     return parser
 
 #공릉동 미세먼지 체크
-def check_dust():
-    driver2.get('https://m.search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B3%B5%EB%A6%89%EB%8F%99+%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80')
+def check_dust(): 
+    driver2.get('http://m.airkorea.or.kr/main;jsessionid=pMxjk2oapu1rDdBqR3ezaqH7MG6IAejaGsIKw0853HmOJeD1UoMIvxzwUQ2zAzGG.airwas2_servlet_newmobile')
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    level = soup.find_all("span",{"class":"number"},limit=2)
-    state_1 = soup.find_all("strong",{"class":"summary_text level2"})
-    state_2 = soup.find_all("strong",{"class":"summary_text level3"})
-    message = "공릉동 미세먼지 : {0} {1}\n초미세먼지 : {2} {3}".format(level[0].getText(),state_1[0].getText(),level[1].getText(),state_2[0].getText())
-    
+    state = soup.find_all("span",{"class":"t2"},limit=2)
+    level = soup.find_all("span",{"class":"t"},limit=2)
+
+    message = "공릉동 미세먼지 : {0} {1}\n초미세먼지 : {2} {3}".format(level[0].getText(),state[0].getText(),level[1].getText(),state[0].getText())
+
     return message
 
 # 버스정류장
