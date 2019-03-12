@@ -20,7 +20,7 @@ def today():
     r = kor_time.weekday()
 
     return r
-
+#
 # 다음 버스 파서
 def bus_parser(string):
     parser = string.replace('			', '')
