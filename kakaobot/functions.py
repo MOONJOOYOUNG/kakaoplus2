@@ -356,34 +356,34 @@ def vacation_two():
 def TechPark():
     html = requests.get('https://bds.bablabs.com/restaurants/LTI0NTI2NjU2?campus_id=o8RPQZ7Zme').text
     soup = BeautifulSoup(html, 'html.parser')
-    park = soup.select('.card-body span')
+    park = soup.find_all("div",{"class":"card-text"},limit=7)
 
     r = today()
     messages = ''
     try:
         if t[r] == '월':
             messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '화':
             messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '수':
             messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '목':
             messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '금':
             messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[7].get_text()))
+                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '토':
