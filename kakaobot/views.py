@@ -9,7 +9,7 @@ from . import functions
 @bot
 def on_init(request):
     return {'type' : 'buttons',
-            'buttons' : ['오늘 식단표','이번주 식단표','버스 정류장','공릉동 미세먼지']
+            'buttons' : ['오늘 식단표','이번주 식단표','버스 정류장'] # ,'공릉동 미세먼지'
  }
 
 @bot
@@ -123,7 +123,7 @@ def on_message(request):
         },
         'keyboard': {
             'type': 'buttons',
-            'buttons' : ['오늘 식단표','이번주 식단표','버스 정류장','공릉동 미세먼지']
+            'buttons' : ['오늘 식단표','이번주 식단표','버스 정류장'] #,'공릉동 미세먼지'
         }
     }
 
