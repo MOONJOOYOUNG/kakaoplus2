@@ -108,8 +108,8 @@ def on_message(request):
     elif content.startswith('4번 출구 석계역'):
         response = functions.seok_2()
 	
-    elif content.startswith('공릉동 미세먼지'):
-        response = functions.check_dust()
+   # elif content.startswith('공릉동 미세먼지'):
+   #     response = functions.check_dust()
 	
     else:
         response = ('지원하는 명령어가 아닙니다.')
