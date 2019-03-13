@@ -10,7 +10,7 @@ from selenium import webdriver
 # 선언부
 t = ['월', '화', '수', '목', '금', '토', '일']
 driver = webdriver.PhantomJS()
-driver2 = webdriver.PhantomJS()
+#driver2 = webdriver.PhantomJS()
 
 # 요일 구하기.
 def today():
@@ -32,16 +32,16 @@ def bus_parser(string):
     return parser
 
 #공릉동 미세먼지 체크
-def check_dust(): 
-    driver2.get('http://m.airkorea.or.kr/main;jsessionid=pMxjk2oapu1rDdBqR3ezaqH7MG6IAejaGsIKw0853HmOJeD1UoMIvxzwUQ2zAzGG.airwas2_servlet_newmobile')
-    html = driver2.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    state = soup.find_all("span",{"class":"t2"},limit=2)
-    level = soup.find_all("span",{"class":"t"},limit=2)
+#def check_dust(): 
+#    driver2.get('http://m.airkorea.or.kr/main;jsessionid=pMxjk2oapu1rDdBqR3ezaqH7MG6IAejaGsIKw0853HmOJeD1UoMIvxzwUQ2zAzGG.airwas2_servlet_newmobile')
+#    html = driver2.page_source
+#    soup = BeautifulSoup(html, 'html.parser')
+#    state = soup.find_all("span",{"class":"t2"},limit=2)
+#    level = soup.find_all("span",{"class":"t"},limit=2)
 
-    message = "공릉동 미세먼지 : {0} {1}\n초미세먼지 : {2} {3}".format(level[0].getText(),state[0].getText(),level[1].getText(),state[0].getText())
+#    message = "공릉동 미세먼지 : {0} {1}\n초미세먼지 : {2} {3}".format(level[0].getText(),state[0].getText(),level[1].getText(),state[0].getText())
 
-    return message
+#    return message
 
 # 버스정류장
 def bus_Gongneung():
