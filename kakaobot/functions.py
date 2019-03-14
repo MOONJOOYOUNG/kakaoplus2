@@ -147,7 +147,7 @@ kb_idx = 0
 sung_idx = 0
 surim_idx = 0
 food_two_idx = 0
-one_two_idx = 0
+food_one_idx = 0
 
 kb_list = []
 surim_list = []
