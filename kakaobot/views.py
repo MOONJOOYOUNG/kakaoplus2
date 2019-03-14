@@ -31,7 +31,7 @@ def on_message(request):
 			},
 			'keyboard':{
 				'type':'buttons',
-				'buttons':['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','제2 학생 식당 메뉴','테크노 파크 식단']
+				'buttons':['KB 학사 학식 메뉴','성림 학사 학식 메뉴', '수림 학사 학식 메뉴','1 학생 식당 메뉴','제2 학생 식당 메뉴','테크노 파크 식단']
 			}
 		})
 
@@ -42,7 +42,7 @@ def on_message(request):
 			},
 			'keyboard':{
 				'type':'buttons',
-				'buttons':['케이비','성림', '수림','제2 학생 식당']
+				'buttons':['케이비','성림', '수림','1 학생 식당','제2 학생 식당']
 			}
 		})
 
@@ -86,6 +86,12 @@ def on_message(request):
 
     elif content.startswith('성림'):
         response = functions.Sungrim_All()
+	
+    elif content.startswith('1 학생 식당 메뉴'):
+        response = functions.Food_one()
+   
+    elif content.startswith('1 학생 식당'):
+        response = functions.Food_one_tomorrow()
 
     elif content.startswith('공릉역 2번 출구'):
         response = functions.bus_Gongneung()
