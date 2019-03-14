@@ -694,15 +694,6 @@ def Food_one_tomorrow():
             messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
 
             return parser.food_parser(messages)
-        
-        elif t[r] == '토':
-            messages += ('토요일은 제공하지 않습니다.\n')
-            return messages
-
-        elif t[r] == '일':
-            messages += ('일요일은 제공하지 않습니다.\n')
-            food_one_idx = 0
-            return messages
     except:
         return ('식당 메뉴가 업로드 되지 않았습니다.')    
 
