@@ -433,7 +433,7 @@ def Food_one():
             return parser.food_parser(messages)
 
         elif t[r] == '화':
-           messages += (t[r] + '요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[9]
+            messages += (t[r] + '요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[9]
                      + food_one_list[19] + ' ' + food_one_list[24] + ' ' + food_one_list[29] + ' ' +
                      food_one_list[34]+ ' ' +
                      food_one_list[39] + ' ' + food_one_list[44] + '\n')
