@@ -479,7 +479,7 @@ def Food_two():
             return parser.food_parser(messages)
 
         elif t[r] == '금':
-            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎중식 든든◎\n' ' + food_two_list[12]
+            messages += (t[r] + '요일 제2학생 식당 메뉴\n' + '◎중식 든든◎\n' + food_two_list[12]
                          + food_two_list[17] + ' ' + food_two_list[22] + ' ' + food_two_list[27] + ' ' +
                          food_two_list[32] + ' ' +
                          food_two_list[37] + '\n')
