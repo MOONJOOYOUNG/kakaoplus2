@@ -362,28 +362,28 @@ def TechPark():
     messages = ''
     try:
         if t[r] == '월':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[1].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[2].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '화':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[1].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[2].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '수':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[1].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[2].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '목':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[1].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[2].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '금':
-            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[3].get_text()) + '\n◎중식 B코너◎\n'
-                         + park_parser(park[4].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
+            messages += ('◎' + t[r] + '요일 테크노파크 식당 메뉴◎\n' + '◎중식 A코너◎\n' + park_parser(park[1].get_text()) + '\n◎중식 B코너◎\n'
+                         + park_parser(park[2].get_text()) + '\n◎저녁◎\n' + park_parser(park[6].get_text()))
             return (messages)
 
         elif t[r] == '토':
