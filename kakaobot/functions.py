@@ -147,11 +147,13 @@ kb_idx = 0
 sung_idx = 0
 surim_idx = 0
 food_two_idx = 0
+one_two_idx = 0
 
 kb_list = []
 surim_list = []
 sung_list = []
 food_two_list = []
+food_one_list = []
 
 # kb 학사
 def Kb_Dormitory():
@@ -396,6 +398,115 @@ def TechPark():
     except:
         return ('홈페이지의 학식 메뉴가 업로드 되지 않았습니다.')
 
+# 제 1학생 식단
+def Food_one():
+    global food_one_idx
+    global food_one_list
+    r = today()
+        
+    if(food_one_idx == 0):
+        food_one_list = []
+        driver.get('http://coop.seoultech.ac.kr/bbs/board.php?bo_table=restaurant1&wr_id=88')
+        html = driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        food_one = soup.select(".dts_design td", limit=132)
+        for idx,i in enumerate(food_one):
+            food_one_list.append(i.get_text())
+        food_one_idx = 1
+
+    messages = ''
+    try:
+        if t[r] == '월':
+            messages += (t[r] + '요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[8]
+                     + food_one_list[18] + ' ' + food_one_list[23] + ' ' + food_one_list[28] + ' ' +
+                     food_one_list[33]+ ' ' +
+                     food_one_list[38] + ' ' + food_one_list[43] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[49] + ' ' + food_one_list[59] + ' ' + food_one_list[
+                64] + ' ' + food_one_list[69] + ' ' +
+                         food_one_list[74] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[102] + ' ' + food_one_list[107] + ' ' + food_one_list[
+                112] + ' ' +
+                         food_one_list[117] + ' ' + food_one_list[122] +'\n')
+            messages += '◎간단 메뉴◎\n라면 2500원\n치즈/만두라면/해장2800원\n부대찌개라면2900원\n공싯밥500원\n'
+            messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
+          
+            return parser.food_parser(messages)
+
+        elif t[r] == '화':
+           messages += (t[r] + '요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[9]
+                     + food_one_list[19] + ' ' + food_one_list[24] + ' ' + food_one_list[29] + ' ' +
+                     food_one_list[34]+ ' ' +
+                     food_one_list[39] + ' ' + food_one_list[44] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[50] + ' ' + food_one_list[60] + ' ' + food_one_list[
+                65] + ' ' + food_one_list[70] + ' ' +
+                         food_one_list[75] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[103] + ' ' + food_one_list[108] + ' ' + food_one_list[
+                113] + ' ' +
+                         food_one_list[118] + ' ' + food_one_list[123] +'\n')
+            messages += '◎간단 메뉴◎\n라면 2500원\n치즈/만두라면/해장2800원\n부대찌개라면2900원\n공싯밥500원\n'
+            messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
+            
+            return parser.food_parser(messages)
+
+        elif t[r] == '수':
+            messages += (t[r] + '요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[10]
+                     + food_one_list[20] + ' ' + food_one_list[25] + ' ' + food_one_list[30] + ' ' +
+                     food_one_list[35]+ ' ' +
+                     food_one_list[40] + ' ' + food_one_list[45] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[51] + ' ' + food_one_list[61] + ' ' + food_one_list[
+                66] + ' ' + food_one_list[71] + ' ' +
+                         food_one_list[76] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[104] + ' ' + food_one_list[109] + ' ' + food_one_list[
+                114] + ' ' +
+                         food_one_list[119] + ' ' + food_one_list[124] +'\n')
+            messages += '◎간단 메뉴◎\n라면 2500원\n치즈/만두라면/해장2800원\n부대찌개라면2900원\n공싯밥500원\n'
+            messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
+            
+            return parser.food_parser(messages)
+
+        elif t[r] == '목':
+            messages += (t[r] + '요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[11]
+                     + food_one_list[21] + ' ' + food_one_list[26] + ' ' + food_one_list[31] + ' ' +
+                     food_one_list[36]+ ' ' +
+                     food_one_list[41] + ' ' + food_one_list[46] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[52] + ' ' + food_one_list[62] + ' ' + food_one_list[
+                67] + ' ' + food_one_list[72] + ' ' +
+                         food_one_list[77] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[105] + ' ' + food_one_list[110] + ' ' + food_one_list[
+                115] + ' ' +
+                         food_one_list[120] + ' ' + food_one_list[125] +'\n')
+            messages += '◎간단 메뉴◎\n라면 2500원\n치즈/만두라면/해장2800원\n부대찌개라면2900원\n공싯밥500원\n'
+            messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
+            
+            return parser.food_parser(messages)
+
+        elif t[r] == '금':
+            messages += (t[r] + '요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[12]
+                                 + food_one_list[22] + ' ' + food_one_list[27] + ' ' + food_one_list[32] + ' ' +
+                                 food_one_list[37]+ ' ' +
+                                 food_one_list[42] + ' ' + food_one_list[47] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[53] + ' ' + food_one_list[63] + ' ' + food_one_list[
+                68] + ' ' + food_one_list[73] + ' ' +
+                         food_one_list[78] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[106] + ' ' + food_one_list[111] + ' ' + food_one_list[
+                116] + ' ' +
+                         food_one_list[121] + ' ' + food_one_list[126] +'\n')
+            messages += '◎간단 메뉴◎\n라면 2500원\n치즈/만두라면/해장2800원\n부대찌개라면2900원\n공싯밥500원\n'
+            messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
+            
+            return parser.food_parser(messages)
+        
+        elif t[r] == '토':
+            messages += ('토요일은 제공하지 않습니다.\n')
+            return messages
+
+        elif t[r] == '일':
+            messages += ('일요일은 제공하지 않습니다.\n')
+            food_one_idx = 0
+            return messages
+    except:
+        return ('식당 메뉴가 업로드 되지 않았습니다.')    
+    
 # 제 2학생 식단
 def Food_two():
     global food_two_idx
@@ -506,6 +617,94 @@ def Food_two():
     except:
         return ('식당 메뉴가 업로드 되지 않았습니다.')    
 
+# 제 1학생 식단
+def Food_one_tomorrow():
+    global food_one_idx
+    global food_one_list
+        
+    if(food_one_idx == 0):
+        food_one_list = []
+        driver.get('http://www.seoultech.ac.kr/life/student/food/')
+        html = driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        food_one = soup.select(".dts_design td", limit=132)
+        for idx,i in enumerate(food_one):
+            food_one_list.append(i.get_text())
+        food_one_idx = 1
+
+    messages = ''
+    try:
+            messages=''
+            messages += ('월요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[8]
+                                 + food_one_list[18] + ' ' + food_one_list[23] + ' ' + food_one_list[28] + ' ' +
+                                 food_one_list[33]+ ' ' +
+                                 food_one_list[38] + ' ' + food_one_list[43] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[49] + ' ' + food_one_list[59] + ' ' + food_one_list[
+                64] + ' ' + food_one_list[69] + ' ' +
+                         food_one_list[74] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[102] + ' ' + food_one_list[107] + ' ' + food_one_list[
+                112] + ' ' +
+                         food_one_list[117] + ' ' + food_one_list[122] +'\n')
+
+            messages += ('화요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[9]
+                                 + food_one_list[19] + ' ' + food_one_list[24] + ' ' + food_one_list[29] + ' ' +
+                                 food_one_list[34]+ ' ' +
+                                 food_one_list[39] + ' ' + food_one_list[44] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[50] + ' ' + food_one_list[60] + ' ' + food_one_list[
+                65] + ' ' + food_one_list[70] + ' ' +
+                         food_one_list[75] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[103] + ' ' + food_one_list[108] + ' ' + food_one_list[
+                113] + ' ' +
+                         food_one_list[118] + ' ' + food_one_list[123] +'\n')
+
+            messages += ('수요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[10]
+                                 + food_one_list[20] + ' ' + food_one_list[25] + ' ' + food_one_list[30] + ' ' +
+                                 food_one_list[35]+ ' ' +
+                                 food_one_list[40] + ' ' + food_one_list[45] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[51] + ' ' + food_one_list[61] + ' ' + food_one_list[
+                66] + ' ' + food_one_list[71] + ' ' +
+                         food_one_list[76] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[104] + ' ' + food_one_list[109] + ' ' + food_one_list[
+                114] + ' ' +
+                         food_one_list[119] + ' ' + food_one_list[124] +'\n')
+
+            messages += ('목요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[11]
+                                 + food_one_list[21] + ' ' + food_one_list[26] + ' ' + food_one_list[31] + ' ' +
+                                 food_one_list[36]+ ' ' +
+                                 food_one_list[41] + ' ' + food_one_list[46] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[52] + ' ' + food_one_list[62] + ' ' + food_one_list[
+                67] + ' ' + food_one_list[72] + ' ' +
+                         food_one_list[77] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[105] + ' ' + food_one_list[110] + ' ' + food_one_list[
+                115] + ' ' +
+                         food_one_list[120] + ' ' + food_one_list[125] +'\n')
+
+            messages += ('목요일 제1학생 식당 메뉴\n' + '◎A코너 4000 ~ 4200◎\n' +  food_one_list[12]
+                                 + food_one_list[22] + ' ' + food_one_list[27] + ' ' + food_one_list[32] + ' ' +
+                                 food_one_list[37]+ ' ' +
+                                 food_one_list[42] + ' ' + food_one_list[47] + '\n')
+            messages += ('◎B코너 3800원◎\n' + food_one_list[53] + ' ' + food_one_list[63] + ' ' + food_one_list[
+                68] + ' ' + food_one_list[73] + ' ' +
+                         food_one_list[78] + '\n')
+            messages += ('◎B코너 3500원◎\n' + food_one_list[106] + ' ' + food_one_list[111] + ' ' + food_one_list[
+                116] + ' ' +
+                         food_one_list[121] + ' ' + food_one_list[126] +'\n')
+            messages
+            messages += '◎간단 메뉴◎\n라면 2500원\n치즈/만두라면/해장2800원\n부대찌개라면2900원\n공싯밥500원\n'
+            messages += '◎운영시간 - 중식 11:00~14:00 석식 17:00~19:00 (18:40분까지 주문가능)◎'
+
+            return parser.food_parser(messages)
+        
+        elif t[r] == '토':
+            messages += ('토요일은 제공하지 않습니다.\n')
+            return messages
+
+        elif t[r] == '일':
+            messages += ('일요일은 제공하지 않습니다.\n')
+            food_one_idx = 0
+            return messages
+    except:
+        return ('식당 메뉴가 업로드 되지 않았습니다.')    
 
 def Food_two_tomorrow():
     global food_two_idx
