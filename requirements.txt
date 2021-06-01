@@ -18,7 +18,7 @@ requests==2.18.4
 selenium==3.6.0
 six==1.11.0
 static3==0.7.0
-urllib3==1.22
+urllib3==1.26.5
 White-Noise==0.1.0
 whitenoise==3.2
 selenium==3.6.0
